@@ -1,11 +1,14 @@
 package gr.betting.admin.bettingtips;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.ShareActionProvider;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -96,28 +100,43 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_news_tips) {
             fragment = new NewTipsFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.mainFrame,fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
         } else if (id == R.id.nav_old_tips) {
             fragment = new OldTipsFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.mainFrame,fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
         } else if (id == R.id.nav_feedback) {
+            Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
+
 
         } else if (id == R.id.nav_settings) {
+            Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_share) {
+            Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_send) {
+            Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
 
         }   else if (id == R.id.nav_info) {
             fragment = new InfoFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.mainFrame,fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
         }
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-        transaction.replace(R.id.mainFrame,fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }
