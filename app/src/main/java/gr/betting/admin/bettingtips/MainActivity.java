@@ -44,6 +44,14 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Setting default fragment
+        navigationView.setCheckedItem(R.id.nav_news_tips);
+        Fragment  fragment = new NewTipsFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.mainFrame,fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     @Override
