@@ -31,6 +31,8 @@ public class OldTipsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
         View v = inflater.inflate(R.layout.old_tips_layout,null);
 
+        this.getActivity().setTitle("History of Tips");
+
         final ProgressDialog loadingDialog = new ProgressDialog(this.getActivity());
         loadingDialog.setTitle("Please wait..");
         loadingDialog.setMessage("Loading tips...");

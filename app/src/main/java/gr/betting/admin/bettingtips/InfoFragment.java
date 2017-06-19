@@ -17,6 +17,7 @@ public class InfoFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
             View v = inflater.inflate(R.layout.info_layout, null);
 
+            this.getActivity().setTitle("About Us");
 
             return v;
         }
