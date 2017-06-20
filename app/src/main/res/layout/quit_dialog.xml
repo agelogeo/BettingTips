@@ -4,13 +4,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        app:srcCompat="@drawable/screen"
-        android:id="@+id/imageView4"
-        android:scaleType="fitXY" />
-
     <TextView
         android:text="Are you sure , you want to sign off?"
         android:layout_width="match_parent"
