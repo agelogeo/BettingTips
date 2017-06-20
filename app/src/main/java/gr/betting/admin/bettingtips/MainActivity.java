@@ -117,9 +117,6 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_settings) {
             Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_share) {
-            Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
-
         } else if (id == R.id.nav_send) {
             Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
 

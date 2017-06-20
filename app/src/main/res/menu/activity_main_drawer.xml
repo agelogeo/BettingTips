@@ -11,24 +11,22 @@
             android:icon="@drawable/ic_chrome_reader_mode_black_24dp"
             android:title="History of Tips" />
         <item
-            android:id="@+id/nav_feedback"
-            android:icon="@drawable/ic_loyalty_black_24dp"
-            android:title="Give us your feedback" />
-        <item
             android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_settings_black_24dp"
             android:title="Settings" />
+
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Social">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share"/>
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/ic_loyalty_black_24dp"
+                android:title="Give us your feedback" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_send_black_24dp"
                 android:title="Send it to a friend" />
             <item
                 android:id="@+id/nav_info"
