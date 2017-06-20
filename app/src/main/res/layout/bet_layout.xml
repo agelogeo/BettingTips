@@ -78,12 +78,11 @@
             <TextView
                 android:text="FH HafnarfjordurFH HafnarfjordurFH Hafnarfjordur"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/away_team_name"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
-                android:layout_weight="1"
-                android:maxHeight="50dp" />
+                android:layout_weight="1" />
         </LinearLayout>
 
         <LinearLayout
