@@ -15,14 +15,16 @@
         <TextView
             android:text="Iceland / Urvalsdeild"
             android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:id="@+id/country_league"
             android:gravity="left|center_vertical"
             android:textStyle="normal|bold"
             android:textColor="@android:color/black"
             android:layout_weight="1"
             android:textAlignment="textStart"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp"
+            android:minHeight="30dp"
+            android:maxHeight="50dp" />
 
         <TextView
             android:text="2017-06-14"
@@ -74,13 +76,14 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:text="FH Hafnarfjordur"
+                android:text="FH HafnarfjordurFH HafnarfjordurFH Hafnarfjordur"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/away_team_name"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:maxHeight="50dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -157,12 +160,14 @@
         android:text="OVER 2.5 GOALS"
         android:layout_width="match_parent"
         android:id="@+id/tip"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:background="@color/main_footer_bet_color"
         android:textSize="18sp"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
-        android:textStyle="normal|bold|italic" />
+        android:textStyle="normal|bold|italic"
+        android:maxHeight="50dp"
+        android:minHeight="30dp" />
 
 </LinearLayout>
