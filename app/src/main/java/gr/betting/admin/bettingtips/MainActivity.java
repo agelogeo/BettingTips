@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,8 +21,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
-    private ShareActionProvider mShareActionProvider;
+    private ShareActionProvider shareActionProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,19 +77,29 @@ public class MainActivity extends AppCompatActivity
         // Locate MenuItem with ShareActionProvider
         MenuItem item = menu.findItem(R.id.menu_item_share);
 
-        // Fetch and store ShareActionProvider
-        mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+        shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+
+        if(shareActionProvider != null){
+            shareActionProvider.setShareIntent(createShareAppIntent());
+            Log.e(LOG_TAG, "intent set to share action provider ");
+        }
+        else{
+            Log.e(LOG_TAG, "Share action provider is null?");
+        }
+        //super.onCreateOptionsMenu(menu);
 
 
         // Return true to display menu
         return true;
     }
 
-    // Call to update the share intent
-    private void setShareIntent(Intent shareIntent) {
-        if (mShareActionProvider != null) {
-            mShareActionProvider.setShareIntent(shareIntent);
-        }
+
+    private Intent createShareAppIntent(){
+        Intent sendIntent = new Intent(Intent.ACTION_SEND);
+        sendIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.     https://www.youtube.com/watch?v=HZ3UWScq_0Y");
+        sendIntent.setType("text/plain");
+        return sendIntent;
     }
 
     @Override
@@ -97,16 +109,11 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        /*//noinspection SimplifiableIfStatement
         if (id == R.id.menu_item_share) {
-            Intent sendIntent = new Intent();
-            sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.     https://www.youtube.com/watch?v=HZ3UWScq_0Y");
-            sendIntent.setType("text/plain");
-            Intent.createChooser(sendIntent,"Share via");
-            startActivity(sendIntent);
+
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -134,17 +141,17 @@ public class MainActivity extends AppCompatActivity
             transaction.commit();
         } else if (id == R.id.nav_feedback) {
             Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
-            Intent sendIntent = new Intent();
-            sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.     https://www.youtube.com/watch?v=HZ3UWScq_0Y");
-            sendIntent.setType("text/plain");
-            startActivity(sendIntent);
 
         } else if (id == R.id.nav_settings) {
             Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_send) {
-            Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
-
+            if(shareActionProvider != null){
+                startActivity(createShareAppIntent());
+                Log.e(LOG_TAG, "intent set to share action provider ");
+            }
+            else{
+                Log.e(LOG_TAG, "Share action provider is null?");
+            }
         }   else if (id == R.id.nav_info) {
             fragment = new InfoFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

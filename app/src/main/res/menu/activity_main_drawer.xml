@@ -23,11 +23,12 @@
             <item
                 android:id="@+id/nav_feedback"
                 android:icon="@drawable/ic_loyalty_black_24dp"
-                android:title="Give us your feedback" />
+                android:title="Give us your feedback"/>
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_send_black_24dp"
-                android:title="Send it to a friend" />
+                android:title="Invite your friend"
+                android:actionProviderClass="android.widget.ShareActionProvider" />
             <item
                 android:id="@+id/nav_info"
                 android:icon="@drawable/ic_info_black_24dp"
