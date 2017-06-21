@@ -67,11 +67,11 @@ public class betListAdapter extends ArrayAdapter<betItem> {
         tip.setText(betitem.getTip());
 
         if(betitem.getGotcha().toUpperCase().equals("TRUE")){
-            odd.setBackgroundColor(getContext().getResources().getColor(R.color.main_positive_bet_color));
+            odd.setBackground(getContext().getResources().getDrawable(R.drawable.bet_odd_shape_positive));
         }else if(betitem.getGotcha().toUpperCase().equals("FALSE")){
-            odd.setBackgroundColor(getContext().getResources().getColor(R.color.main_negative_bet_color));
+            odd.setBackground(getContext().getResources().getDrawable(R.drawable.bet_odd_shape_negative));
         }else{
-            odd.setBackgroundColor(getContext().getResources().getColor(R.color.main_default_bet_color));
+            odd.setBackground(getContext().getResources().getDrawable(R.drawable.bet_odd_shape));
         }
 
         // Return the completed view to render on screen

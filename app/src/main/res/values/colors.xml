@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#595959</color>
-    <color name="colorPrimaryDark">#3d3d3d</color>
+    <color name="colorPrimary">#00b2cc</color>
+    <color name="colorPrimaryDark">#009fb2</color>
     <color name="colorAccent">#ff5646</color>
 
     #e84c3d
-
-    <color name="main_footer_bet_color">#d02f1f</color>
-    <color name="main_header_bet_color">@android:color/holo_blue_dark</color>
-    <color name="main_default_bet_color">#3d3d3d</color>
+    <color name="main_border_bet_color">@android:color/black</color>
+    <color name="main_header_bet_color">#e9eb04</color>
+    <color name="main_footer_bet_color">#009fb2</color>
+    <color name="main_default_bet_color">#797979</color>
     <color name="main_positive_bet_color">#38bb38</color>
-    <color name="main_negative_bet_color">@android:color/black</color>
-
-
+    <color name="main_negative_bet_color">#bb3838</color>
+    009fb2
+    d02f1f
     <!-- Blue/Light Blue Theme  -->
     <color name="blue_footer_bet_color">@android:color/holo_blue_light</color>
     <color name="blue_header_bet_color">@android:color/holo_blue_dark</color>
-    <color name="blue_default_bet_color">@android:color/black</color>
+    <color name="blue_default_bet_color">#797979</color>
     <color name="blue_positive_bet_color">#41f141</color>
     <color name="blue_negative_bet_color">#fd1500</color>
 

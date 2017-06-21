@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/shape_my">
-    <stroke android:width="4dp" android:color="#636161" />
-    <padding android:left="3dp"
-        android:top="3dp"
-        android:right="3dp"
-        android:bottom="3dp" />
-    <corners
-        android:topLeftRadius="24dp"
-        android:topRightRadius="24dp"
-        android:bottomLeftRadius="24dp"
-        android:bottomRightRadius="24dp"/>
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:right="4dp" android:left="5dp" android:top="6dp" >
+    <shape android:shape="rectangle">
+        <solid android:color="@android:color/darker_gray"/>
+        <!--<padding android:left="3dp"
+            android:top="3dp"
+            android:right="3dp"
+            android:bottom="3dp" />-->
+        <corners
+            android:topLeftRadius="24dp"
+            android:topRightRadius="24dp"
+            android:bottomLeftRadius="24dp"
+            android:bottomRightRadius="24dp"/>
+    </shape>
+</item>
+</layer-list>

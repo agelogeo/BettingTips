@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/roundshape"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="5dp">
 
     <LinearLayout
         android:id="@+id/header_layout"
@@ -53,7 +54,7 @@
         android:id="@+id/details_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?android:attr/colorButtonNormal"
+        android:background="@android:color/background_light"
         android:orientation="horizontal"
         android:paddingLeft="5dp"
         android:paddingRight="5dp">
@@ -146,7 +147,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
-            android:background="@color/main_default_bet_color"
+            android:background="@drawable/bet_odd_shape"
             android:fadeScrollbars="false"
             android:gravity="center_vertical|center_horizontal"
             android:text="1.55"

@@ -22,13 +22,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Betting Tips"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="Daily Betting Tips"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="appbettingtips@gmail.com" />
+        android:text="appbettingtips@gmail.com"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="italic" />
 
 </LinearLayout>
