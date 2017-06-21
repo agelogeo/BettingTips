@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,10 +30,16 @@ import java.util.ArrayList;
  */
 
 public class NewTipsFragment extends Fragment {
+    private AdView mAdView;
     @Nullable
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
         View v = inflater.inflate(R.layout.new_tips_layout,null);
+
+
+        mAdView = (AdView) v.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         this.getActivity().setTitle("Today's Tips");
 
@@ -148,7 +158,6 @@ public class NewTipsFragment extends Fragment {
                 } catch (Exception e){
                     loadingDialog.dismiss();
                     System.out.println("ERROR : onPostExecute");
-                    NewTipsFragment.this.getActivity().finish();
                     e.printStackTrace();
                 }
             }

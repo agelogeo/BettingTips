@@ -5,6 +5,10 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="banner_new_ad_unit_id">ca-app-pub-1785790420897011/1232497885</string>
+    <string name="banner_old_ad_unit_id">ca-app-pub-1785790420897011/3906762687</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- Test AdMob ID : ca-app-pub-3940256099942544/6300978111 -->
 </resources>

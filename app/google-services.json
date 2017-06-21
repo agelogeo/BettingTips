@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "966612527911",
+    "firebase_url": "https://my-first-project-f2ac2.firebaseio.com",
+    "project_id": "my-first-project-f2ac2",
+    "storage_bucket": "my-first-project-f2ac2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966612527911:android:e75466036915ffee",
+        "android_client_info": {
+          "package_name": "gr.betting.admin.bettingtips"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966612527911-mnanm76to9mc9i18cks80h0s8l5o8ood.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "gr.betting.admin.bettingtips",
+            "certificate_hash": "f9a7dafe761bb0453fd5aaf00272ac1ac75cd461"
+          }
+        },
+        {
+          "client_id": "966612527911-ruec7gsuopi89kj8blv6m5n9td8fen3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf1jnmr3dVL3WRJ1TQRqSrYvloAJEiA3k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966612527911-ruec7gsuopi89kj8blv6m5n9td8fen3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
