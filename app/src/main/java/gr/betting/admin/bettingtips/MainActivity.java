@@ -9,12 +9,16 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.MobileAds;
@@ -71,7 +75,35 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this);
+            // ...Irrelevant code for customizing the buttons and title
+            LayoutInflater inflater = MainActivity.this.getLayoutInflater();
+            View dialogView = inflater.inflate(R.layout.quit_dialog, null);
+            dialogBuilder.setView(dialogView);
+            //dialogBuilder.setTitle("Edit Coupon");
+            final AlertDialog alertDialog = dialogBuilder.create();
+            // set the custom dialog components - text, image and button
+
+            Button noButton = (Button) dialogView.findViewById(R.id.dialog_no_btn);
+            Button yesButton = (Button) dialogView.findViewById(R.id.dialog_yes_btn);
+
+            // if button is clicked, close the custom dialog
+            noButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                }
+            });
+
+            yesButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    alertDialog.dismiss();
+                    MainActivity.super.onBackPressed();
+                }
+            });
+
+            alertDialog.show();
         }
 
 
@@ -138,13 +170,14 @@ public class MainActivity extends AppCompatActivity
             fragment = new NewTipsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
-            transaction.addToBackStack(null);
+            transaction.disallowAddToBackStack();
+            //transaction.addToBackStack();
             transaction.commit();
         } else if (id == R.id.nav_old_tips) {
             fragment = new OldTipsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
-            transaction.addToBackStack(null);
+            //transaction.addToBackStack(null);
             transaction.commit();
         } else if (id == R.id.nav_feedback) {
             Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
@@ -163,7 +196,7 @@ public class MainActivity extends AppCompatActivity
             fragment = new InfoFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
-            transaction.addToBackStack(null);
+            //transaction.addToBackStack(null);
             transaction.commit();
         }
 
