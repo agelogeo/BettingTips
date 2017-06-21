@@ -1,172 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="5dp">
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="50dp"
+    android:background="@drawable/roundshape"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/header_layout"
-        android:background="@color/main_header_bet_color">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bet_top_shape"
+        android:orientation="horizontal">
 
         <TextView
-            android:text="Iceland / Urvalsdeild"
+            android:id="@+id/country_league"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/country_league"
-            android:gravity="left|center_vertical"
-            android:textStyle="normal|bold"
-            android:textColor="@android:color/black"
             android:layout_weight="1"
-            android:textAlignment="textStart"
-            android:paddingLeft="10dp"
+            android:gravity="left|center_vertical"
+            android:maxHeight="50dp"
             android:minHeight="30dp"
-            android:maxHeight="50dp" />
-
-        <TextView
-            android:text="2017-06-14"
-            android:layout_height="match_parent"
-            android:id="@+id/date"
-            android:layout_weight="0.26"
-            android:layout_width="wrap_content"
-            android:gravity="right|center_vertical|center_horizontal"
-            android:textStyle="normal|bold"
-            android:textColor="@android:color/black" />
-
-        <TextView
-            android:text="21 : 00"
-            android:layout_height="match_parent"
-            android:id="@+id/time"
-            android:gravity="right|center_vertical"
-            android:textStyle="normal|bold"
+            android:paddingLeft="10dp"
+            android:text="Iceland / Urvalsdeild"
+            android:textAlignment="textStart"
             android:textColor="@android:color/black"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.26"
+            android:gravity="right|center_vertical|center_horizontal"
+            android:text="2017-06-14"
+            android:textColor="@android:color/black"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="0.35"
+            android:gravity="right|center_vertical"
             android:paddingRight="10dp"
-            android:layout_width="0dp" />
+            android:text="21 : 00"
+            android:textColor="@android:color/black"
+            android:textStyle="normal|bold" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/details_layout"
-        android:background="?attr/colorButtonNormal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/colorButtonNormal"
+        android:orientation="horizontal"
         android:paddingLeft="5dp"
         android:paddingRight="5dp">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_height="match_parent"
             android:id="@+id/teams_layout"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="0.06"
+            android:orientation="vertical"
             android:padding="10dp">
 
             <TextView
-                android:text="Grindavik"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:id="@+id/home_team_name"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:layout_weight="1" />
-
-            <TextView
-                android:text="FH HafnarfjordurFH HafnarfjordurFH Hafnarfjordur"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Grindavik"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+
+            <TextView
                 android:id="@+id/away_team_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="FH HafnarfjordurFH HafnarfjordurFH Hafnarfjordur"
                 android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:layout_weight="1" />
+                android:textStyle="normal|bold" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
             android:id="@+id/dots_layout"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="5dp">
-
-            <TextView
-                android:text=":"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:id="@+id/textView4"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:layout_weight="1" />
-
-            <TextView
-                android:text=":"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:id="@+id/textView3"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_height="match_parent"
-            android:id="@+id/score_layout"
             android:layout_width="wrap_content"
-            android:paddingRight="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:paddingBottom="10dp"
+            android:paddingRight="5dp"
             android:paddingTop="10dp">
 
             <TextView
-                android:text="0"
+                android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:id="@+id/home_team_score"
+                android:layout_weight="1"
+                android:text=":"
                 android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:layout_weight="1" />
+                android:textStyle="normal|bold" />
 
             <TextView
-                android:text="0"
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:id="@+id/away_team_score"
+                android:layout_weight="1"
+                android:text=":"
                 android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:layout_weight="1" />
+                android:textStyle="normal|bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/score_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/home_team_score"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+
+            <TextView
+                android:id="@+id/away_team_score"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
         </LinearLayout>
 
         <TextView
-            android:text="1.55"
             android:id="@+id/odd"
-            android:gravity="center_vertical|center_horizontal"
-            android:textStyle="normal|bold"
-            android:textSize="18sp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
             android:background="@color/main_default_bet_color"
             android:fadeScrollbars="false"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="1.55"
             android:textColor="@android:color/white"
-            android:layout_margin="5dp"
-            android:layout_height="60dp"
-            android:layout_width="60dp" />
+            android:textSize="18sp"
+            android:textStyle="normal|bold" />
     </LinearLayout>
 
     <TextView
-        android:text="OVER 2.5 GOALS"
-        android:layout_width="match_parent"
         android:id="@+id/tip"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bet_bottom_shape"
         android:gravity="center_vertical|center_horizontal"
-        android:background="@color/main_footer_bet_color"
-        android:textSize="18sp"
+        android:maxHeight="50dp"
+        android:minHeight="30dp"
+        android:text="OVER 2.5 GOALS"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
-        android:textStyle="normal|bold|italic"
-        android:maxHeight="50dp"
-        android:minHeight="30dp" />
+        android:textSize="18sp"
+        android:textStyle="normal|bold|italic" />
 
 </LinearLayout>
