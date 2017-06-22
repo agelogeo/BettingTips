@@ -22,18 +22,25 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
+
+    private FirebaseAnalytics mFirebaseAnalytics;
     private ShareActionProvider shareActionProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -163,6 +170,10 @@ public class MainActivity extends AppCompatActivity
 
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("navigaton_option",(String)item.getTitle());
+        mFirebaseAnalytics.logEvent("navigation",bundle);
 
         Fragment fragment = null;
 

@@ -9,15 +9,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 /**
  * Created by Admin on 22/6/2017.
  */
 
 public class TodayFragment extends Fragment {
+    private FirebaseAnalytics mFirebaseAnalytics;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tabs_layout,null);
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
 
         Fragment childFragment = new StandardNewTipsFragment();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
@@ -29,6 +35,10 @@ public class TodayFragment extends Fragment {
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                Bundle bundle = new Bundle();
+                bundle.putString("today_option",(String)tab.getText());
+                mFirebaseAnalytics.logEvent("today_tabs",bundle);
+
                 if(tab.getPosition()==0){
                     Fragment childFragment = new StandardNewTipsFragment();
                     FragmentTransaction transaction = getChildFragmentManager().beginTransaction();

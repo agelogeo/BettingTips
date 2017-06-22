@@ -9,15 +9,49 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+
 /**
  * Created by Admin on 22/6/2017.
  */
 
 public class BonusFragment extends Fragment {
+    private InterstitialAd interstitial;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tabs_layout,null);
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        //Prepare the Interstitial Ad
+        interstitial = new InterstitialAd(getActivity());
+        //Insert the Ad Unit ID
+        interstitial.setAdUnitId(getString(R.string.full_screen_ad_unit_id));
+
+        interstitial.loadAd(adRequest);
+
+        interstitial.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(int i) {
+                super.onAdFailedToLoad(i);
+            }
+
+            @Override
+            public void onAdLoaded() {
+                displayInterstitial();
+            }
+
+            @Override
+            public void onAdClosed() {
+                super.onAdClosed();
+            }
+        });
+
 
         Fragment childFragment = new AndrikoNewTipsFragment();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
@@ -53,5 +87,11 @@ public class BonusFragment extends Fragment {
 
 
         return v;
+    }
+
+    public void displayInterstitial(){
+        if(interstitial.isLoaded()){
+            interstitial.show();
+        }
     }
 }
