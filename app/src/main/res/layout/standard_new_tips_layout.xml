@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="false"
         android:layout_marginTop="200dp"
-        android:text="Sorry, There are no available tips today."
+        android:text="@string/sorry_text"
         android:visibility="gone" />
 
     <ListView

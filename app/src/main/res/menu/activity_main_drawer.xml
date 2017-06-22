@@ -5,34 +5,34 @@
         <item
             android:id="@+id/nav_news_tips"
             android:icon="@drawable/ic_today_black_24dp"
-            android:title="Today's Tips" />
+            android:title="@string/nav_today" />
         <item
             android:id="@+id/nav_old_tips"
             android:icon="@drawable/ic_chrome_reader_mode_black_24dp"
-            android:title="History of Tips" />
+            android:title="@string/nav_history" />
         <item
             android:id="@+id/nav_bonus_tips"
             android:icon="@drawable/ic_whatshot_black_24dp"
-            android:title="Bonus Tips" />
+            android:title="@string/nav_bonus" />
 
 
     </group>
 
-    <item android:title="Social">
+    <item android:title="@string/nav_social">
         <menu>
             <item
                 android:id="@+id/nav_feedback"
                 android:icon="@drawable/ic_loyalty_black_24dp"
-                android:title="Give us your feedback"/>
+                android:title="@string/nav_feedback" />
             <item
                 android:id="@+id/nav_send"
+                android:actionProviderClass="android.widget.ShareActionProvider"
                 android:icon="@drawable/ic_send_black_24dp"
-                android:title="Invite your friend"
-                android:actionProviderClass="android.widget.ShareActionProvider" />
+                android:title="@string/nav_send" />
             <item
                 android:id="@+id/nav_info"
                 android:icon="@drawable/ic_info_black_24dp"
-                android:title="About us" />
+                android:title="@string/nav_about" />
         </menu>
     </item>
 

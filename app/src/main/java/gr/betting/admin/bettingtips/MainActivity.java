@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        MobileAds.initialize(this, "ca-app-pub-1785790420897011~3331999883");
+        MobileAds.initialize(this, getString(R.string.app_ad_unit_id));
 
 
 
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity
     private Intent createShareAppIntent(){
         Intent sendIntent = new Intent(Intent.ACTION_SEND);
         sendIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.     https://www.youtube.com/watch?v=HZ3UWScq_0Y");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_message));
         sendIntent.setType("text/plain");
         return sendIntent;
     }

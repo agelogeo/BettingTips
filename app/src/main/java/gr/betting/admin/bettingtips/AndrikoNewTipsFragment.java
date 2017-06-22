@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,18 +35,18 @@ public class AndrikoNewTipsFragment extends Fragment {
     @Nullable
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
-        final View v = inflater.inflate(R.layout.new_tips_layout,null);
+        final View v = inflater.inflate(R.layout.standard_new_tips_layout,null);
 
 
         mAdView = (AdView) v.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        this.getActivity().setTitle("Today's Tips");
+        this.getActivity().setTitle(getString(R.string.nav_bonus));
 
         final ProgressDialog loadingDialog = new ProgressDialog(this.getActivity());
-        loadingDialog.setTitle("Please wait..");
-        loadingDialog.setMessage("Loading tips...");
+        loadingDialog.setTitle(getString(R.string.please_wait));
+        loadingDialog.setMessage(getString(R.string.loading_tips));
         loadingDialog.setCancelable(false);
         loadingDialog.show();
 

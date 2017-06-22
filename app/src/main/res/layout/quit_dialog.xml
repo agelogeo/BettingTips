@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="Exit the application"
+            android:text="@string/quit_title"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -37,7 +37,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:paddingLeft="10dp"
-        android:text="Are you sure you want to close the application?"
+        android:text="@string/quit_message"
         android:textAlignment="textStart"
         android:textSize="18sp" />
 
@@ -53,7 +53,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:backgroundTint="@color/main_footer_bet_color"
-            android:text="No" />
+            android:text="@string/no" />
 
         <Button
             android:id="@+id/dialog_yes_btn"
@@ -62,6 +62,6 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:backgroundTint="@color/main_header_bet_color"
-            android:text="Yes" />
+            android:text="@string/yes" />
     </LinearLayout>
 </LinearLayout>

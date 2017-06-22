@@ -24,8 +24,8 @@ public class HistoryFragment extends Fragment {
         transaction.replace(R.id.content_main2, childFragment).commit();
 
         TabLayout tabs = (TabLayout) v.findViewById(R.id.tabs);
-        tabs.addTab(tabs.newTab().setText("Standard"));
-        tabs.addTab(tabs.newTab().setText("Alternative"));
+        tabs.addTab(tabs.newTab().setText(getString(R.string.tab_standard)));
+        tabs.addTab(tabs.newTab().setText(getString(R.string.tab_alternative)));
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

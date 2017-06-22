@@ -1,13 +1,55 @@
 <resources>
     <string name="app_name">Daily Betting Tips</string>
-
+    <string name="app_email">dailybettingapp@gmail.com</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Loading Dialogs -->
+    <string name="please_wait">Please wait</string>
+    <string name="loading_tips">Loading tips...</string>
+
+    <!-- Tab names -->
+    <string name="tab_standard">Standard</string>
+    <string name="tab_alternative">Alternative</string>
+    <string name="bonus_today">Today\'s</string>
+    <string name="bonus_history">History</string>
+
+    <!-- New and Old tips layout -->
+    <string name="sorry_text">Sorry, There are no available tips today.</string>
+
+    <!-- Main Activity -->
+    <string name="share_message">This is my text to send.     https://www.youtube.com/watch?v=HZ3UWScq_0Y</string>
+
+    <!-- AD UNITS -->
+    <string name="app_ad_unit_id">ca-app-pub-1785790420897011~3331999883</string>
+
     <string name="banner_new_ad_unit_id">ca-app-pub-1785790420897011/1232497885</string>
     <string name="banner_old_ad_unit_id">ca-app-pub-1785790420897011/3906762687</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="tameiarxis_new_ad_unit_id">ca-app-pub-1785790420897011/2325624688</string>
+    <string name="tameiarxis_old_ad_unit_id">ca-app-pub-1785790420897011/3802357886</string>
 
+    <string name="andriko_new_ad_unit_id">ca-app-pub-1785790420897011/5279091088</string>
+    <string name="andriko_old_ad_unit_id">ca-app-pub-1785790420897011/6755824289</string>
+
+    <string name="full_screen_ad_unit_id">ca-app-pub-1785790420897011/2186023880</string>
     <!-- Test AdMob ID : ca-app-pub-3940256099942544/6300978111 -->
+
+    <!-- Navigation Drawer -->
+    <string name="nav_today">Today\'s Tips</string>
+    <string name="nav_history">History of Tips</string>
+    <string name="nav_bonus">Bonus Tips</string>
+    <string name="nav_social">Social</string>
+    <string name="nav_feedback">Give us your feedback</string>
+    <string name="nav_send">Invite your friend</string>
+    <string name="nav_about">About us</string>
+
+    <!-- Quit Dialog -->
+    <string name="quit_title">Exit the application</string>
+    <string name="quit_message">Are you sure you want to close the application?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+
 </resources>

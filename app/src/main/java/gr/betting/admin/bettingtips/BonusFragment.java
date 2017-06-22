@@ -24,8 +24,8 @@ public class BonusFragment extends Fragment {
         transaction.replace(R.id.content_main2, childFragment).commit();
 
         TabLayout tabs = (TabLayout) v.findViewById(R.id.tabs);
-        tabs.addTab(tabs.newTab().setText("Today's"));
-        tabs.addTab(tabs.newTab().setText("History"));
+        tabs.addTab(tabs.newTab().setText(getString(R.string.bonus_today)));
+        tabs.addTab(tabs.newTab().setText(getString(R.string.bonus_history)));
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

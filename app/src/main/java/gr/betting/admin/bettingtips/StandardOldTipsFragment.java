@@ -3,7 +3,6 @@ package gr.betting.admin.bettingtips;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -36,17 +35,17 @@ public class StandardOldTipsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
-        final View v = inflater.inflate(R.layout.old_tips_layout,null);
+        final View v = inflater.inflate(R.layout.standard_old_tips_layout,null);
 
         mAdView = (AdView) v.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        this.getActivity().setTitle("History of Tips");
+        this.getActivity().setTitle(getString(R.string.nav_history));
 
         final ProgressDialog loadingDialog = new ProgressDialog(this.getActivity());
-        loadingDialog.setTitle("Please wait..");
-        loadingDialog.setMessage("Loading tips...");
+        loadingDialog.setTitle(getString(R.string.please_wait));
+        loadingDialog.setMessage(getString(R.string.loading_tips));
         loadingDialog.setCancelable(false);
         loadingDialog.show();
 
