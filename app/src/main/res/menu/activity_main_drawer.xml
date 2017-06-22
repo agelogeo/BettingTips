@@ -11,9 +11,9 @@
             android:icon="@drawable/ic_chrome_reader_mode_black_24dp"
             android:title="History of Tips" />
         <item
-            android:id="@+id/nav_settings"
+            android:id="@+id/nav_bonus_tips"
             android:icon="@drawable/ic_settings_black_24dp"
-            android:title="Settings" />
+            android:title="Bonus Tips" />
 
 
     </group>

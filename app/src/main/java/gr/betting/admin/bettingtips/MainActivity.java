@@ -182,8 +182,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_feedback) {
             Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
 
-        } else if (id == R.id.nav_settings) {
-            Toast.makeText(this,"This function is not implemented yet.", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_bonus_tips) {
+            fragment = new BonusFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.mainFrame,fragment);
+            //transaction.addToBackStack(null);
+            transaction.commit();
         } else if (id == R.id.nav_send) {
             if(shareActionProvider != null){
                 startActivity(createShareAppIntent());
