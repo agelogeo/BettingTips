@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#00b2cc</color>
     <color name="colorPrimaryDark">#009fb2</color>
-    <color name="colorAccent">#ff5646</color>
+    <color name="colorAccent">#2ed3e6</color>
 
     #e84c3d
     <color name="main_border_bet_color">@android:color/black</color>

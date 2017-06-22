@@ -167,10 +167,10 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
 
         if (id == R.id.nav_news_tips) {
-            fragment = new NewTipsFragment();
+            fragment = new StandardFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
-            transaction.disallowAddToBackStack();
+            //transaction.disallowAddToBackStack();
             //transaction.addToBackStack();
             transaction.commit();
         } else if (id == R.id.nav_old_tips) {
