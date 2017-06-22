@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Ρυθμίσεις</string>
+    <string name="bonus_history">Ιστορικό προτάσεων</string>
+    <string name="bonus_today">Σημερινές προτάσεις</string>
+    <string name="loading_tips">Φόρτωση δεδομένων</string>
+    <string name="nav_about">Σχετικά με εμάς</string>
+    <string name="nav_bonus">Μπόνους συμβουλές</string>
+    <string name="nav_feedback">Βαθμολογία εφαρμογής</string>
+    <string name="nav_history">Ιστορικό προτάσεων</string>
+    <string name="nav_send">Προτείνετε σε έναν φίλο σας</string>
+    <string name="nav_social">Περισσότερα</string>
+    <string name="nav_today">Σημερινές προτάσεις</string>
+    <string name="navigation_drawer_close">Κλείσε το μενού</string>
+    <string name="navigation_drawer_open">Άνοιξε το μενού</string>
+    <string name="no">Όχι</string>
+    <string name="please_wait">Παρακαλώ περιμένετε</string>
+    <string name="quit_message">Είστε σίγουρος πως θέλετε να βγείτε από την εφαρμογή;</string>
+    <string name="quit_title">Έξοδος εφαρμογής</string>
+    <string name="share_message">"Δοκιμαστικό μήνυμα "</string>
+    <string name="sorry_text">Λύπουμαστε, αλλά δεν υπάρχουν νεότερες συμβουλές</string>
+    <string name="tab_alternative">Εναλλακτικές</string>
+    <string name="tab_standard">Βασικές</string>
+    <string name="yes">Ναι</string>
+</resources>

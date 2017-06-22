@@ -1,65 +1,65 @@
 <resources>
-    <string name="app_name">Daily Betting Tips</string>
-    <string name="app_email">dailybettingapp@gmail.com</string>
+    <string name="app_name" translatable="false">Daily Betting Tips</string>
+    <string name="app_email" translatable="false">dailybettingapp@gmail.com</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Settings</string>
+    <string name="navigation_drawer_open" translatable="true">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="true">Close navigation drawer</string>
+    <string name="action_settings" translatable="true">Settings</string>
 
     <!-- Loading Dialogs -->
-    <string name="please_wait">Please wait</string>
-    <string name="loading_tips">Loading tips...</string>
+    <string name="please_wait" translatable="true">Please wait</string>
+    <string name="loading_tips" translatable="true">Loading tips...</string>
 
     <!-- Tab names -->
-    <string name="tab_standard">Standard</string>
-    <string name="tab_alternative">Alternative</string>
-    <string name="bonus_today">Today\'s</string>
-    <string name="bonus_history">History</string>
+    <string name="tab_standard" translatable="true">Standard</string>
+    <string name="tab_alternative" translatable="true">Alternative</string>
+    <string name="bonus_today" translatable="true">Today\'s</string>
+    <string name="bonus_history" translatable="true">History</string>
 
     <!-- New and Old tips layout -->
-    <string name="sorry_text">Sorry, There are no available tips today.</string>
+    <string name="sorry_text" translatable="true">Sorry, There are no available tips today.</string>
 
     <!-- Main Activity -->
-    <string name="share_message">This is my text to send.     https://www.youtube.com/watch?v=HZ3UWScq_0Y</string>
+    <string name="share_message" translatable="true">This is my text to send.     https://www.youtube.com/watch?v=HZ3UWScq_0Y</string>
 
     <!-- AD UNITS -->
-    <string name="app_ad_unit_id">ca-app-pub-1785790420897011~3331999883</string>
+    <string name="app_ad_unit_id" translatable="false">ca-app-pub-1785790420897011~3331999883</string>
 
-    <string name="banner_new_ad_unit_id">ca-app-pub-1785790420897011/1232497885</string>
-    <string name="banner_old_ad_unit_id">ca-app-pub-1785790420897011/3906762687</string>
+    <string name="banner_new_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/1232497885</string>
+    <string name="banner_old_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/3906762687</string>
 
-    <string name="tameiarxis_new_ad_unit_id">ca-app-pub-1785790420897011/2325624688</string>
-    <string name="tameiarxis_old_ad_unit_id">ca-app-pub-1785790420897011/3802357886</string>
+    <string name="tameiarxis_new_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/2325624688</string>
+    <string name="tameiarxis_old_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/3802357886</string>
 
-    <string name="andriko_new_ad_unit_id">ca-app-pub-1785790420897011/5279091088</string>
-    <string name="andriko_old_ad_unit_id">ca-app-pub-1785790420897011/6755824289</string>
+    <string name="andriko_new_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/5279091088</string>
+    <string name="andriko_old_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/6755824289</string>
 
-    <string name="full_screen_ad_unit_id">ca-app-pub-1785790420897011/2186023880</string>
+    <string name="full_screen_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/2186023880</string>
     <!-- Test AdMob ID : ca-app-pub-3940256099942544/6300978111 -->
 
     <!-- Navigation Drawer -->
-    <string name="nav_today">Today\'s Tips</string>
-    <string name="nav_history">History of Tips</string>
+    <string name="nav_today" translatable="true">Today\'s Tips</string>
+    <string name="nav_history" translatable="true">History of Tips</string>
     <string name="nav_bonus">Bonus Tips</string>
-    <string name="nav_social">Social</string>
-    <string name="nav_feedback">Give us your feedback</string>
-    <string name="nav_send">Invite your friend</string>
-    <string name="nav_about">About us</string>
+    <string name="nav_social" translatable="true">Social</string>
+    <string name="nav_feedback" translatable="true">Give us your feedback</string>
+    <string name="nav_send" translatable="true">Invite your friend</string>
+    <string name="nav_about" translatable="true">About us</string>
 
     <!-- Quit Dialog -->
-    <string name="quit_title">Exit the application</string>
-    <string name="quit_message">Are you sure you want to close the application?</string>
-    <string name="no">No</string>
-    <string name="yes">Yes</string>
+    <string name="quit_title" translatable="true">Exit the application</string>
+    <string name="quit_message" translatable="true">Are you sure you want to close the application?</string>
+    <string name="no" translatable="true">No</string>
+    <string name="yes" translatable="true">Yes</string>
 
     <!-- Google Spreadsheet -->
-    <string name="sheet_id">175XqnHhcOS8CVoBY08xMhaDO39VmauBEFKU9qeaHS3U</string>
-    <string name="andriko_history">andriko_history</string>
-    <string name="andriko_today">andriko_today</string>
-    <string name="tameiarxis_history">tameiarxis_history</string>
-    <string name="tameiarxis_today">tameiarxis_today</string>
-    <string name="standard_history">standard_history</string>
-    <string name="standard_today">standard_today</string>
+    <string name="sheet_id" translatable="false">175XqnHhcOS8CVoBY08xMhaDO39VmauBEFKU9qeaHS3U</string>
+    <string name="andriko_history" translatable="false">andriko_history</string>
+    <string name="andriko_today" translatable="false">andriko_today</string>
+    <string name="tameiarxis_history" translatable="false">tameiarxis_history</string>
+    <string name="tameiarxis_today" translatable="false">tameiarxis_today</string>
+    <string name="standard_history" translatable="false">standard_history</string>
+    <string name="standard_today" translatable="false">standard_today</string>
 
 
 </resources>
