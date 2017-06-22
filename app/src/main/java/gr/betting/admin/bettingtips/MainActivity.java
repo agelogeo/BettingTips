@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity
 
         //Setting default fragment
         navigationView.setCheckedItem(R.id.nav_news_tips);
-        Fragment  fragment = new StandardNewTipsFragment();
+        Fragment  fragment = new TodayFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.mainFrame,fragment);
         transaction.commit();
