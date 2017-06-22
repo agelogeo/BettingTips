@@ -8,7 +8,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
@@ -34,7 +36,7 @@ public class TameiarxisOldTipsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
-        View v = inflater.inflate(R.layout.old_tips_layout,null);
+        final View v = inflater.inflate(R.layout.old_tips_layout,null);
 
         mAdView = (AdView) v.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -95,58 +97,53 @@ public class TameiarxisOldTipsFragment extends Fragment {
                 try {
                     if(response==null)
                         Toast.makeText(TameiarxisOldTipsFragment.this.getActivity(), "No available tips", Toast.LENGTH_LONG).show();
-                    else{
-                        JSONObject jsonResult = new JSONObject(response);
-                        final JSONArray results = (JSONArray) jsonResult.get("tameiarxis_history");
-                        int counter = 0;
-                        for(int i=0;i<results.length();i++){
-                            betItem tempItem = new betItem();
-                            counter++;
+                    else {
+                        if (!response.contains("The coordinates or dimensions of the range are invalid.")) {
+                            JSONObject jsonResult = new JSONObject(response);
+                            final JSONArray results = (JSONArray) jsonResult.get("tameiarxis_history");
+                            int counter = 0;
+                            for (int i = 0; i < results.length(); i++) {
+                                betItem tempItem = new betItem();
+                                counter++;
 
-                            JSONObject tip = results.getJSONObject(i);
+                                JSONObject tip = results.getJSONObject(i);
 
-                            tempItem.setDate(tip.getString("DATE"));
-                            tempItem.setTime(tip.getString("TIME"));
+                                tempItem.setDate(tip.getString("DATE"));
+                                tempItem.setTime(tip.getString("TIME"));
 
-                            tempItem.setHome_team_name(tip.getString("HOME_TEAM"));
-                            tempItem.setAway_team_name(tip.getString("AWAY_TEAM"));
+                                tempItem.setHome_team_name(tip.getString("HOME_TEAM"));
+                                tempItem.setAway_team_name(tip.getString("AWAY_TEAM"));
 
-                            tempItem.setHome_team_score(tip.getString("HOME_SCORE"));
-                            tempItem.setAway_team_score(tip.getString("AWAY_SCORE"));
+                                tempItem.setHome_team_score(tip.getString("HOME_SCORE"));
+                                tempItem.setAway_team_score(tip.getString("AWAY_SCORE"));
 
-                            tempItem.setOdd(tip.getString("ODD"));
-                            tempItem.setTip(tip.getString("TIP"));
+                                tempItem.setOdd(tip.getString("ODD"));
+                                tempItem.setTip(tip.getString("TIP"));
 
-                            tempItem.setCountry_league(tip.getString("COUNTRY_LEAGUE"));
-                            tempItem.setGotcha(tip.getString("Gotcha"));
+                                tempItem.setCountry_league(tip.getString("COUNTRY_LEAGUE"));
+                                tempItem.setGotcha(tip.getString("Gotcha"));
 
-                            adapterList.add(tempItem);
+                                adapterList.add(tempItem);
+
+                            }
+                            System.out.println("Counter : " + counter);
+                            loadingDialog.dismiss();
+
+
+                            betListAdapter myAdapter = new betListAdapter(TameiarxisOldTipsFragment.this.getActivity(), adapterList);
+                            listView.setAdapter(myAdapter);
+
+
+                        } else {
+                            System.out.println("No available tips");
+                            ImageView sad_face = (ImageView) v.findViewById(R.id.sad_face);
+                            sad_face.setVisibility(View.VISIBLE);
+                            TextView sorry_text = (TextView) v.findViewById(R.id.sorry_text);
+                            sorry_text.setVisibility(View.VISIBLE);
+                            listView.setVisibility(View.GONE);
+                            loadingDialog.dismiss();
 
                         }
-                        System.out.println("Counter : "+counter);
-                        loadingDialog.dismiss();
-
-
-                        betListAdapter myAdapter = new betListAdapter(TameiarxisOldTipsFragment.this.getActivity(), adapterList );
-                        listView.setAdapter(myAdapter);
-
-                        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                Intent DetailIntent = new Intent(SearchFlights.this, ListViewItemDetail.class);
-                                JSONObject jsonResult = null;
-                                try {
-                                    jsonResult = new JSONObject(response);
-                                    JSONArray results = (JSONArray) jsonResult.get("results");
-                                    JSONObject result = results.getJSONObject(adapterList.get(position).getResult_indicator());
-                                    DetailIntent.putExtra("JSON_result", result.toString());
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                                DetailIntent.putExtra("LVI_itinerary_ind",adapterList.get(position).getItinerary_indicator());
-                                startActivity(DetailIntent);
-                            }
-                        });*/
                     }
 
                 } catch (JSONException e) {

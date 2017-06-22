@@ -13,13 +13,13 @@ import android.view.ViewGroup;
  * Created by Admin on 22/6/2017.
  */
 
-public class TodayFragment extends Fragment {
+public class HistoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tabs_layout,null);
 
-        Fragment childFragment = new StandardNewTipsFragment();
+        Fragment childFragment = new StandardOldTipsFragment();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.replace(R.id.content_main2, childFragment).commit();
 
@@ -30,11 +30,11 @@ public class TodayFragment extends Fragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if(tab.getPosition()==0){
-                    Fragment childFragment = new StandardNewTipsFragment();
+                    Fragment childFragment = new StandardOldTipsFragment();
                     FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
                     transaction.replace(R.id.content_main2, childFragment).commit();
                 }else if (tab.getPosition()==1){
-                    Fragment childFragment = new TameiarxisNewTipsFragment();
+                    Fragment childFragment = new TameiarxisOldTipsFragment();
                     FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
                     transaction.replace(R.id.content_main2, childFragment).commit();
                 }

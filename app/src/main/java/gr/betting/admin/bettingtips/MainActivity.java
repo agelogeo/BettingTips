@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity
             //transaction.addToBackStack();
             transaction.commit();
         } else if (id == R.id.nav_old_tips) {
-            fragment = new StandardOldTipsFragment();
+            fragment = new HistoryFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
             //transaction.addToBackStack(null);
