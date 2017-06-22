@@ -35,7 +35,7 @@ public class TameiarxisNewTipsFragment extends Fragment {
     @Nullable
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
-        final View v = inflater.inflate(R.layout.standard_new_tips_layout,null);
+        final View v = inflater.inflate(R.layout.tameiarxis_new_tips_layout,null);
 
 
         mAdView = (AdView) v.findViewById(R.id.adView);
@@ -62,8 +62,8 @@ public class TameiarxisNewTipsFragment extends Fragment {
 
             protected String doInBackground(Void... urls) {
                 try {
-                    String SheetID = "175XqnHhcOS8CVoBY08xMhaDO39VmauBEFKU9qeaHS3U";
-                    String SheetName = "tameiarxis_today";
+                    String SheetID = getString(R.string.sheet_id);
+                    String SheetName = getString(R.string.tameiarxis_today);
                     String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id="+SheetID+"&sheet="+SheetName;
 
 
@@ -100,7 +100,7 @@ public class TameiarxisNewTipsFragment extends Fragment {
                     else{
                         if (!response.contains("The coordinates or dimensions of the range are invalid.")) {
                             JSONObject jsonResult = new JSONObject(response);
-                            final JSONArray results = (JSONArray) jsonResult.get("tameiarxis_today");
+                            final JSONArray results = (JSONArray) jsonResult.get(getString(R.string.tameiarxis_today));
                             int counter = 0;
                             for(int i=0;i<results.length();i++){
                                 betItem tempItem = new betItem();

@@ -61,8 +61,8 @@ public class StandardOldTipsFragment extends Fragment {
 
             protected String doInBackground(Void... urls) {
                 try {
-                    String SheetID = "175XqnHhcOS8CVoBY08xMhaDO39VmauBEFKU9qeaHS3U";
-                    String SheetName = "standard_history";
+                    String SheetID = getString(R.string.sheet_id);
+                    String SheetName = getString(R.string.standard_history);
                     String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id="+SheetID+"&sheet="+SheetName;
 
 
@@ -99,7 +99,7 @@ public class StandardOldTipsFragment extends Fragment {
                     else{
                         if(!response.contains("The coordinates or dimensions of the range are invalid.")) {
                             JSONObject jsonResult = new JSONObject(response);
-                            final JSONArray results = (JSONArray) jsonResult.get("standard_history");
+                            final JSONArray results = (JSONArray) jsonResult.get(getString(R.string.standard_history));
                             int counter = 0;
                             for (int i = 0; i < results.length(); i++) {
                                 betItem tempItem = new betItem();

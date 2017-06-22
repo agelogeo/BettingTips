@@ -52,4 +52,14 @@
     <string name="no">No</string>
     <string name="yes">Yes</string>
 
+    <!-- Google Spreadsheet -->
+    <string name="sheet_id">175XqnHhcOS8CVoBY08xMhaDO39VmauBEFKU9qeaHS3U</string>
+    <string name="andriko_history">andriko_history</string>
+    <string name="andriko_today">andriko_today</string>
+    <string name="tameiarxis_history">tameiarxis_history</string>
+    <string name="tameiarxis_today">tameiarxis_today</string>
+    <string name="standard_history">standard_history</string>
+    <string name="standard_today">standard_today</string>
+
+
 </resources>
