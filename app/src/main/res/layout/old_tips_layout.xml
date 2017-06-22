@@ -8,6 +8,25 @@
     android:orientation="vertical"
     android:weightSum="1">
 
+    <ImageView
+        android:id="@+id/sad_face"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        ads:srcCompat="@drawable/sad_face" />
+
+    <TextView
+        android:id="@+id/sorry_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="200dp"
+        android:text="Sorry, There are no available tips today."
+        android:visibility="gone" />
+
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"

@@ -29,7 +29,7 @@ import java.util.ArrayList;
  * Created by Admin on 19/6/2017.
  */
 
-public class NewTipsFragment extends Fragment {
+public class TameiarxisNewTipsFragment extends Fragment {
     private AdView mAdView;
     @Nullable
     @Override
@@ -62,7 +62,7 @@ public class NewTipsFragment extends Fragment {
             protected String doInBackground(Void... urls) {
                 try {
                     String SheetID = "175XqnHhcOS8CVoBY08xMhaDO39VmauBEFKU9qeaHS3U";
-                    String SheetName = "2017";
+                    String SheetName = "tameiarxis_today";
                     String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id="+SheetID+"&sheet="+SheetName;
 
 
@@ -87,7 +87,7 @@ public class NewTipsFragment extends Fragment {
                 } catch (Exception e) {
                     System.out.println("ERROR : doInBackground");
                     loadingDialog.dismiss();
-                    NewTipsFragment.this.getActivity().finish();
+                    TameiarxisNewTipsFragment.this.getActivity().finish();
                     return null;
                 }
             }
@@ -95,10 +95,10 @@ public class NewTipsFragment extends Fragment {
                 final ArrayList<betItem> adapterList = new ArrayList<betItem>();
                 try {
                     if(response==null)
-                        Toast.makeText(NewTipsFragment.this.getActivity(), "No available tips", Toast.LENGTH_LONG).show();
+                        Toast.makeText(TameiarxisNewTipsFragment.this.getActivity(), "No available tips", Toast.LENGTH_LONG).show();
                     else{
                         JSONObject jsonResult = new JSONObject(response);
-                        final JSONArray results = (JSONArray) jsonResult.get("2017");
+                        final JSONArray results = (JSONArray) jsonResult.get("tameiarxis_today");
                         int counter = 0;
                         for(int i=0;i<results.length();i++){
                             betItem tempItem = new betItem();
@@ -128,7 +128,7 @@ public class NewTipsFragment extends Fragment {
                         loadingDialog.dismiss();
 
 
-                        betListAdapter myAdapter = new betListAdapter(NewTipsFragment.this.getActivity(), adapterList );
+                        betListAdapter myAdapter = new betListAdapter(TameiarxisNewTipsFragment.this.getActivity(), adapterList );
                         listView.setAdapter(myAdapter);
 
                         /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -153,7 +153,7 @@ public class NewTipsFragment extends Fragment {
                 } catch (JSONException e) {
                     System.out.println("ERROR : onPostExecute");
                     loadingDialog.dismiss();
-                    NewTipsFragment.this.getActivity().finish();
+                    TameiarxisNewTipsFragment.this.getActivity().finish();
                     e.printStackTrace();
                 } catch (Exception e){
                     loadingDialog.dismiss();

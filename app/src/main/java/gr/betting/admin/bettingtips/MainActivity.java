@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity
 
         //Setting default fragment
         navigationView.setCheckedItem(R.id.nav_news_tips);
-        Fragment  fragment = new NewTipsFragment();
+        Fragment  fragment = new StandardNewTipsFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.mainFrame,fragment);
         transaction.commit();
@@ -167,14 +167,14 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
 
         if (id == R.id.nav_news_tips) {
-            fragment = new StandardFragment();
+            fragment = new TodayFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
             //transaction.disallowAddToBackStack();
             //transaction.addToBackStack();
             transaction.commit();
         } else if (id == R.id.nav_old_tips) {
-            fragment = new OldTipsFragment();
+            fragment = new StandardOldTipsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
             //transaction.addToBackStack(null);

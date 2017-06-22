@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="gr.betting.admin.bettingtips.MainActivity"
-    tools:showIn="@layout/standard_layout">
+    tools:showIn="@layout/today_layout">
 
     <FrameLayout
         android:layout_width="match_parent"
