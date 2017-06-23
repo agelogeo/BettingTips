@@ -38,7 +38,8 @@ public class betListAdapter extends ArrayAdapter<betItem> {
         TextView country_league = (TextView) header.findViewById(R.id.country_league);
         TextView time = (TextView) header.findViewById(R.id.time);
         TextView date = (TextView) header.findViewById(R.id.date);
-        date.setText(betitem.getDate());
+        String[] date_temp = betitem.getDate().split("-");
+        date.setText(date_temp[2]+"/"+date_temp[1]+"/"+date_temp[0]);
         country_league.setText(betitem.getCountry_league());
         time.setText(betitem.getTime());
 
