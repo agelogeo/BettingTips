@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,11 +33,17 @@ import java.util.ArrayList;
 
 public class AndrikoOldTipsFragment extends Fragment {
     private AdView mAdView;
+    private FirebaseAnalytics mFirebaseAnalytics;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
         final View v = inflater.inflate(R.layout.andriko_old_tips_layout,null);
+// Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
 
+        Bundle bundle = new Bundle();
+        bundle.putString("Andriko_old_tips",(String)getActivity().getTitle());
+        mFirebaseAnalytics.logEvent("Andriko_old",bundle);
         mAdView = (AdView) v.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);

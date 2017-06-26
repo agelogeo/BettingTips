@@ -32,17 +32,14 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
-
-    private FirebaseAnalytics mFirebaseAnalytics;
+    private int id;
     private ShareActionProvider shareActionProvider;
-
+    NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Obtain the FirebaseAnalytics instance.
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -68,10 +65,11 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         //Setting default fragment
+        id=R.id.nav_news_tips;
         navigationView.setCheckedItem(R.id.nav_news_tips);
         Fragment  fragment = new TodayFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -85,35 +83,45 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this);
-            // ...Irrelevant code for customizing the buttons and title
-            LayoutInflater inflater = MainActivity.this.getLayoutInflater();
-            View dialogView = inflater.inflate(R.layout.quit_dialog, null);
-            dialogBuilder.setView(dialogView);
-            //dialogBuilder.setTitle("Edit Coupon");
-            final AlertDialog alertDialog = dialogBuilder.create();
-            // set the custom dialog components - text, image and button
+            if (id == R.id.nav_news_tips) {
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this);
+                // ...Irrelevant code for customizing the buttons and title
+                LayoutInflater inflater = MainActivity.this.getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.quit_dialog, null);
+                dialogBuilder.setView(dialogView);
+                //dialogBuilder.setTitle("Edit Coupon");
+                final AlertDialog alertDialog = dialogBuilder.create();
+                // set the custom dialog components - text, image and button
 
-            Button noButton = (Button) dialogView.findViewById(R.id.dialog_no_btn);
-            Button yesButton = (Button) dialogView.findViewById(R.id.dialog_yes_btn);
+                Button noButton = (Button) dialogView.findViewById(R.id.dialog_no_btn);
+                Button yesButton = (Button) dialogView.findViewById(R.id.dialog_yes_btn);
 
-            // if button is clicked, close the custom dialog
-            noButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    alertDialog.dismiss();
-                }
-            });
+                // if button is clicked, close the custom dialog
+                noButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
 
-            yesButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    alertDialog.dismiss();
-                    MainActivity.super.onBackPressed();
-                }
-            });
+                yesButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
+                        MainActivity.super.onBackPressed();
+                    }
+                });
 
-            alertDialog.show();
+                alertDialog.show();
+            }else{
+                id=R.id.nav_news_tips;
+                navigationView.setCheckedItem(R.id.nav_news_tips);
+                Fragment fragment = new TodayFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.mainFrame,fragment);
+                transaction.commit();
+
+            }
         }
 
 
@@ -172,11 +180,11 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
 
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
+        id = item.getItemId();
+/*
         Bundle bundle = new Bundle();
         bundle.putString("navigaton_option",(String)item.getTitle());
-        mFirebaseAnalytics.logEvent("navigation",bundle);
+        mFirebaseAnalytics.logEvent("navigation",bundle);*/
 
         Fragment fragment = null;
 
