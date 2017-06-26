@@ -17,9 +17,17 @@
     <string name="please_wait">Παρακαλώ περιμένετε</string>
     <string name="quit_message">Είστε σίγουρος πως θέλετε να βγείτε από την εφαρμογή;</string>
     <string name="quit_title">Έξοδος εφαρμογής</string>
-    <string name="share_message">Δοκιμαστικό μήνυμα https://www.youtube.com/watch?v=HZ3UWScq_0Y</string>
+    <string name="share_message">Αν μπορείτε δοκιμάστε την εφαρμογή αυτή https://goo.gl/QcCauP</string>
     <string name="sorry_text">Λύπουμαστε, αλλά δεν υπάρχουν νεότερες συμβουλές</string>
     <string name="tab_alternative">Εναλλακτικές</string>
     <string name="tab_standard">Βασικές</string>
     <string name="yes">Ναι</string>
+
+    <string name="info_message" ><b>Η Daily Betting Tips</b> είναι μια εφαρμογή με στοιχηματικές πρότασεις για αγώνες ποδοσφαίρου.<b> Σε οποιαδήποτε περίπτωση, δεν φέρουμε ευθύνη για την έκβαση των αποτελεσμάτων.</b>Είμαστε απλά μια παρέα που ασχολούμαστε με το στοιχήμα και μας αρέσει το άθλημα.</string>
+    <string name="info_message2" >Στόχος μας είναι να βγάλουμε μερικά χρήματα μέσω του στοιχήματος.Θα θέλαμε να σας ευχαριστήσουμε για την υποστήριξη σας και να σας ευχηθούμε καλά κέρδη.<b>\nΓια απόριες ή προτάσεις μπορείτε να μας στείλετε e-mail στην διεύθυνση : dailybettingapp@gmail.com</b></string>
+
+    <string name="we_need_your_help">Χρειαζόμαστε την βοήθεια σου!</string>
+    <string name="please_take_a_moment">Θα το εκτιμούσαμε πολύ, αν μπορούσατε να αφιερώσετε λίγο χρόνο για να βαθμολογήστε την εφαρμογή μας.</string>
+    <string name="cancel">Άκυρο</string>
+    <string name="rate_it">Θα το κάνω</string>
 </resources>
