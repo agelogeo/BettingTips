@@ -27,6 +27,8 @@
     <string name="info_message2" >Στόχος μας είναι να βγάλουμε μερικά χρήματα μέσω του στοιχήματος.Θα θέλαμε να σας ευχαριστήσουμε για την υποστήριξη σας και να σας ευχηθούμε καλά κέρδη.<b>\nΓια απόριες ή προτάσεις μπορείτε να μας στείλετε e-mail στην διεύθυνση : dailybettingapp@gmail.com</b></string>
     <string name="build_version" >Έκδοση λογισμικού </string>
 
+    <string name="error_server" >Σφάλμα με την σύνδεση.</string>
+
     <string name="we_need_your_help">Χρειαζόμαστε την βοήθεια σου!</string>
     <string name="please_take_a_moment">Θα το εκτιμούσαμε πολύ, αν μπορούσατε να αφιερώσετε λίγο χρόνο για να βαθμολογήστε την εφαρμογή μας.</string>
     <string name="cancel">Άκυρο</string>

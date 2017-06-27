@@ -72,7 +72,7 @@
     <string name="please_take_a_moment" translatable="true">Please take a moment to rate it.We really appreciate it.</string>
     <string name="cancel" translatable="true">Cancel</string>
     <string name="rate_it" translatable="true">Rate it</string>
-    <string name="error_server">Error with Google server.</string>
+    <string name="error_server" translatable="true">Error with Google server.</string>
 
 
 
