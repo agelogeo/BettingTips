@@ -42,10 +42,12 @@ public class TodayFragment extends Fragment {
                 if(tab.getPosition()==0){
                     Fragment childFragment = new StandardNewTipsFragment();
                     FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.enter_from_left,R.anim.exit_to_right);
                     transaction.replace(R.id.content_main2, childFragment).commit();
                 }else if (tab.getPosition()==1){
                     Fragment childFragment = new TameiarxisNewTipsFragment();
                     FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left);
                     transaction.replace(R.id.content_main2, childFragment).commit();
                 }
             }

@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity
                 navigationView.setCheckedItem(R.id.nav_news_tips);
                 Fragment fragment = new TodayFragment();
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
                 transaction.replace(R.id.mainFrame,fragment);
                 transaction.commit();
 
@@ -186,11 +187,13 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_news_tips) {
             fragment = new TodayFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
         } else if (id == R.id.nav_old_tips) {
             fragment = new HistoryFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
         } else if (id == R.id.nav_feedback) {
@@ -208,6 +211,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_bonus_tips) {
             fragment = new BonusFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
         } else if (id == R.id.nav_send) {
@@ -222,6 +226,7 @@ public class MainActivity extends AppCompatActivity
             navigationView.setCheckedItem(R.id.nav_info);
             fragment = new InfoFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
         }
