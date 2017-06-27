@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Daily Betting Tips</string>
     <string name="app_email" translatable="false">dailybettingapp@gmail.com</string>
+    <string name="app_ver" translatable="false">1.2</string>
 
     <string name="navigation_drawer_open" translatable="true">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="true">Close navigation drawer</string>
@@ -17,7 +18,7 @@
     <string name="bonus_history" translatable="true">History</string>
 
     <!-- New and Old tips layout -->
-    <string name="sorry_text" translatable="true">Sorry, There are no available tips today.</string>
+    <string name="sorry_text" translatable="true">Sorry, There are no available tips today.\nCome back later.</string>
 
     <!-- Main Activity -->
     <string name="share_message" translatable="true">Give a try on this app https://goo.gl/QcCauP</string>
@@ -61,13 +62,18 @@
     <string name="standard_history" translatable="false">standard_history</string>
     <string name="standard_today" translatable="false">standard_today</string>
 
+
+    <!-- Info fragment -->
     <string name="info_message" translatable="true"><b>Daily Betting Tips</b> contains some useful tips about betting.<b> Just in case, we want to make it clear that we do not take any responsibility about the results of betting.</b>We are just a group of guys who are passionate about football and have some knowledge about betting.</string>
     <string name="info_message2" translatable="true">Our goal is to earn ourselves some profit.We would like to wish everybody good luck and thank you about your support and feedback.<b>\nFor any questions about the application please feel free to contact us at : dailybettingapp@gmail.com</b></string>
+    <string name="build_version" translatable="true">Build Version </string>
 
     <string name="we_need_your_help" translatable="true">We need your help!</string>
     <string name="please_take_a_moment" translatable="true">Please take a moment to rate it.We really appreciate it.</string>
     <string name="cancel" translatable="true">Cancel</string>
     <string name="rate_it" translatable="true">Rate it</string>
+    <string name="error_server">Error with Google server.</string>
+
 
 
 </resources>
