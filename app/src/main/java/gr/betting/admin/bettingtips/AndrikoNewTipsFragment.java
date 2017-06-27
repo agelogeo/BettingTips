@@ -51,119 +51,71 @@ public class AndrikoNewTipsFragment extends Fragment {
 
         this.getActivity().setTitle(getString(R.string.nav_bonus));
 
-        final ProgressDialog loadingDialog = new ProgressDialog(this.getActivity());
-        loadingDialog.setTitle(getString(R.string.please_wait));
-        loadingDialog.setMessage(getString(R.string.loading_tips));
-        loadingDialog.setCancelable(false);
-        loadingDialog.show();
 
 
         final ListView listView = (ListView) v.findViewById(R.id.listview);
 
+        String response = CallHolder.getBonus_new();
+        final ArrayList<betItem> adapterList = new ArrayList<betItem>();
+        try {
+            if(response==null)
+                Toast.makeText(AndrikoNewTipsFragment.this.getActivity(), "No available tips", Toast.LENGTH_LONG).show();
+            else{
+                if (!response.contains("The coordinates or dimensions of the range are invalid.")) {
+                    JSONObject jsonResult = new JSONObject(response);
+                    final JSONArray results = (JSONArray) jsonResult.get(getString(R.string.andriko_today));
+                    int counter = 0;
+                    for(int i=0;i<results.length();i++){
+                        betItem tempItem = new betItem();
+                        counter++;
 
-        new AsyncTask<Void, Void, String>() {
+                        JSONObject tip = results.getJSONObject(i);
 
-            @Override
-            protected void onPreExecute() {
-            }
+                        tempItem.setDate(tip.getString("DATE"));
+                        tempItem.setTime(tip.getString("TIME"));
 
-            protected String doInBackground(Void... urls) {
-                try {
-                    String SheetID = getString(R.string.sheet_id);;
-                    String SheetName = getString(R.string.andriko_today);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id="+SheetID+"&sheet="+SheetName;
+                        tempItem.setHome_team_name(tip.getString("HOME_TEAM"));
+                        tempItem.setAway_team_name(tip.getString("AWAY_TEAM"));
 
+                        tempItem.setHome_team_score(tip.getString("HOME_SCORE"));
+                        tempItem.setAway_team_score(tip.getString("AWAY_SCORE"));
 
+                        tempItem.setOdd(tip.getString("ODD"));
+                        tempItem.setTip(tip.getString("TIP"));
 
-                    System.out.println(link);
+                        tempItem.setCountry_league(tip.getString("COUNTRY_LEAGUE"));
+                        tempItem.setGotcha(tip.getString("Gotcha"));
 
-                    URL url = new URL(link);
-                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                    try {
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-                        StringBuilder stringBuilder = new StringBuilder();
-                        String line;
-                        while ((line = bufferedReader.readLine()) != null) {
-                            stringBuilder.append(line).append("\n");
-                        }
-                        bufferedReader.close();
+                        adapterList.add(tempItem);
 
-                        return stringBuilder.toString();
-                    } finally {
-                        urlConnection.disconnect();
                     }
-                } catch (Exception e) {
-                    System.out.println("ERROR : doInBackground");
-                    loadingDialog.dismiss();
-                    AndrikoNewTipsFragment.this.getActivity().finish();
-                    return null;
+                    System.out.println("Counter : "+counter);
+
+
+                    betListAdapter myAdapter = new betListAdapter(AndrikoNewTipsFragment.this.getActivity(), adapterList );
+                    listView.setAdapter(myAdapter);
+
+                } else {
+                    System.out.println("No available tips");
+                    ImageView sad_face = (ImageView) v.findViewById(R.id.sad_face);
+                    sad_face.setVisibility(View.VISIBLE);
+                    TextView sorry_text = (TextView) v.findViewById(R.id.sorry_text);
+                    sorry_text.setVisibility(View.VISIBLE);
+                    listView.setVisibility(View.GONE);
+
                 }
             }
-            protected void onPostExecute(final String response) {
-                final ArrayList<betItem> adapterList = new ArrayList<betItem>();
-                try {
-                    if(response==null)
-                        Toast.makeText(AndrikoNewTipsFragment.this.getActivity(), "No available tips", Toast.LENGTH_LONG).show();
-                    else{
-                        if (!response.contains("The coordinates or dimensions of the range are invalid.")) {
-                            JSONObject jsonResult = new JSONObject(response);
-                            final JSONArray results = (JSONArray) jsonResult.get(getString(R.string.andriko_today));
-                            int counter = 0;
-                            for(int i=0;i<results.length();i++){
-                                betItem tempItem = new betItem();
-                                counter++;
 
-                                JSONObject tip = results.getJSONObject(i);
-
-                                tempItem.setDate(tip.getString("DATE"));
-                                tempItem.setTime(tip.getString("TIME"));
-
-                                tempItem.setHome_team_name(tip.getString("HOME_TEAM"));
-                                tempItem.setAway_team_name(tip.getString("AWAY_TEAM"));
-
-                                tempItem.setHome_team_score(tip.getString("HOME_SCORE"));
-                                tempItem.setAway_team_score(tip.getString("AWAY_SCORE"));
-
-                                tempItem.setOdd(tip.getString("ODD"));
-                                tempItem.setTip(tip.getString("TIP"));
-
-                                tempItem.setCountry_league(tip.getString("COUNTRY_LEAGUE"));
-                                tempItem.setGotcha(tip.getString("Gotcha"));
-
-                                adapterList.add(tempItem);
-
-                            }
-                            System.out.println("Counter : "+counter);
-                            loadingDialog.dismiss();
+        } catch (JSONException e) {
+            System.out.println("ERROR : onPostExecute");
+            AndrikoNewTipsFragment.this.getActivity().finish();
+            e.printStackTrace();
+        } catch (Exception e){
+            System.out.println("ERROR : onPostExecute");
+            e.printStackTrace();
+        }
 
 
-                            betListAdapter myAdapter = new betListAdapter(AndrikoNewTipsFragment.this.getActivity(), adapterList );
-                            listView.setAdapter(myAdapter);
-
-                        } else {
-                            System.out.println("No available tips");
-                            ImageView sad_face = (ImageView) v.findViewById(R.id.sad_face);
-                            sad_face.setVisibility(View.VISIBLE);
-                            TextView sorry_text = (TextView) v.findViewById(R.id.sorry_text);
-                            sorry_text.setVisibility(View.VISIBLE);
-                            listView.setVisibility(View.GONE);
-                            loadingDialog.dismiss();
-
-                        }
-                    }
-
-                } catch (JSONException e) {
-                    System.out.println("ERROR : onPostExecute");
-                    loadingDialog.dismiss();
-                    AndrikoNewTipsFragment.this.getActivity().finish();
-                    e.printStackTrace();
-                } catch (Exception e){
-                    loadingDialog.dismiss();
-                    System.out.println("ERROR : onPostExecute");
-                    e.printStackTrace();
-                }
-            }
-        }.execute();
 
         return v;
     }

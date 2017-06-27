@@ -169,13 +169,6 @@ public class MainActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        /*//noinspection SimplifiableIfStatement
-        if (id == R.id.menu_item_share) {
-
-            return true;
-        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -186,10 +179,7 @@ public class MainActivity extends AppCompatActivity
 
         // Handle navigation view item clicks here.
         id = item.getItemId();
-/*
-        Bundle bundle = new Bundle();
-        bundle.putString("navigaton_option",(String)item.getTitle());
-        mFirebaseAnalytics.logEvent("navigation",bundle);*/
+
 
         Fragment fragment = null;
 
@@ -197,14 +187,11 @@ public class MainActivity extends AppCompatActivity
             fragment = new TodayFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
-            //transaction.disallowAddToBackStack();
-            //transaction.addToBackStack();
             transaction.commit();
         } else if (id == R.id.nav_old_tips) {
             fragment = new HistoryFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
-            //transaction.addToBackStack(null);
             transaction.commit();
         } else if (id == R.id.nav_feedback) {
             final String appName = getApplicationContext().getPackageName();
@@ -222,7 +209,6 @@ public class MainActivity extends AppCompatActivity
             fragment = new BonusFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
-            //transaction.addToBackStack(null);
             transaction.commit();
         } else if (id == R.id.nav_send) {
             if(shareActionProvider != null){
@@ -237,10 +223,8 @@ public class MainActivity extends AppCompatActivity
             fragment = new InfoFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.mainFrame,fragment);
-            //transaction.addToBackStack(null);
             transaction.commit();
         }
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -255,7 +239,6 @@ public class MainActivity extends AppCompatActivity
         try {
             trimCache(this);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -267,7 +250,6 @@ public class MainActivity extends AppCompatActivity
                 deleteDir(dir);
             }
         } catch (Exception e) {
-            // TODO: handle exception
         }
     }
 
@@ -290,6 +272,8 @@ public class MainActivity extends AppCompatActivity
         // Count times app has been opened, display rating message after number of times
         // By Rafael Duval
         try {
+
+
 
             // Get the app's shared preferences
             SharedPreferences app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -337,8 +321,8 @@ public class MainActivity extends AppCompatActivity
                         });
                 alert.show();
             }
-
-            Toast.makeText(this, "This app has been started " + counter + " times.", Toast.LENGTH_SHORT).show();
+            Log.d("RATE ","This app has been started " + counter + " times.");
+            //Toast.makeText(this, "This app has been started " + counter + " times.", Toast.LENGTH_SHORT).show();
 
 
             // Increment the counter
