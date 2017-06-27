@@ -59,8 +59,15 @@ public class StandardNewTipsFragment extends Fragment {
         String response = CallHolder.getStandard_new();
         final ArrayList<betItem> adapterList = new ArrayList<betItem>();
         try {
-            if(response==null)
-                Toast.makeText(StandardNewTipsFragment.this.getActivity(), "No available tips", Toast.LENGTH_LONG).show();
+            if(response==null) {
+                Toast.makeText(StandardNewTipsFragment.this.getActivity(), R.string.error_server, Toast.LENGTH_LONG).show();
+                System.out.println("No available tips");
+                ImageView sad_face = (ImageView) v.findViewById(R.id.sad_face);
+                sad_face.setVisibility(View.VISIBLE);
+                TextView sorry_text = (TextView) v.findViewById(R.id.sorry_text);
+                sorry_text.setVisibility(View.VISIBLE);
+                listView.setVisibility(View.GONE);
+            }
             else{
                 if (!response.contains("The coordinates or dimensions of the range are invalid.")) {
                     JSONObject jsonResult = new JSONObject(response);
