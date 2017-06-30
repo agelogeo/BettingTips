@@ -43,6 +43,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/banner_new_ad_unit_id"/>
+        ads:adUnitId="@string/tameiarxis_new_ad_unit_id"/>
 
 </RelativeLayout>

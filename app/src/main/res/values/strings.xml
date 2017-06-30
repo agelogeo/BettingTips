@@ -24,18 +24,18 @@
     <string name="share_message" translatable="true">Give a try on this app https://goo.gl/QcCauP</string>
 
     <!-- AD UNITS -->
-    <string name="app_ad_unit_id" translatable="false">ca-app-pub-1785790420897011~3331999883</string>
+    <string name="app_ad_unit_id" translatable="false">ca-app-pub-9524826399567092~7577416364</string>
 
-    <string name="banner_new_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/1232497885</string>
-    <string name="banner_old_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/3906762687</string>
+    <string name="banner_new_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/9054149563</string>
+    <string name="banner_old_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/1530882762</string>
 
-    <string name="tameiarxis_new_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/2325624688</string>
-    <string name="tameiarxis_old_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/3802357886</string>
+    <string name="tameiarxis_new_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/3007615965</string>
+    <string name="tameiarxis_old_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/4484349169</string>
 
-    <string name="andriko_new_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/5279091088</string>
-    <string name="andriko_old_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/6755824289</string>
+    <string name="andriko_new_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/5961082366</string>
+    <string name="andriko_old_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/7437815569</string>
 
-    <string name="full_screen_ad_unit_id" translatable="false">ca-app-pub-1785790420897011/2186023880</string>
+    <string name="full_screen_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/8914548761</string>
     <!-- Test AdMob ID : ca-app-pub-3940256099942544/6300978111 -->
 
     <!-- Navigation Drawer -->
