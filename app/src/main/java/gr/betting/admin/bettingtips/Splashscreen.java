@@ -2,10 +2,13 @@ package gr.betting.admin.bettingtips;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.PixelFormat;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.telecom.Call;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -20,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -55,6 +59,7 @@ public class Splashscreen extends Activity {
         iv.startAnimation(anim);
 
         System.out.println("----------------------------------------------------------------/ Start : "+System.currentTimeMillis());
+
 
         //Standard Today
         new AsyncTask<Void, Void, String>() {
@@ -326,6 +331,8 @@ public class Splashscreen extends Activity {
                 CallHolder.setBonus_old(response);
             }
         }.execute();
+
+
 
 
 

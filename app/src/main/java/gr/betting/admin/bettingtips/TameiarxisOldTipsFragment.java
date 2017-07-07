@@ -1,27 +1,33 @@
 package gr.betting.admin.bettingtips;
 
 import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.mopub.mobileads.MoPubErrorCode;
+import com.mopub.mobileads.MoPubView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -31,22 +37,31 @@ import java.util.ArrayList;
  * Created by Admin on 19/6/2017.
  */
 
-public class TameiarxisOldTipsFragment extends Fragment {
-    private AdView mAdView;
+public class TameiarxisOldTipsFragment extends Fragment implements MoPubView.BannerAdListener {
+
+    private MoPubView moPubView;
     private FirebaseAnalytics mFirebaseAnalytics;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
         final View v = inflater.inflate(R.layout.tameiarxis_old_tips_layout,null);
-// Obtain the FirebaseAnalytics instance.
+
+
+        moPubView = (MoPubView) v.findViewById(R.id.adview);
+        moPubView.setAdUnitId(getString(R.string.mp_alt_history));
+        moPubView.loadAd();
+        moPubView.setBannerAdListener(this);
+
+        // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
 
         Bundle bundle = new Bundle();
         bundle.putString("Tameiarxis_old_tips",(String)getActivity().getTitle());
         mFirebaseAnalytics.logEvent("Tameiarxis_old",bundle);
-        mAdView = (AdView) v.findViewById(R.id.adView);
+        /*mAdView = (AdView) v.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);*/
 
         this.getActivity().setTitle(getString(R.string.nav_history));
 
@@ -116,5 +131,55 @@ public class TameiarxisOldTipsFragment extends Fragment {
         }
 
         return v;
+    }
+
+    @Override
+    public void onBannerLoaded(MoPubView banner) {
+
+    }
+
+    @Override
+    public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
+
+    }
+
+    @Override
+    public void onBannerClicked(MoPubView banner) {
+
+    }
+
+    @Override
+    public void onBannerExpanded(MoPubView banner) {
+
+    }
+
+    @Override
+    public void onBannerCollapsed(MoPubView banner) {
+
+    }
+
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
+
+        public DownloadImageTask(ImageView bmImage) {
+            this.bmImage = bmImage;
+        }
+
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon11 = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+            return mIcon11;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            bmImage.setImageBitmap(result);
+        }
     }
 }

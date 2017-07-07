@@ -30,19 +30,17 @@
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/adView"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adview"
         android:layout_margin="5dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="3.0sp" />
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <com.mopub.mobileads.MoPubView
+        android:id="@+id/adview"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/tameiarxis_new_ad_unit_id"/>
+        />
 
 </RelativeLayout>

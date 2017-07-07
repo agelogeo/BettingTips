@@ -24,19 +24,16 @@
     <string name="share_message" translatable="true">Give a try on this app https://goo.gl/QcCauP</string>
 
     <!-- AD UNITS -->
-    <string name="app_ad_unit_id" translatable="false">ca-app-pub-9524826399567092~7577416364</string>
+    <string name="mp_standard_today" translatable="false">b99699ce9dd64bbeb959fc4d7e305ad6</string>
+    <string name="mp_standard_history" translatable="false">aae14c914d7340cd9ae3d11f479991b6</string>
 
-    <string name="banner_new_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/9054149563</string>
-    <string name="banner_old_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/1530882762</string>
+    <string name="mp_alt_today" translatable="false">e0aa5d06f6bf43829dbdac9b2e80ee01</string>
+    <string name="mp_alt_history" translatable="false">645e54a3472f42c1b51f404e9f8e2b02</string>
 
-    <string name="tameiarxis_new_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/3007615965</string>
-    <string name="tameiarxis_old_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/4484349169</string>
+    <string name="mp_bonus_today" translatable="false">5dfa395266264422a593f6e1aacd52c3</string>
+    <string name="mp_bonus_history" translatable="false">7f6f543895524a83b5def0083b3aa219</string>
 
-    <string name="andriko_new_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/5961082366</string>
-    <string name="andriko_old_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/7437815569</string>
-
-    <string name="full_screen_ad_unit_id" translatable="false">ca-app-pub-9524826399567092/8914548761</string>
-    <!-- Test AdMob ID : ca-app-pub-3940256099942544/6300978111 -->
+    <string name="mp_full_ad" translatable="false">96df675d8b514242aac36be7e4fa9650</string>
 
     <!-- Navigation Drawer -->
     <string name="nav_today" translatable="true">Today\'s Tips</string>
@@ -73,7 +70,5 @@
     <string name="cancel" translatable="true">Cancel</string>
     <string name="rate_it" translatable="true">Rate it</string>
     <string name="error_server" translatable="true">Error with Google server.</string>
-
-
 
 </resources>

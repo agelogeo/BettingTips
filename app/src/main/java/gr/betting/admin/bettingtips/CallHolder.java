@@ -1,5 +1,13 @@
 package gr.betting.admin.bettingtips;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.util.Log;
+import android.widget.ImageView;
+
+import java.io.InputStream;
+
 /**
  * Created by Admin on 27/6/2017.
  */
@@ -11,6 +19,8 @@ public class  CallHolder {
     private static String tameiarxis_old;
     private static String bonus_new;
     private static String bonus_old;
+
+
 
     public static String getStandard_new() {
         return standard_new;

@@ -13,20 +13,27 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.mopub.mobileads.MoPubErrorCode;
+import com.mopub.mobileads.MoPubInterstitial;
 
 /**
  * Created by Admin on 22/6/2017.
  */
 
-public class BonusFragment extends Fragment {
+public class BonusFragment extends Fragment implements MoPubInterstitial.InterstitialAdListener {
     private InterstitialAd interstitial;
 
+    MoPubInterstitial mInterstitial;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tabs_layout,null);
 
-        AdRequest adRequest = new AdRequest.Builder().build();
+        mInterstitial = new MoPubInterstitial(getActivity(), getString(R.string.mp_full_ad));
+        mInterstitial.setInterstitialAdListener(this);
+        mInterstitial.load();
+
+        /*AdRequest adRequest = new AdRequest.Builder().build();
 
         //Prepare the Interstitial Ad
         interstitial = new InterstitialAd(getActivity());
@@ -50,7 +57,7 @@ public class BonusFragment extends Fragment {
             public void onAdClosed() {
                 super.onAdClosed();
             }
-        });
+        });*/
 
 
         Fragment childFragment = new AndrikoNewTipsFragment();
@@ -95,5 +102,41 @@ public class BonusFragment extends Fragment {
         if(interstitial.isLoaded()){
             interstitial.show();
         }
+    }
+
+    @Override
+    public void onInterstitialLoaded(MoPubInterstitial interstitial) {
+        if (interstitial.isReady()) {
+            mInterstitial.show();
+        } else {
+            // Other code
+        }
+    }
+
+    @Override
+    public void onInterstitialFailed(MoPubInterstitial interstitial, MoPubErrorCode errorCode) {
+
+    }
+
+    @Override
+    public void onInterstitialShown(MoPubInterstitial interstitial) {
+
+    }
+
+    @Override
+    public void onInterstitialClicked(MoPubInterstitial interstitial) {
+
+    }
+
+    @Override
+    public void onInterstitialDismissed(MoPubInterstitial interstitial) {
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        mInterstitial.destroy();
+
+        super.onDestroyView();
     }
 }
