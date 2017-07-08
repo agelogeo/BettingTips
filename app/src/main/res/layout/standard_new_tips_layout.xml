@@ -31,17 +31,16 @@
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/adview"
         android:layout_margin="5dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="3.0sp" />
 
-    <com.mopub.mobileads.MoPubView
+    <!--<com.mopub.mobileads.MoPubView
         android:id="@+id/adview"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        />
+        />-->
 
 
     <!--<com.google.android.gms.ads.AdView

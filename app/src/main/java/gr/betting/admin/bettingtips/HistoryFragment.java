@@ -9,15 +9,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mopub.mobileads.MoPubErrorCode;
+import com.mopub.mobileads.MoPubView;
+
 /**
  * Created by Admin on 22/6/2017.
  */
 
-public class HistoryFragment extends Fragment {
+public class HistoryFragment extends Fragment implements MoPubView.BannerAdListener {
+    MoPubView moPubView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tabs_layout,null);
+
+        moPubView = (MoPubView) v.findViewById(R.id.adview);
+        moPubView.setAdUnitId(getString(R.string.mp_standard_history));
+        moPubView.loadAd();
+        moPubView.setBannerAdListener(this);
 
         Fragment childFragment = new StandardOldTipsFragment();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
@@ -55,5 +64,36 @@ public class HistoryFragment extends Fragment {
 
 
         return v;
+    }
+
+    @Override
+    public void onBannerLoaded(MoPubView banner) {
+
+    }
+
+    @Override
+    public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
+
+    }
+
+    @Override
+    public void onBannerClicked(MoPubView banner) {
+
+    }
+
+    @Override
+    public void onBannerExpanded(MoPubView banner) {
+
+    }
+
+    @Override
+    public void onBannerCollapsed(MoPubView banner) {
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        moPubView.destroy();
+        super.onDestroyView();
     }
 }

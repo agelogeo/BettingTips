@@ -37,19 +37,19 @@ import java.util.ArrayList;
  * Created by Admin on 19/6/2017.
  */
 
-public class AndrikoNewTipsFragment extends Fragment implements MoPubView.BannerAdListener {
+public class AndrikoNewTipsFragment extends Fragment  {
 
-    private MoPubView moPubView;
+    //private MoPubView moPubView;
     private FirebaseAnalytics mFirebaseAnalytics;
     @Nullable
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
         final View v = inflater.inflate(R.layout.andriko_new_tips_layout,null);
-
+/*
         moPubView = (MoPubView) v.findViewById(R.id.adview);
         moPubView.setAdUnitId(getString(R.string.mp_bonus_today));
         moPubView.loadAd();
-        moPubView.setBannerAdListener(this);
+        moPubView.setBannerAdListener(this);*/
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
@@ -132,30 +132,6 @@ public class AndrikoNewTipsFragment extends Fragment implements MoPubView.Banner
         return v;
     }
 
-    @Override
-    public void onBannerLoaded(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
-
-    }
-
-    @Override
-    public void onBannerClicked(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerExpanded(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerCollapsed(MoPubView banner) {
-
-    }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;

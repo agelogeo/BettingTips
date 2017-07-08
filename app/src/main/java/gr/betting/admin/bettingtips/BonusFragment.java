@@ -15,14 +15,16 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubInterstitial;
+import com.mopub.mobileads.MoPubView;
 
 /**
  * Created by Admin on 22/6/2017.
  */
 
-public class BonusFragment extends Fragment implements MoPubInterstitial.InterstitialAdListener {
+public class BonusFragment extends Fragment implements MoPubInterstitial.InterstitialAdListener, MoPubView.BannerAdListener {
     private InterstitialAd interstitial;
 
+    MoPubView moPubView;
     MoPubInterstitial mInterstitial;
     @Nullable
     @Override
@@ -32,6 +34,12 @@ public class BonusFragment extends Fragment implements MoPubInterstitial.Interst
         mInterstitial = new MoPubInterstitial(getActivity(), getString(R.string.mp_full_ad));
         mInterstitial.setInterstitialAdListener(this);
         mInterstitial.load();
+
+        moPubView = (MoPubView) v.findViewById(R.id.adview);
+        moPubView.setAdUnitId(getString(R.string.mp_bonus_today));
+        moPubView.setAutorefreshEnabled(true);
+        moPubView.setBannerAdListener(this);
+        moPubView.loadAd();
 
         /*AdRequest adRequest = new AdRequest.Builder().build();
 
@@ -136,7 +144,33 @@ public class BonusFragment extends Fragment implements MoPubInterstitial.Interst
     @Override
     public void onDestroyView() {
         mInterstitial.destroy();
+        moPubView.destroy();
 
         super.onDestroyView();
+    }
+
+    @Override
+    public void onBannerLoaded(MoPubView banner) {
+
+    }
+
+    @Override
+    public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
+
+    }
+
+    @Override
+    public void onBannerClicked(MoPubView banner) {
+
+    }
+
+    @Override
+    public void onBannerExpanded(MoPubView banner) {
+
+    }
+
+    @Override
+    public void onBannerCollapsed(MoPubView banner) {
+
     }
 }

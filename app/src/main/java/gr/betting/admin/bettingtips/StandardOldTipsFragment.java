@@ -45,11 +45,11 @@ public class StandardOldTipsFragment extends Fragment implements MoPubView.Banne
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
         final View v = inflater.inflate(R.layout.standard_old_tips_layout,null);
-
+/*
         moPubView = (MoPubView) v.findViewById(R.id.adview);
         moPubView.setAdUnitId(getString(R.string.mp_standard_history));
         moPubView.loadAd();
-        moPubView.setBannerAdListener(this);
+        moPubView.setBannerAdListener(this);*/
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());

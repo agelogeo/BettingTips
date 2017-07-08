@@ -40,17 +40,12 @@ import java.util.ArrayList;
 public class StandardNewTipsFragment extends Fragment implements MoPubView.BannerAdListener {
     private AdView mAdView;
     private FirebaseAnalytics mFirebaseAnalytics;
-    private MoPubView moPubView;
     @Nullable
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
         final View v = inflater.inflate(R.layout.standard_new_tips_layout,null);
 
-        moPubView = (MoPubView) v.findViewById(R.id.adview);
-        moPubView.setAdUnitId(getString(R.string.mp_standard_today));
-        moPubView.setAutorefreshEnabled(true);
-        moPubView.setBannerAdListener(this);
-        moPubView.loadAd();
+
 
 
         // Obtain the FirebaseAnalytics instance.
@@ -146,7 +141,6 @@ public class StandardNewTipsFragment extends Fragment implements MoPubView.Banne
 
     @Override
     public void onDestroyView() {
-        moPubView.destroy();
         super.onDestroyView();
     }
 

@@ -16,6 +16,14 @@
     <include
         layout="@layout/content_main2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adview"
         android:layout_below="@+id/tabs" />
+
+    <com.mopub.mobileads.MoPubView
+        android:id="@+id/adview"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        />
 </RelativeLayout>
