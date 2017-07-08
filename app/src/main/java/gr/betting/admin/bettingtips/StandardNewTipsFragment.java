@@ -48,8 +48,10 @@ public class StandardNewTipsFragment extends Fragment implements MoPubView.Banne
 
         moPubView = (MoPubView) v.findViewById(R.id.adview);
         moPubView.setAdUnitId(getString(R.string.mp_standard_today));
-        moPubView.loadAd();
+        moPubView.setAutorefreshEnabled(true);
         moPubView.setBannerAdListener(this);
+        moPubView.loadAd();
+
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
@@ -155,6 +157,7 @@ public class StandardNewTipsFragment extends Fragment implements MoPubView.Banne
 
     @Override
     public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
+        Toast.makeText(getContext(), errorCode.toString(), Toast.LENGTH_SHORT).show();
 
     }
 

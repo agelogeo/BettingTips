@@ -24,14 +24,14 @@
     <string name="share_message" translatable="true">Give a try on this app https://goo.gl/QcCauP</string>
 
     <!-- AD UNITS -->
-    <string name="mp_standard_today" translatable="false">b99699ce9dd64bbeb959fc4d7e305ad6</string>
-    <string name="mp_standard_history" translatable="false">aae14c914d7340cd9ae3d11f479991b6</string>
+    <string name="mp_standard_today" translatable="false">5c56f32df14e44acb0784a2a62473783</string>
+    <string name="mp_standard_history" translatable="false">833b329ff5c149afb5f28ef233f680e0</string>
 
-    <string name="mp_alt_today" translatable="false">e0aa5d06f6bf43829dbdac9b2e80ee01</string>
-    <string name="mp_alt_history" translatable="false">645e54a3472f42c1b51f404e9f8e2b02</string>
+    <string name="mp_alt_today" translatable="false">ade7771ea31640f296256e34950cfb52</string>
+    <string name="mp_alt_history" translatable="false">b6e8abea776a4f0eb1906d55f115ef2f</string>
 
-    <string name="mp_bonus_today" translatable="false">5dfa395266264422a593f6e1aacd52c3</string>
-    <string name="mp_bonus_history" translatable="false">7f6f543895524a83b5def0083b3aa219</string>
+    <string name="mp_bonus_today" translatable="false">ccfeef1fc9064205bfc819b5087778ab</string>
+    <string name="mp_bonus_history" translatable="false">1664142f933b4519942a44fff6e539f7</string>
 
     <string name="mp_full_ad" translatable="false">96df675d8b514242aac36be7e4fa9650</string>
 
