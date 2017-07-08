@@ -37,7 +37,7 @@ import java.util.ArrayList;
  * Created by Admin on 19/6/2017.
  */
 
-public class StandardNewTipsFragment extends Fragment implements MoPubView.BannerAdListener {
+public class StandardNewTipsFragment extends Fragment {
     private AdView mAdView;
     private FirebaseAnalytics mFirebaseAnalytics;
     @Nullable
@@ -139,36 +139,6 @@ public class StandardNewTipsFragment extends Fragment implements MoPubView.Banne
         return v;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
-
-    @Override
-    public void onBannerLoaded(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
-        Toast.makeText(getContext(), errorCode.toString(), Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void onBannerClicked(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerExpanded(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerCollapsed(MoPubView banner) {
-
-    }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;

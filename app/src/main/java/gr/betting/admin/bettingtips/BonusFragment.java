@@ -38,8 +38,8 @@ public class BonusFragment extends Fragment implements MoPubInterstitial.Interst
         moPubView = (MoPubView) v.findViewById(R.id.adview);
         moPubView.setAdUnitId(getString(R.string.mp_bonus_today));
         moPubView.setAutorefreshEnabled(true);
-        moPubView.setBannerAdListener(this);
         moPubView.loadAd();
+        moPubView.setBannerAdListener(this);
 
         /*AdRequest adRequest = new AdRequest.Builder().build();
 

@@ -25,6 +25,7 @@ public class HistoryFragment extends Fragment implements MoPubView.BannerAdListe
 
         moPubView = (MoPubView) v.findViewById(R.id.adview);
         moPubView.setAdUnitId(getString(R.string.mp_standard_history));
+        moPubView.setAutorefreshEnabled(true);
         moPubView.loadAd();
         moPubView.setBannerAdListener(this);
 

@@ -29,8 +29,8 @@ public class TodayFragment extends Fragment implements MoPubView.BannerAdListene
         moPubView = (MoPubView) v.findViewById(R.id.adview);
         moPubView.setAdUnitId(getString(R.string.mp_standard_today));
         moPubView.setAutorefreshEnabled(true);
-        moPubView.setBannerAdListener(this);
         moPubView.loadAd();
+        moPubView.setBannerAdListener(this);
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
