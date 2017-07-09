@@ -33,6 +33,7 @@
     <string name="nav_today" translatable="true">Today\'s Tips</string>
     <string name="nav_history" translatable="true">History of Tips</string>
     <string name="nav_bonus">Bonus Tips</string>
+    <string name="nav_stats">Statistics</string>
     <string name="nav_social" translatable="true">Social</string>
     <string name="nav_feedback" translatable="true">Give us your feedback</string>
     <string name="nav_send" translatable="true">Invite your friend</string>

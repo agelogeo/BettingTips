@@ -14,6 +14,10 @@
             android:id="@+id/nav_bonus_tips"
             android:icon="@drawable/ic_whatshot_black_24dp"
             android:title="@string/nav_bonus" />
+        <item
+            android:id="@+id/nav_stats"
+            android:icon="@drawable/ic_show_chart_black_24dp"
+            android:title="@string/nav_stats" />
 
 
     </group>

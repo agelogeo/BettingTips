@@ -10,6 +10,7 @@
     <string name="nav_history">Ιστορικό προτάσεων</string>
     <string name="nav_send">Προτείνετε σε έναν φίλο σας</string>
     <string name="nav_social">Περισσότερα</string>
+    <string name="nav_stats">Στατιστικά</string>
     <string name="nav_today">Σημερινές προτάσεις</string>
     <string name="navigation_drawer_close">Κλείσε το μενού</string>
     <string name="navigation_drawer_open">Άνοιξε το μενού</string>
