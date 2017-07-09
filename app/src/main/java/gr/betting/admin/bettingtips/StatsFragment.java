@@ -51,7 +51,7 @@ public class StatsFragment extends Fragment {
 
                     for(int i=0;i<results.length();i++){
                         JSONObject source = results.getJSONObject(i);
-                        TextView total=null,won=null,lost=null,perc=null;
+                        TextView total=null,won=null,lost=null,perc=null,left=null,mid=null,right=null;
                         double p;
                         String ps;
                         DecimalFormat df = new DecimalFormat("#.##");
@@ -61,18 +61,27 @@ public class StatsFragment extends Fragment {
                                 won = (TextView) v.findViewById(R.id.standard_tips_won_num);
                                 lost = (TextView) v.findViewById(R.id.standard_tips_lost_num);
                                 perc = (TextView) v.findViewById(R.id.standard_tips_perc_num);
+                                left = (TextView) v.findViewById(R.id.standard_left_odd);
+                                mid = (TextView) v.findViewById(R.id.standard_mid_odd);
+                                right = (TextView) v.findViewById(R.id.standard_right_odd);
                                 break;
                             case 1:
                                 total = (TextView) v.findViewById(R.id.alt_tips_total_num);
                                 won = (TextView) v.findViewById(R.id.alt_tips_won_num);
                                 lost = (TextView) v.findViewById(R.id.alt_tips_lost_num);
                                 perc = (TextView) v.findViewById(R.id.alt_tips_perc_num);
+                                left = (TextView) v.findViewById(R.id.alt_left_odd);
+                                mid = (TextView) v.findViewById(R.id.alt_mid_odd);
+                                right = (TextView) v.findViewById(R.id.alt_right_odd);
                                 break;
                             case 2:
                                 total = (TextView) v.findViewById(R.id.bonus_tips_total_num);
                                 won = (TextView) v.findViewById(R.id.bonus_tips_won_num);
                                 lost = (TextView) v.findViewById(R.id.bonus_tips_lost_num);
                                 perc = (TextView) v.findViewById(R.id.bonus_tips_perc_num);
+                                left = (TextView) v.findViewById(R.id.bonus_left_odd);
+                                mid = (TextView) v.findViewById(R.id.bonus_mid_odd);
+                                right = (TextView) v.findViewById(R.id.bonus_right_odd);
                                 break;
                         }
                         p = Double.parseDouble(source.getString("SUCCESS"));
@@ -85,6 +94,9 @@ public class StatsFragment extends Fragment {
                         won.setText(source.getString("WON"));
                         lost.setText(source.getString("LOST"));
                         perc.setText(ps.substring(2));
+                        left.setText(source.getString("LOW"));
+                        mid.setText(source.getString("MID"));
+                        right.setText(source.getString("HIGH"));
 
                     }
 
