@@ -218,6 +218,12 @@ public class MainActivity extends AppCompatActivity
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
+        }else if (id == R.id.nav_stats) {
+            fragment = new StatsFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
+            transaction.replace(R.id.mainFrame,fragment);
+            transaction.commit();
         } else if (id == R.id.nav_send) {
             if(shareActionProvider != null){
                 startActivity(createShareAppIntent());
