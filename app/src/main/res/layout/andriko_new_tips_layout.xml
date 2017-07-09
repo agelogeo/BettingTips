@@ -5,25 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorButtonNormal"
-    android:orientation="vertical"
     android:weightSum="1">
 
     <ImageView
         android:id="@+id/sad_face"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:visibility="gone"
         ads:srcCompat="@drawable/sad_face" />
 
     <TextView
         android:id="@+id/sorry_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="false"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="300dp"
         android:text="@string/sorry_text"
         android:visibility="gone" />
 
