@@ -333,7 +333,49 @@ public class Splashscreen extends Activity {
         }.execute();
 
 
+        //Stats Fragment
+        new AsyncTask<Void, Void, String>() {
 
+            @Override
+            protected void onPreExecute() {
+            }
+
+            protected String doInBackground(Void... urls) {
+                try {
+                    String SheetID = getString(R.string.sheet_id);
+                    String SheetName = getString(R.string.stats);
+                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+
+
+                    System.out.println(link);
+
+                    URL url = new URL(link);
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    try {
+                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                        StringBuilder stringBuilder = new StringBuilder();
+                        String line;
+                        while ((line = bufferedReader.readLine()) != null) {
+                            stringBuilder.append(line).append("\n");
+                        }
+                        bufferedReader.close();
+
+                        return stringBuilder.toString();
+                    } finally {
+                        urlConnection.disconnect();
+                    }
+                } catch (Exception e) {
+                    System.out.println("ERROR : doInBackground");
+                    //loadingDialog.dismiss();
+                    Splashscreen.this.finish();
+                    return null;
+                }
+            }
+
+            protected void onPostExecute(final String response) {
+                CallHolder.setStats(response);
+            }
+        }.execute();
 
 
     }

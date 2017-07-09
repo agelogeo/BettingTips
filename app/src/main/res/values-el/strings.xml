@@ -34,4 +34,11 @@
     <string name="please_take_a_moment">Θα το εκτιμούσαμε πολύ, αν μπορούσατε να αφιερώσετε λίγο χρόνο για να βαθμολογήστε την εφαρμογή μας.</string>
     <string name="cancel">Άκυρο</string>
     <string name="rate_it">Θα το κάνω</string>
+
+    <!-- Stats -->
+    <string name="stats_title">Στατιστικά</string>
+    <string name="stats_total">Συνολικές προτάσεις :</string>
+    <string name="stats_won">Κερδισμένα :</string>
+    <string name="stats_lost">Χαμένα :</string>
+    <string name="stats_perc">Ποσοστό επιτυχίας :</string>
 </resources>

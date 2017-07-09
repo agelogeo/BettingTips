@@ -12,12 +12,13 @@
         android:layout_height="match_parent"
         android:background="?attr/colorButtonNormal"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Statistics"
+            android:text="@string/stats_title"
             android:textAlignment="center"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -50,7 +51,7 @@
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
                     android:gravity="bottom"
-                    android:text="Standard Tips"
+                    android:text="@string/tab_standard"
                     android:textAlignment="center"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -70,7 +71,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Total tips in history : "
+                        android:text="@string/stats_total"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -101,7 +102,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Won : "
+                        android:text="@string/stats_won"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -132,7 +133,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Lost : "
+                        android:text="@string/stats_lost"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -163,7 +164,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Success Percentage : "
+                        android:text="@string/stats_perc"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -211,7 +212,7 @@
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
                     android:gravity="bottom"
-                    android:text="Alternative Tips"
+                    android:text="@string/tab_alternative"
                     android:textAlignment="center"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -231,7 +232,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Total tips in history : "
+                        android:text="@string/stats_total"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -262,7 +263,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Won : "
+                        android:text="@string/stats_won"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -293,7 +294,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Lost : "
+                        android:text="@string/stats_lost"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -324,7 +325,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Success Percentage : "
+                        android:text="@string/stats_perc"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -372,7 +373,7 @@
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
                     android:gravity="bottom"
-                    android:text="Bonus Tips"
+                    android:text="@string/nav_bonus"
                     android:textAlignment="center"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -392,7 +393,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Total tips in history : "
+                        android:text="@string/stats_total"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -423,7 +424,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Won : "
+                        android:text="@string/stats_won"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -454,7 +455,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Lost : "
+                        android:text="@string/stats_lost"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 
@@ -485,7 +486,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="Success Percentage : "
+                        android:text="@string/stats_perc"
                         android:textSize="18sp"
                         android:textStyle="normal|italic" />
 

@@ -53,6 +53,7 @@
     <string name="tameiarxis_today" translatable="false">tameiarxis_today</string>
     <string name="standard_history" translatable="false">standard_history</string>
     <string name="standard_today" translatable="false">standard_today</string>
+    <string name="stats" translatable="false">stats</string>
 
 
     <!-- Info fragment -->
@@ -65,5 +66,12 @@
     <string name="cancel" translatable="true">Cancel</string>
     <string name="rate_it" translatable="true">Rate it</string>
     <string name="error_server" translatable="true">Error with Google server.</string>
+
+    <!-- Stats -->
+    <string name="stats_title">Statistics</string>
+    <string name="stats_total">Total tips in history :</string>
+    <string name="stats_won">Won :</string>
+    <string name="stats_lost">Lost :</string>
+    <string name="stats_perc">Success Percentage :</string>
 
 </resources>

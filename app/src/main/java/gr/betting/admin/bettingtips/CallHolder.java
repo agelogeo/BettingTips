@@ -19,8 +19,15 @@ public class  CallHolder {
     private static String tameiarxis_old;
     private static String bonus_new;
     private static String bonus_old;
+    private static String stats;
 
+    public static String getStats() {
+        return stats;
+    }
 
+    public static void setStats(String stats) {
+        CallHolder.stats = stats;
+    }
 
     public static String getStandard_new() {
         return standard_new;
