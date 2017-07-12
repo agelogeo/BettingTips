@@ -31,7 +31,9 @@ dependencies {
     compile 'com.google.firebase:firebase-core:10.0.1'
     compile 'com.google.firebase:firebase-messaging:10.0.1'
     compile 'com.google.firebase:firebase-ads:10.0.1'
-    compile('com.mopub:mopub-sdk:4.15.0@aar') {
+    compile 'com.facebook.android:audience-network-sdk:4.+'
+
+        compile('com.mopub:mopub-sdk:4.15.0@aar') {
         transitive = true
     }
 

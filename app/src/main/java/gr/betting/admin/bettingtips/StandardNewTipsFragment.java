@@ -14,9 +14,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mopub.mobileads.MoPubErrorCode;
@@ -38,13 +40,11 @@ import java.util.ArrayList;
  */
 
 public class StandardNewTipsFragment extends Fragment {
-    private AdView mAdView;
     private FirebaseAnalytics mFirebaseAnalytics;
     @Nullable
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
         final View v = inflater.inflate(R.layout.standard_new_tips_layout,null);
-
 
 
 

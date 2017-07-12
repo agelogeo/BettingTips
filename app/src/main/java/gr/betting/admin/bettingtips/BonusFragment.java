@@ -8,7 +8,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
+import com.facebook.ads.*;
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -21,51 +25,17 @@ import com.mopub.mobileads.MoPubView;
  * Created by Admin on 22/6/2017.
  */
 
-public class BonusFragment extends Fragment implements MoPubInterstitial.InterstitialAdListener, MoPubView.BannerAdListener {
-    private InterstitialAd interstitial;
-
-    MoPubView moPubView;
-    MoPubInterstitial mInterstitial;
+public class BonusFragment extends Fragment  {
+    private com.facebook.ads.AdView adView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tabs_layout,null);
 
-        mInterstitial = new MoPubInterstitial(getActivity(), getString(R.string.mp_full_ad));
-        mInterstitial.setInterstitialAdListener(this);
-        mInterstitial.load();
-
-        moPubView = (MoPubView) v.findViewById(R.id.adview);
-        moPubView.setAdUnitId(getString(R.string.mp_bonus_today));
-        moPubView.setAutorefreshEnabled(true);
-        moPubView.loadAd();
-        moPubView.setBannerAdListener(this);
-
-        /*AdRequest adRequest = new AdRequest.Builder().build();
-
-        //Prepare the Interstitial Ad
-        interstitial = new InterstitialAd(getActivity());
-        //Insert the Ad Unit ID
-        interstitial.setAdUnitId(getString(R.string.full_screen_ad_unit_id));
-
-        interstitial.loadAd(adRequest);
-
-        interstitial.setAdListener(new AdListener() {
-            @Override
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-            }
-
-            @Override
-            public void onAdLoaded() {
-                displayInterstitial();
-            }
-
-            @Override
-            public void onAdClosed() {
-                super.onAdClosed();
-            }
-        });*/
+        RelativeLayout adViewContainer = (RelativeLayout) v.findViewById(R.id.adViewContainer);
+        adView = new com.facebook.ads.AdView(getContext(), getString(R.string.bonus_banner), AdSize.BANNER_320_50);
+        adViewContainer.addView(adView);
+        adView.loadAd();
 
 
         Fragment childFragment = new AndrikoNewTipsFragment();
@@ -106,71 +76,6 @@ public class BonusFragment extends Fragment implements MoPubInterstitial.Interst
         return v;
     }
 
-    public void displayInterstitial(){
-        if(interstitial.isLoaded()){
-            interstitial.show();
-        }
-    }
 
-    @Override
-    public void onInterstitialLoaded(MoPubInterstitial interstitial) {
-        if (interstitial.isReady()) {
-            mInterstitial.show();
-        } else {
-            // Other code
-        }
-    }
 
-    @Override
-    public void onInterstitialFailed(MoPubInterstitial interstitial, MoPubErrorCode errorCode) {
-
-    }
-
-    @Override
-    public void onInterstitialShown(MoPubInterstitial interstitial) {
-
-    }
-
-    @Override
-    public void onInterstitialClicked(MoPubInterstitial interstitial) {
-
-    }
-
-    @Override
-    public void onInterstitialDismissed(MoPubInterstitial interstitial) {
-
-    }
-
-    @Override
-    public void onDestroyView() {
-        mInterstitial.destroy();
-        moPubView.destroy();
-
-        super.onDestroyView();
-    }
-
-    @Override
-    public void onBannerLoaded(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
-
-    }
-
-    @Override
-    public void onBannerClicked(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerExpanded(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerCollapsed(MoPubView banner) {
-
-    }
 }

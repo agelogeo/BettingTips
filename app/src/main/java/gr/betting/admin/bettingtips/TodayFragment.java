@@ -8,7 +8,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
@@ -17,20 +20,20 @@ import com.mopub.mobileads.MoPubView;
  * Created by Admin on 22/6/2017.
  */
 
-public class TodayFragment extends Fragment implements MoPubView.BannerAdListener {
+public class TodayFragment extends Fragment  {
     private FirebaseAnalytics mFirebaseAnalytics;
-
-    MoPubView moPubView;
+    private AdView adView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tabs_layout,null);
 
-        moPubView = (MoPubView) v.findViewById(R.id.adview);
-        moPubView.setAdUnitId(getString(R.string.mp_standard_today));
-        moPubView.setAutorefreshEnabled(true);
-        moPubView.loadAd();
-        moPubView.setBannerAdListener(this);
+
+        RelativeLayout adViewContainer = (RelativeLayout) v.findViewById(R.id.adViewContainer);
+
+        adView = new AdView(getContext(), getString(R.string.today_banner), AdSize.BANNER_320_50);
+        adViewContainer.addView(adView);
+        adView.loadAd();
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
@@ -77,34 +80,4 @@ public class TodayFragment extends Fragment implements MoPubView.BannerAdListene
         return v;
     }
 
-    @Override
-    public void onBannerLoaded(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
-
-    }
-
-    @Override
-    public void onBannerClicked(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerExpanded(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onBannerCollapsed(MoPubView banner) {
-
-    }
-
-    @Override
-    public void onDestroyView() {
-        moPubView.destroy();
-        super.onDestroyView();
-    }
 }

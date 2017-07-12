@@ -1,14 +1,10 @@
 package gr.betting.admin.bettingtips;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
@@ -28,23 +24,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.google.android.gms.ads.MobileAds;
-import com.google.firebase.analytics.FirebaseAnalytics;
+import com.facebook.ads.*;
 
 import java.io.File;
-import java.io.InputStream;
 
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, InterstitialAdListener {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     private int id;
+    private InterstitialAd interstitialAd;
     private ShareActionProvider shareActionProvider;
     NavigationView navigationView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,20 +47,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //MobileAds.initialize(this, getString(R.string.app_ad_unit_id));
-
         AskRating();
-
-
-
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -194,6 +175,7 @@ public class MainActivity extends AppCompatActivity
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
+            loadInterstitialAd();
         } else if (id == R.id.nav_old_tips) {
             fragment = new HistoryFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -218,6 +200,7 @@ public class MainActivity extends AppCompatActivity
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
+            loadInterstitialAd();
         }else if (id == R.id.nav_stats) {
             fragment = new StatsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -350,5 +333,48 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    private void loadInterstitialAd() {
+        interstitialAd = new InterstitialAd(this, getString(R.string.interstitial_ad));
+        interstitialAd.setAdListener(this);
+        interstitialAd.loadAd();
+    }
 
+    @Override
+    public void onError(Ad ad, AdError error) {
+        // Ad failed to load
+    }
+
+    @Override
+    public void onAdLoaded(Ad ad) {
+        // Ad is loaded and ready to be displayed
+        // You can now display the full screen add using this code:
+        interstitialAd.show();
+    }
+
+    @Override
+    public void onAdClicked(Ad ad) {
+
+    }
+
+    @Override
+    public void onLoggingImpression(Ad ad) {
+
+    }
+
+    @Override
+    public void onInterstitialDisplayed(Ad ad) {
+
+    }
+
+    @Override
+    public void onInterstitialDismissed(Ad ad) {
+        interstitialAd.destroy();
+
+    }
+
+
+    /**
+     * This function assumes logger is an instance of AppEventsLogger and has been
+     * created using AppEventsLogger.newLogger() call.
+     */
 }
