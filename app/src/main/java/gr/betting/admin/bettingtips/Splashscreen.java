@@ -61,6 +61,18 @@ public class Splashscreen extends Activity {
         System.out.println("----------------------------------------------------------------/ Start : "+System.currentTimeMillis());
 
 
+        getAltToday();
+        getBonusToday();
+        getStats();
+        getStandardToday(); // Contains SplashScreen.finish
+        getStandardHistory();
+        getAltHistory();
+        getBonusHistory();
+
+
+    }
+
+    public void getStandardToday(){
         //Standard Today
         new AsyncTask<Void, Void, String>() {
 
@@ -110,7 +122,55 @@ public class Splashscreen extends Activity {
                 System.out.println("----------------------------------------------------------------/ End : "+System.currentTimeMillis());
             }
         }.execute();
+    }
 
+    public void getStandardHistory(){
+        //Standard History
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected void onPreExecute() {
+            }
+
+            protected String doInBackground(Void... urls) {
+                try {
+                    String SheetID = getString(R.string.sheet_id);
+                    String SheetName = getString(R.string.standard_history);
+                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+
+
+                    System.out.println(link);
+
+                    URL url = new URL(link);
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    try {
+                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                        StringBuilder stringBuilder = new StringBuilder();
+                        String line;
+                        while ((line = bufferedReader.readLine()) != null) {
+                            stringBuilder.append(line).append("\n");
+                        }
+                        bufferedReader.close();
+
+                        return stringBuilder.toString();
+                    } finally {
+                        urlConnection.disconnect();
+                    }
+                } catch (Exception e) {
+                    System.out.println("ERROR : doInBackground");
+                    //loadingDialog.dismiss();
+                    Splashscreen.this.finish();
+                    return null;
+                }
+            }
+
+            protected void onPostExecute(final String response) {
+                CallHolder.setStandard_old(response);
+            }
+        }.execute();
+    }
+
+    public void getAltToday(){
         //Tameiarxis Today
         new AsyncTask<Void, Void, String>() {
 
@@ -154,7 +214,55 @@ public class Splashscreen extends Activity {
                 CallHolder.setTameiarxis_new(response);
             }
         }.execute();
+    }
 
+    public void getAltHistory(){
+        //Tameiarxis History
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected void onPreExecute() {
+            }
+
+            protected String doInBackground(Void... urls) {
+                try {
+                    String SheetID = getString(R.string.sheet_id);
+                    String SheetName = getString(R.string.tameiarxis_history);
+                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+
+
+                    System.out.println(link);
+
+                    URL url = new URL(link);
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    try {
+                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                        StringBuilder stringBuilder = new StringBuilder();
+                        String line;
+                        while ((line = bufferedReader.readLine()) != null) {
+                            stringBuilder.append(line).append("\n");
+                        }
+                        bufferedReader.close();
+
+                        return stringBuilder.toString();
+                    } finally {
+                        urlConnection.disconnect();
+                    }
+                } catch (Exception e) {
+                    System.out.println("ERROR : doInBackground");
+                    //loadingDialog.dismiss();
+                    Splashscreen.this.finish();
+                    return null;
+                }
+            }
+
+            protected void onPostExecute(final String response) {
+                CallHolder.setTameiarxis_old(response);
+            }
+        }.execute();
+    }
+
+    public void getBonusToday(){
         //Bonus Today
         new AsyncTask<Void, Void, String>() {
 
@@ -199,139 +307,9 @@ public class Splashscreen extends Activity {
                 CallHolder.setBonus_new(response);
             }
         }.execute();
+    }
 
-        //Standard History
-        new AsyncTask<Void, Void, String>() {
-
-            @Override
-            protected void onPreExecute() {
-            }
-
-            protected String doInBackground(Void... urls) {
-                try {
-                    String SheetID = getString(R.string.sheet_id);
-                    String SheetName = getString(R.string.standard_history);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
-
-
-                    System.out.println(link);
-
-                    URL url = new URL(link);
-                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                    try {
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-                        StringBuilder stringBuilder = new StringBuilder();
-                        String line;
-                        while ((line = bufferedReader.readLine()) != null) {
-                            stringBuilder.append(line).append("\n");
-                        }
-                        bufferedReader.close();
-
-                        return stringBuilder.toString();
-                    } finally {
-                        urlConnection.disconnect();
-                    }
-                } catch (Exception e) {
-                    System.out.println("ERROR : doInBackground");
-                    //loadingDialog.dismiss();
-                    Splashscreen.this.finish();
-                    return null;
-                }
-            }
-
-            protected void onPostExecute(final String response) {
-                CallHolder.setStandard_old(response);
-            }
-        }.execute();
-
-        //Tameiarxis History
-        new AsyncTask<Void, Void, String>() {
-
-            @Override
-            protected void onPreExecute() {
-            }
-
-            protected String doInBackground(Void... urls) {
-                try {
-                    String SheetID = getString(R.string.sheet_id);
-                    String SheetName = getString(R.string.tameiarxis_history);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
-
-
-                    System.out.println(link);
-
-                    URL url = new URL(link);
-                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                    try {
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-                        StringBuilder stringBuilder = new StringBuilder();
-                        String line;
-                        while ((line = bufferedReader.readLine()) != null) {
-                            stringBuilder.append(line).append("\n");
-                        }
-                        bufferedReader.close();
-
-                        return stringBuilder.toString();
-                    } finally {
-                        urlConnection.disconnect();
-                    }
-                } catch (Exception e) {
-                    System.out.println("ERROR : doInBackground");
-                    //loadingDialog.dismiss();
-                    Splashscreen.this.finish();
-                    return null;
-                }
-            }
-
-            protected void onPostExecute(final String response) {
-                CallHolder.setTameiarxis_old(response);
-            }
-        }.execute();
-
-        //Stats Fragment
-        new AsyncTask<Void, Void, String>() {
-
-            @Override
-            protected void onPreExecute() {
-            }
-
-            protected String doInBackground(Void... urls) {
-                try {
-                    String SheetID = getString(R.string.sheet_id);
-                    String SheetName = getString(R.string.stats);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
-
-
-                    System.out.println(link);
-
-                    URL url = new URL(link);
-                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                    try {
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-                        StringBuilder stringBuilder = new StringBuilder();
-                        String line;
-                        while ((line = bufferedReader.readLine()) != null) {
-                            stringBuilder.append(line).append("\n");
-                        }
-                        bufferedReader.close();
-
-                        return stringBuilder.toString();
-                    } finally {
-                        urlConnection.disconnect();
-                    }
-                } catch (Exception e) {
-                    System.out.println("ERROR : doInBackground");
-                    //loadingDialog.dismiss();
-                    Splashscreen.this.finish();
-                    return null;
-                }
-            }
-
-            protected void onPostExecute(final String response) {
-                CallHolder.setStats(response);
-            }
-        }.execute();
-
+    public void getBonusHistory(){
         //Bonus History
         new AsyncTask<Void, Void, String>() {
 
@@ -375,11 +353,53 @@ public class Splashscreen extends Activity {
                 CallHolder.setBonus_old(response);
             }
         }.execute();
-
-
-
-
-
     }
+
+    public void getStats(){
+        //Stats Fragment
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected void onPreExecute() {
+            }
+
+            protected String doInBackground(Void... urls) {
+                try {
+                    String SheetID = getString(R.string.sheet_id);
+                    String SheetName = getString(R.string.stats);
+                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+
+
+                    System.out.println(link);
+
+                    URL url = new URL(link);
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    try {
+                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                        StringBuilder stringBuilder = new StringBuilder();
+                        String line;
+                        while ((line = bufferedReader.readLine()) != null) {
+                            stringBuilder.append(line).append("\n");
+                        }
+                        bufferedReader.close();
+
+                        return stringBuilder.toString();
+                    } finally {
+                        urlConnection.disconnect();
+                    }
+                } catch (Exception e) {
+                    System.out.println("ERROR : doInBackground");
+                    //loadingDialog.dismiss();
+                    Splashscreen.this.finish();
+                    return null;
+                }
+            }
+
+            protected void onPostExecute(final String response) {
+                CallHolder.setStats(response);
+            }
+        }.execute();
+    }
+
 
 }
