@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         id = item.getItemId();
 
-
+        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
         Fragment fragment = null;
 
         if (id == R.id.nav_news_tips) {

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.facebook.ads.AdSettings;
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
 import com.mopub.mobileads.MoPubErrorCode;
@@ -28,6 +29,7 @@ public class HistoryFragment extends Fragment {
 
         RelativeLayout adViewContainer = (RelativeLayout) v.findViewById(R.id.adViewContainer);
 
+        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
         adView = new AdView(getContext(), getString(R.string.history_banner), AdSize.BANNER_320_50);
         adViewContainer.addView(adView);
         adView.loadAd();

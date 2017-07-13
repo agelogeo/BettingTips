@@ -32,6 +32,7 @@ public class BonusFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tabs_layout,null);
 
+        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
         RelativeLayout adViewContainer = (RelativeLayout) v.findViewById(R.id.adViewContainer);
         adView = new com.facebook.ads.AdView(getContext(), getString(R.string.bonus_banner), AdSize.BANNER_320_50);
         adViewContainer.addView(adView);

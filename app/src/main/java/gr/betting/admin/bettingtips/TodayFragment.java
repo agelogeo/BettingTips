@@ -1,5 +1,6 @@
 package gr.betting.admin.bettingtips;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -10,11 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.facebook.ads.AdSettings;
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  * Created by Admin on 22/6/2017.
@@ -31,9 +38,11 @@ public class TodayFragment extends Fragment  {
 
         RelativeLayout adViewContainer = (RelativeLayout) v.findViewById(R.id.adViewContainer);
 
-        adView = new AdView(getContext(), getString(R.string.today_banner), AdSize.BANNER_320_50);
+        adView = new AdView(getActivity(), getString(R.string.today_banner), AdSize.BANNER_320_50);
         adViewContainer.addView(adView);
+        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
         adView.loadAd();
+
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
