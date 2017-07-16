@@ -1,4 +1,4 @@
-# BettingTips
+# Daily Betting Tips
 
 This is an android application developed in order to help users earn some money from betting.
 It contains a main navigation drawer for easier navigation through the app and a several async tasks
