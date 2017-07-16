@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">Daily Betting Tips</string>
     <string name="app_email" translatable="false">dailybettingapp@gmail.com</string>
-    <string name="app_ver" translatable="false">1.2</string>
 
     <string name="navigation_drawer_open" translatable="true">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="true">Close navigation drawer</string>
@@ -26,8 +25,8 @@
     <!-- Navigation Drawer -->
     <string name="nav_today" translatable="true">Today\'s Tips</string>
     <string name="nav_history" translatable="true">History of Tips</string>
-    <string name="nav_bonus">Bonus Tips</string>
-    <string name="nav_stats">Statistics</string>
+    <string name="nav_bonus" translatable="true">Bonus Tips</string>
+    <string name="nav_stats" translatable="true">Statistics</string>
     <string name="nav_social" translatable="true">Social</string>
     <string name="nav_feedback" translatable="true">Give us your feedback</string>
     <string name="nav_send" translatable="true">Invite your friend</string>
@@ -62,14 +61,14 @@
     <string name="error_server" translatable="true">Error with Google server.</string>
 
     <!-- Stats -->
-    <string name="stats_title">Statistics</string>
-    <string name="stats_total">Total tips in history :</string>
-    <string name="stats_won">Won :</string>
-    <string name="stats_lost">Lost :</string>
-    <string name="stats_perc">Success Percentage :</string>
-    <string name="first_odd">Odd &lt; 1.50</string>
-    <string name="mid_odd">1.50 &lt; Odd &lt; 2.00</string>
-    <string name="right_odd">Odd &gt; 2.00</string>
+    <string name="stats_title" translatable="true">Statistics</string>
+    <string name="stats_total" translatable="true">Total tips in history :</string>
+    <string name="stats_won" translatable="true">Won :</string>
+    <string name="stats_lost" translatable="true">Lost :</string>
+    <string name="stats_perc" translatable="true">Success Percentage :</string>
+    <string name="first_odd" translatable="true">Odd &lt; 1.50</string>
+    <string name="mid_odd" translatable="true">1.50 &lt; Odd &lt; 2.00</string>
+    <string name="right_odd" translatable="true">Odd &gt; 2.00</string>
 
     <!-- FACEBOOK ADS -->
     <string name="today_banner" translatable="false">314020665687947_324069141349766</string>
