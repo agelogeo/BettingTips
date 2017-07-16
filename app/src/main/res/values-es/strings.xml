@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Daily Betting Tips</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="nav_history">Historial de sugerencias</string>
+    <string name="nav_today">Sugerencias de hoy</string>
+    <string name="nav_stats">Estadísticas</string>
+    <string name="nav_bonus">Extra Consejos</string>
+    <string name="nav_about">Sobre nosotros</string>
+    <string name="nav_send">Invite a un amigo</string>
+    <string name="nav_social">Más</string>
+    <string name="nav_feedback">Evaluación de la aplicación</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="tab_standard">Básicas</string>
+    <string name="tab_alternative">Alternativas</string>
+    <string name="stats_title">Estadísticas</string>
+    <string name="stats_total">Todos los consejos del historial</string>
+    <string name="stats_won">Ganados</string>
+    <string name="stats_lost">Perdidos</string>
+    <string name="stats_perc">Porcentaje de éxito</string>
+    <string name="we_need_your_help">iNecesitamos su ayuda!</string>
+    <string name="please_take_a_moment">Dedique un momento por favor para evaluar nuestro aplicación. Lo apreciaríamos muchísimo.</string>
+    <string name="please_wait">Espere un momento por favor</string>
+    <string name="quit_message">¿Está seguro que quiere cerrar la aplicación?</string>
+    <string name="quit_title">Cerrar la aplicación</string>
+    <string name="rate_it">Evaluación</string>
+    <string name="cancel">No, gracias</string>
+    <string name="share_message">Pruebe esta aplicación https://goo.gl/QcCauP</string>
+    <string name="sorry_text">Perdón, no hay consejos nuevos. Pruebe de nuevo después.</string>
+    <string name="loading_tips">Cargando datos</string>
+    <string name="error_server">Error con la conexión</string>
+    <string name="build_version">Versión</string>
+    <string name="navigation_drawer_close">Cierre el menú</string>
+    <string name="navigation_drawer_open">Abra el menú</string>
+    <string name="bonus_history">Historial de sugerencias</string>
+    <string name="bonus_today">Sugerencias de hoy</string>
+    <string name="first_odd">Probabilidad &lt; 1.50</string>
+    <string name="mid_odd">1.50 &lt; Probabilidad &lt; 2.00</string>
+    <string name="right_odd">Probabilidad &gt; 2.00</string>
+</resources>
