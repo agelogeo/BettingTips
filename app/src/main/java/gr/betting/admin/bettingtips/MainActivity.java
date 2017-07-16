@@ -282,8 +282,8 @@ public class MainActivity extends AppCompatActivity
             // Do every x times
             //int RunEvery = 20;
 
-            //if(counter != 0  && counter == 5 || counter == 20 || counter == 50 || counter == 150 || counter == 300 )
-            if(counter<20)
+            if(counter != 0  && counter == 5 || counter == 20 || counter == 50 || counter == 150 || counter == 300 )
+
             {
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
