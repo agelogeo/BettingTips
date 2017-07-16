@@ -8,7 +8,6 @@ Drawer List :
 - History of Tips
 - Bonus Tips
 - Statistics
-(More social)
 - Rate our app
 - Suggest it to a friend
 - About us.
