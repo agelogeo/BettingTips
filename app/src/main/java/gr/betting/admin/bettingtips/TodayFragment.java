@@ -29,20 +29,10 @@ import java.net.URL;
 
 public class TodayFragment extends Fragment  {
     private FirebaseAnalytics mFirebaseAnalytics;
-    private AdView adView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tabs_layout,null);
-
-
-        RelativeLayout adViewContainer = (RelativeLayout) v.findViewById(R.id.adViewContainer);
-
-        adView = new AdView(getActivity(), getString(R.string.today_banner), AdSize.BANNER_320_50);
-        adViewContainer.addView(adView);
-        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
-        adView.loadAd();
-
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());

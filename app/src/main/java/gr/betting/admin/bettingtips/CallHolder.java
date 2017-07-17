@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.facebook.ads.AdView;
+
 import java.io.InputStream;
 
 /**
@@ -20,6 +22,15 @@ public class  CallHolder {
     private static String bonus_new;
     private static String bonus_old;
     private static String stats;
+    private static AdView adView;
+
+    public static AdView getAdView() {
+        return adView;
+    }
+
+    public static void setAdView(AdView adView) {
+        CallHolder.adView = adView;
+    }
 
     public static String getStats() {
         return stats;

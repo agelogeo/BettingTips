@@ -18,6 +18,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,6 +46,8 @@ public class Splashscreen extends Activity {
         splash = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
+
+        CallHolder.setAdView(new AdView(getApplicationContext(), getString(R.string.today_banner), AdSize.BANNER_320_50));
         StartAnimations();
     }
     private void StartAnimations() {

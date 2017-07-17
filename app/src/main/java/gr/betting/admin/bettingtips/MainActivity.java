@@ -24,6 +24,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+
 import com.facebook.ads.*;
 
 import java.io.File;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity
     private InterstitialAd interstitialAd;
     private ShareActionProvider shareActionProvider;
     NavigationView navigationView;
+    private AdView adView;
 
 
     @Override
@@ -44,8 +47,18 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        RelativeLayout adViewContainer = (RelativeLayout) findViewById(R.id.adViewContainer);
+
+        //adView = new AdView(this, getString(R.string.today_banner), AdSize.BANNER_320_50);
+        adViewContainer.addView(CallHolder.getAdView());
+        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
+        CallHolder.getAdView().loadAd();
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
 
         AskRating();
 
@@ -166,7 +179,6 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         id = item.getItemId();
 
-        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
         Fragment fragment = null;
 
         if (id == R.id.nav_news_tips) {
@@ -182,6 +194,7 @@ public class MainActivity extends AppCompatActivity
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
+            loadInterstitialAd();
         } else if (id == R.id.nav_feedback) {
             final String appName = getApplicationContext().getPackageName();
             try {

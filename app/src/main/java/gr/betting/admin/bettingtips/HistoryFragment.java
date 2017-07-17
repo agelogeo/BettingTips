@@ -27,13 +27,6 @@ public class HistoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tabs_layout,null);
 
-        RelativeLayout adViewContainer = (RelativeLayout) v.findViewById(R.id.adViewContainer);
-
-        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
-        adView = new AdView(getContext(), getString(R.string.history_banner), AdSize.BANNER_320_50);
-        adViewContainer.addView(adView);
-        adView.loadAd();
-
 
         Fragment childFragment = new StandardOldTipsFragment();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();

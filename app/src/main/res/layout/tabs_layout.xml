@@ -20,13 +20,7 @@
         android:layout_above="@+id/adViewContainer"
         android:layout_below="@+id/tabs" />
 
-    <RelativeLayout
-        android:id="@+id/adViewContainer"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true" />
-
-   <!-- <com.mopub.mobileads.MoPubView
+    <!-- <com.mopub.mobileads.MoPubView
         android:id="@+id/adview"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
