@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Daily Betting Tips</string>
     <string name="action_settings">Ajustes</string>
     <string name="nav_history">Historial de sugerencias</string>
     <string name="nav_today">Sugerencias de hoy</string>
