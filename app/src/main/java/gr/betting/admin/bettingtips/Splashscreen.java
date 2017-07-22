@@ -31,6 +31,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Splashscreen extends Activity {
     public static Activity splash;
@@ -48,6 +49,7 @@ public class Splashscreen extends Activity {
         setContentView(R.layout.activity_splashscreen);
 
         CallHolder.setAdView(new AdView(getApplicationContext(), getString(R.string.today_banner), AdSize.BANNER_320_50));
+        CallHolder.setCalendar(Calendar.getInstance());
         StartAnimations();
     }
     private void StartAnimations() {

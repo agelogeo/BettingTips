@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import com.facebook.ads.AdView;
 
 import java.io.InputStream;
+import java.util.Calendar;
 
 /**
  * Created by Admin on 27/6/2017.
@@ -23,6 +24,15 @@ public class  CallHolder {
     private static String bonus_old;
     private static String stats;
     private static AdView adView;
+    private static Calendar calendar;
+
+    public static Calendar getCalendar() {
+        return calendar;
+    }
+
+    public static void setCalendar(Calendar calendar) {
+        CallHolder.calendar = calendar;
+    }
 
     public static AdView getAdView() {
         return adView;

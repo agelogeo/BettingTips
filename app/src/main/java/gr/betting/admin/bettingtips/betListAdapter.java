@@ -9,7 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * Created by Admin on 14/6/2017.
@@ -38,10 +43,29 @@ public class betListAdapter extends ArrayAdapter<betItem> {
         TextView country_league = (TextView) header.findViewById(R.id.country_league);
         TextView time = (TextView) header.findViewById(R.id.time);
         TextView date = (TextView) header.findViewById(R.id.date);
-        String[] date_temp = betitem.getDate().split("-");
-        date.setText(date_temp[2]+"/"+date_temp[1]+"/"+date_temp[0]);
+
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+
+
+            //Initial timezone.
+            sdf.setTimeZone(TimeZone.getTimeZone("Europe/Athens"));
+            Date myDate = null;
+            try {
+                myDate = sdf.parse(betitem.getDate()+" "+betitem.getTime());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            CallHolder.getCalendar().setTime(myDate);
+
+            //Here you say to java the wanted timezone. This is the secret
+            sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+            sdf.setTimeZone(TimeZone.getDefault());
+            //Will print in local time
+            date.setText(sdf.format(CallHolder.getCalendar().getTime()));
+
+
         country_league.setText(betitem.getCountry_league());
-        time.setText(betitem.getTime());
 
         //Details layout
         LinearLayout details = (LinearLayout) convertView.findViewById(R.id.details_layout);
