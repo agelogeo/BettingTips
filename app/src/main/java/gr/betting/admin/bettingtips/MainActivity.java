@@ -50,9 +50,15 @@ public class MainActivity extends AppCompatActivity
         RelativeLayout adViewContainer = (RelativeLayout) findViewById(R.id.adViewContainer);
 
         //adView = new AdView(this, getString(R.string.today_banner), AdSize.BANNER_320_50);
-        adViewContainer.addView(CallHolder.getAdView());
-        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
-        CallHolder.getAdView().loadAd();
+        if(CallHolder.getAdView()!=null){
+            adViewContainer.addView(CallHolder.getAdView());
+            AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
+            CallHolder.getAdView().loadAd();
+            System.out.println("ADVIEW : DONE");
+        }else
+            System.out.println("ADVIEW : NULL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
