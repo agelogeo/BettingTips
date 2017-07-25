@@ -225,13 +225,13 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
             loadInterstitialAd();
-        }/*else if (id == R.id.nav_stats) {
-            fragment = new StatsFragment();
+        }else if (id == R.id.nav_guides) {
+            fragment = new GuideFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
-        } */else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_send) {
             if(shareActionProvider != null){
                 startActivity(createShareAppIntent());
                 Log.e(LOG_TAG, "intent set to share action provider ");
