@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity
 
         //adView = new AdView(this, getString(R.string.today_banner), AdSize.BANNER_320_50);
         if(CallHolder.getAdView()!=null){
-            adViewContainer.addView(CallHolder.getAdView());
             AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
             CallHolder.getAdView().loadAd();
+            adViewContainer.addView(CallHolder.getAdView());
             System.out.println("ADVIEW : DONE");
         }else
             System.out.println("ADVIEW : NULL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
@@ -225,13 +225,13 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
             loadInterstitialAd();
-        }else if (id == R.id.nav_stats) {
+        }/*else if (id == R.id.nav_stats) {
             fragment = new StatsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
-        } else if (id == R.id.nav_send) {
+        } */else if (id == R.id.nav_send) {
             if(shareActionProvider != null){
                 startActivity(createShareAppIntent());
                 Log.e(LOG_TAG, "intent set to share action provider ");

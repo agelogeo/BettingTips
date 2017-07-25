@@ -68,9 +68,10 @@ public class Splashscreen extends Activity {
         System.out.println("----------------------------------------------------------------/ Start : "+System.currentTimeMillis());
 
 
-        getStats();
-        getStandardToday(); // Contains SplashScreen.finish
+        //getStats();
+
         getAltToday();
+        getStandardToday(); // Contains SplashScreen.finish
         getBonusToday();
         getStandardHistory();
         getAltHistory();
