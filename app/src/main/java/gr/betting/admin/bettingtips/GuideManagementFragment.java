@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -41,11 +42,12 @@ public class GuideManagementFragment extends Fragment  {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
-        View v = inflater.inflate(R.layout.info_layout, null);
+        View v = inflater.inflate(R.layout.guide_layout, null);
 
-        this.getActivity().setTitle(getString(R.string.nav_about));
-        TextView version = (TextView) v.findViewById(R.id.version);
-        version.setText(" "+BuildConfig.VERSION_NAME);
+        WebView view = (WebView) v.findViewById(R.id.my_web);
+        view.getSettings().setJavaScriptEnabled(true);
+        view.loadUrl("file:///android_asset/management.html");
+
 
         return v;
     }

@@ -38,15 +38,15 @@ import java.util.ArrayList;
  * Created by Admin on 19/6/2017.
  */
 
-public class GuideStrategiesFragment extends Fragment  {
+public class GuideOverOneFragment extends Fragment  {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
-        View v = inflater.inflate(R.layout.guide_strategies_layout, null);
+        View v = inflater.inflate(R.layout.guide_layout, null);
 
         WebView view = (WebView) v.findViewById(R.id.my_web);
         view.getSettings().setJavaScriptEnabled(true);
-        view.loadUrl("file:///android_asset/index.html");
+        view.loadUrl("file:///android_asset/over1.html");
 
 
         return v;
