@@ -78,7 +78,6 @@
 
     <string name="facebook_app_id" translatable="false">314020665687947</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb314020665687947</string>
-    <string name="betting_guide">Betting Guide</string>
 
 
 </resources>
