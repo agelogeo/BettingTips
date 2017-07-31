@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity
 
         //adView = new AdView(this, getString(R.string.today_banner), AdSize.BANNER_320_50);
         if(CallHolder.getAdView()!=null){
-            AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
-            CallHolder.getAdView().loadAd();
             adViewContainer.addView(CallHolder.getAdView());
             System.out.println("ADVIEW : DONE");
         }else
@@ -65,11 +63,8 @@ public class MainActivity extends AppCompatActivity
 
 
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
 
         AskRating();
 

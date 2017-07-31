@@ -24,6 +24,7 @@ public class GuideFragment extends Fragment  {
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.replace(R.id.content_main2, childFragment).commit();
 
+        this.getActivity().setTitle(getString(R.string.nav_guide));
         TabLayout tabs = (TabLayout) v.findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("Over 1.5"));
         tabs.addTab(tabs.newTab().setText("Over 0.5"));

@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.ads.AdSettings;
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
 
@@ -48,7 +49,9 @@ public class Splashscreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
 
+        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
         CallHolder.setAdView(new AdView(getApplicationContext(), getString(R.string.today_banner), AdSize.BANNER_320_50));
+        CallHolder.getAdView().loadAd();
         CallHolder.setCalendar(Calendar.getInstance());
         StartAnimations();
     }
@@ -71,8 +74,8 @@ public class Splashscreen extends Activity {
         //getStats();
 
         getAltToday();
-        getStandardToday(); // Contains SplashScreen.finish
         getBonusToday();
+        getStandardToday(); // Contains SplashScreen.finish
         getStandardHistory();
         getAltHistory();
         getBonusHistory();
