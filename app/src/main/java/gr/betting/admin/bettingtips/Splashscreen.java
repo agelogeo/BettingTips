@@ -49,7 +49,7 @@ public class Splashscreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
 
-        AdSettings.addTestDevice("8801a968cdfe4596dc07c8ed286cc68a");
+        AdSettings.addTestDevice("1a423b3fe2e8ab23617f457578f1ff44");
         CallHolder.setAdView(new AdView(getApplicationContext(), getString(R.string.today_banner), AdSize.BANNER_320_50));
         CallHolder.getAdView().loadAd();
         CallHolder.setCalendar(Calendar.getInstance());
