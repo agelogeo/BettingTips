@@ -41,4 +41,6 @@
     <string name="info_message"><b>Daily Betting Tips</b> contiene algunos consejos útiles sobre apostar.<b> Por si acaso, querríamos aclarar que no tomamos ninguna responsabilidad sobre los resultados de las apuestas.</b>Somos, simplemente, un grupo de personas que son aficionados al fútbol y tienen unos conocimientos sobre apostar.</string>
     <string name="info_message2">Nuestro objetivo es ganar algo de lucro. Querríamos desearles a todos buena suerte y agradecerles por su apoyo y sus comentarios.<b>\nPara cualquier pregunta sobre la aplicación no dude en comunicárnosla por el corréo electrónico siguiente: dailybettingapp@gmail.com</b></string>
 
+
+    <string name="ok" >Bueno</string>
 </resources>

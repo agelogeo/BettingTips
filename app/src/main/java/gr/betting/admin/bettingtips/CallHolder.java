@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import com.facebook.ads.AdView;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -25,6 +26,15 @@ public class  CallHolder {
     private static String stats;
     private static AdView adView;
     private static Calendar calendar;
+    private static String message ;
+
+    public static String getMessage() {
+        return message;
+    }
+
+    public static void setMessage(String message) {
+        CallHolder.message = message;
+    }
 
     public static Calendar getCalendar() {
         return calendar;

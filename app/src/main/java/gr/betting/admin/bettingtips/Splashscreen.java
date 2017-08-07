@@ -72,10 +72,10 @@ public class Splashscreen extends Activity {
 
 
         //getStats();
-
+        getMessage();
         getAltToday();
-        getBonusToday();
         getStandardToday(); // Contains SplashScreen.finish
+        getBonusToday();
         getStandardHistory();
         getAltHistory();
         getBonusHistory();
@@ -228,6 +228,59 @@ public class Splashscreen extends Activity {
                 startActivity(intent);
                 Splashscreen.this.finish();
                 System.out.println("----------------------------------------------------------------/ End : "+System.currentTimeMillis());
+            }
+        }.execute();
+    }
+
+    public void getMessage(){
+        //Message Dialog
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected void onPreExecute() {
+            }
+
+            protected String doInBackground(Void... urls) {
+                try {
+                    String SheetID = getString(R.string.sheet_id);
+                    String SheetName = getString(R.string.message);
+                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+
+
+                    System.out.println(link);
+
+                    URL url = new URL(link);
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    try {
+                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                        StringBuilder stringBuilder = new StringBuilder();
+                        String line;
+                        while ((line = bufferedReader.readLine()) != null) {
+                            stringBuilder.append(line).append("\n");
+                        }
+                        bufferedReader.close();
+
+                        return stringBuilder.toString();
+                    } finally {
+                        urlConnection.disconnect();
+                    }
+                } catch (Exception e) {
+                    System.out.println("ERROR : doInBackground");
+                    //loadingDialog.dismiss();
+                    Splashscreen.this.finish();
+                    return null;
+                }
+            }
+
+            protected void onPostExecute(final String response) {
+                if(response!=null){
+                    if (!response.contains("The coordinates or dimensions of the range are invalid.")) {
+                        CallHolder.setMessage(response);
+                        Log.e("MESSAGE", response);
+                    }else{
+                        Log.e("MESSAGE","MESSAGE : NULL");
+                    }
+                }
             }
         }.execute();
     }

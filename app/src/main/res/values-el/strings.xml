@@ -35,6 +35,7 @@
     <string name="cancel">Άκυρο</string>
     <string name="rate_it">Θα το κάνω</string>
 
+
     <!-- Stats -->
     <string name="stats_title">Στατιστικά</string>
     <string name="stats_total">Συνολικές προτάσεις :</string>
@@ -44,4 +45,7 @@
     <string name="first_odd">Απόδοση &lt; 1.50</string>
     <string name="mid_odd">1.50 &lt; Απόδοση &lt; 2.00</string>
     <string name="right_odd">Απόδοση &gt; 2.00</string>
+
+
+    <string name="ok">Εντάξει</string>
 </resources>
