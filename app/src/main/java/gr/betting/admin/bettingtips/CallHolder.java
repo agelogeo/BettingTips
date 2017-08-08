@@ -1,5 +1,6 @@
 package gr.betting.admin.bettingtips;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -27,6 +28,16 @@ public class  CallHolder {
     private static AdView adView;
     private static Calendar calendar;
     private static String message ;
+    private static Boolean show_ads;
+    private static SharedPreferences app_preferences;
+
+    public static SharedPreferences getApp_preferences() {
+        return app_preferences;
+    }
+
+    public static void setApp_preferences(SharedPreferences app_preferences) {
+        CallHolder.app_preferences = app_preferences;
+    }
 
     public static String getMessage() {
         return message;

@@ -56,16 +56,20 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Get the app's shared preferences
+        CallHolder.setApp_preferences(PreferenceManager.getDefaultSharedPreferences(this));
+
         RelativeLayout adViewContainer = (RelativeLayout) findViewById(R.id.adViewContainer);
 
-        //adView = new AdView(this, getString(R.string.today_banner), AdSize.BANNER_320_50);
-        if(CallHolder.getAdView()!=null){
-            adViewContainer.addView(CallHolder.getAdView());
-            System.out.println("ADVIEW : DONE");
-        }else
-            System.out.println("ADVIEW : NULL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
-
+        if(CallHolder.getApp_preferences().getBoolean("show_ads",true)){
+            if(CallHolder.getAdView()!=null){
+                adViewContainer.addView(CallHolder.getAdView());
+                System.out.println("ADVIEW : DONE");
+            }else
+                System.out.println("ADVIEW : NULL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        }else{
+            adViewContainer.setVisibility(View.GONE);
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
