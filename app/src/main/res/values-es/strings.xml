@@ -8,6 +8,8 @@
     <string name="nav_about">Sobre nosotros</string>
     <string name="nav_send">Invite a un amigo</string>
     <string name="nav_social">Más</string>
+    <string name="nav_support">Αpoyarnos</string>
+    <string name="nav_donate">Hacer una donación</string>
     <string name="nav_feedback">Evaluación de la aplicación</string>
     <string name="yes">Sí</string>
     <string name="no">No</string>

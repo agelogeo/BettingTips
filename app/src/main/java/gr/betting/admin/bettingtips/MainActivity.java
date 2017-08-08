@@ -252,7 +252,19 @@ public class MainActivity extends AppCompatActivity
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_donate) {
+            final String paypallink = "https://www.paypal.me/agelogeo";
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse(paypallink)));
+            } catch (android.content.ActivityNotFoundException anfe) {
+                startActivity(new Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse(paypallink)));
+            }
+        } else if (id == R.id.nav_support) {
+
+        }else if (id == R.id.nav_send) {
             if(shareActionProvider != null){
                 startActivity(createShareAppIntent());
                 Log.e(LOG_TAG, "intent set to share action provider ");
