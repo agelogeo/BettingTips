@@ -28,7 +28,7 @@
     <string name="nav_bonus" translatable="true">Bonus Tips</string>
     <string name="nav_guide" translatable="true">Betting Guide</string>
     <string name="nav_social" translatable="true">More</string>
-    <string name="nav_feedback" translatable="true">Give us your feedback</string>
+    <string name="nav_feedback" translatable="true">Rate our app</string>
     <string name="nav_support" translatable="true">Support Us</string>
     <string name="nav_donate" translatable="true">Donate</string>
     <string name="nav_send" translatable="true">Invite your friend</string>

@@ -12,13 +12,13 @@ import android.widget.TextView;
  * Created by Admin on 19/6/2017.
  */
 
-public class InfoFragment extends Fragment {
+public class SupportFragment extends Fragment {
         @Nullable
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
-            View v = inflater.inflate(R.layout.info_layout, null);
+            View v = inflater.inflate(R.layout.support_layout, null);
 
-            this.getActivity().setTitle(getString(R.string.nav_about));
+            this.getActivity().setTitle(getString(R.string.nav_support));
             TextView version = (TextView) v.findViewById(R.id.version);
             version.setText(" "+BuildConfig.VERSION_NAME);
 

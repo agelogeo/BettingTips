@@ -18,12 +18,9 @@
             android:id="@+id/nav_guides"
             android:icon="@drawable/ic_speaker_notes_black_24dp"
             android:title="@string/nav_guide" />
-
-
     </group>
 
-    <item android:title="@string/nav_social">
-        <menu>
+    <group android:id="@+id/group2">
             <item
                 android:id="@+id/nav_feedback"
                 android:icon="@drawable/ic_loyalty_black_24dp"
@@ -34,6 +31,7 @@
                 android:title="@string/nav_donate" />
             <item
                 android:id="@+id/nav_support"
+                android:checkable="true"
                 android:icon="@drawable/ic_thumb_up_black_24dp"
                 android:title="@string/nav_support" />
             <item
@@ -46,7 +44,6 @@
                 android:id="@+id/nav_info"
                 android:icon="@drawable/ic_info_black_24dp"
                 android:title="@string/nav_about" />
-        </menu>
-    </item>
+    </group>
 
 </menu>

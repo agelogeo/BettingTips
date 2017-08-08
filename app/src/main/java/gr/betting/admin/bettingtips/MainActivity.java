@@ -263,7 +263,12 @@ public class MainActivity extends AppCompatActivity
                         Uri.parse(paypallink)));
             }
         } else if (id == R.id.nav_support) {
-
+            navigationView.setCheckedItem(R.id.nav_support);
+            fragment = new SupportFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
+            transaction.replace(R.id.mainFrame,fragment);
+            transaction.commit();
         }else if (id == R.id.nav_send) {
             if(shareActionProvider != null){
                 startActivity(createShareAppIntent());
