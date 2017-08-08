@@ -25,10 +25,10 @@ public class SupportFragment extends Fragment {
 
 
 
-            /*// Increment the counter
+            // Increment the counter
             SharedPreferences.Editor editor = CallHolder.getApp_preferences().edit();
             editor.putBoolean("show_ads",false);
-            editor.apply(); // Very important*/
+            editor.apply(); // Very important
 
             this.getActivity().setTitle(getString(R.string.nav_support));
             TextView version = (TextView) v.findViewById(R.id.version);

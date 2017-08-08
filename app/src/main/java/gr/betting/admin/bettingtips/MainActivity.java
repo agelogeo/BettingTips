@@ -223,14 +223,16 @@ public class MainActivity extends AppCompatActivity
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
-            loadInterstitialAd();
+            if(CallHolder.getApp_preferences().getBoolean("show_ads",true))
+                loadInterstitialAd();
         } else if (id == R.id.nav_old_tips) {
             fragment = new HistoryFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
-            loadInterstitialAd();
+            if(CallHolder.getApp_preferences().getBoolean("show_ads",true))
+                loadInterstitialAd();
         } else if (id == R.id.nav_feedback) {
             final String appName = getApplicationContext().getPackageName();
             try {
@@ -249,7 +251,8 @@ public class MainActivity extends AppCompatActivity
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
-            loadInterstitialAd();
+            if(CallHolder.getApp_preferences().getBoolean("show_ads",true))
+                loadInterstitialAd();
         }else if (id == R.id.nav_guides) {
             fragment = new GuideFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
