@@ -50,8 +50,8 @@ public class SupportFragment extends Fragment{
                 @Override
                 public void onClick(View v) {
                     try {
-                        mHelper.launchPurchaseFlow(getActivity(), ITEM_SKU, 10001,
-                                mPurchaseFinishedListener, "mypurchasetoken");
+                        mHelper.launchPurchaseFlow(getActivity(), ITEM_SKU, 10002,
+                                mPurchaseFinishedListener, "mypurchasetoken3");
                     } catch (IabHelper.IabAsyncInProgressException e) {
                         e.printStackTrace();
                     }
@@ -112,4 +112,15 @@ public class SupportFragment extends Fragment{
 
         }
     };
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mHelper != null) try {
+            mHelper.dispose();
+        } catch (IabHelper.IabAsyncInProgressException e) {
+            e.printStackTrace();
+        }
+        mHelper = null;
+    }
 }
