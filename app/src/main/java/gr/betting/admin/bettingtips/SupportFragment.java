@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import gr.betting.admin.bettingtips.util.IabHelper;
 import gr.betting.admin.bettingtips.util.IabResult;
+import gr.betting.admin.bettingtips.util.Inventory;
 import gr.betting.admin.bettingtips.util.Purchase;
 
 /**
@@ -28,7 +29,7 @@ public class SupportFragment extends Fragment{
     private Button buyButton;
 
     IabHelper mHelper;
-    static final String ITEM_SKU = "android.test.purchased";
+    static final String ITEM_SKU = "com.example.vip_donation";
         @Nullable
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
@@ -50,8 +51,8 @@ public class SupportFragment extends Fragment{
                 @Override
                 public void onClick(View v) {
                     try {
-                        mHelper.launchPurchaseFlow(getActivity(), ITEM_SKU, 10002,
-                                mPurchaseFinishedListener, "mypurchasetoken3");
+                        mHelper.launchPurchaseFlow(getActivity(), ITEM_SKU, 10001,
+                                mPurchaseFinishedListener, "mypurchasetoken");
                     } catch (IabHelper.IabAsyncInProgressException e) {
                         e.printStackTrace();
                     }
@@ -105,13 +106,52 @@ public class SupportFragment extends Fragment{
                 // Handle error
                 return;
             }
-            /*else if (purchase.getSku().equals(ITEM_SKU)) {
+            else if (purchase.getSku().equals(ITEM_SKU)) {
                 consumeItem();
                 buyButton.setEnabled(false);
-            }*/
+            }
 
         }
     };
+
+    public void consumeItem() {
+        try {
+            mHelper.queryInventoryAsync(mReceivedInventoryListener);
+        } catch (IabHelper.IabAsyncInProgressException e) {
+            e.printStackTrace();
+        }
+    }
+
+    IabHelper.QueryInventoryFinishedListener mReceivedInventoryListener
+            = new IabHelper.QueryInventoryFinishedListener() {
+        public void onQueryInventoryFinished(IabResult result,
+                                             Inventory inventory) {
+
+            if (result.isFailure()) {
+                // Handle failure
+            } else {
+                try {
+                    mHelper.consumeAsync(inventory.getPurchase(ITEM_SKU),
+                            mConsumeFinishedListener);
+                } catch (IabHelper.IabAsyncInProgressException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    };
+
+    IabHelper.OnConsumeFinishedListener mConsumeFinishedListener =
+            new IabHelper.OnConsumeFinishedListener() {
+                public void onConsumeFinished(Purchase purchase,
+                                              IabResult result) {
+
+                    if (result.isSuccess()) {
+                        clickButton.setEnabled(true);
+                    } else {
+                        // handle error
+                    }
+                }
+            };
 
     @Override
     public void onDestroy() {
