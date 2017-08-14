@@ -9,21 +9,53 @@
     tools:context=".MainActivity">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="buy"
-        android:id="@+id/buyButton"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="buyClick" />
+        android:text="Test"
+        android:id="@+id/testButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/friendlyButton"
+        android:layout_alignStart="@+id/friendlyButton"
+        android:layout_marginTop="71dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="click"
-        android:id="@+id/clickButton"
-        android:layout_above="@+id/buyButton"
+        android:text="Friendly"
+        android:id="@+id/friendlyButton"
+        android:layout_below="@+id/testButton"
+        android:layout_alignLeft="@+id/goldButton"
+        android:layout_alignStart="@+id/goldButton"
+        android:layout_marginTop="26dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gold"
+        android:id="@+id/goldButton"
+        android:layout_below="@+id/friendlyButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="83dp"/>
+        android:layout_marginTop="39dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VIP"
+        android:id="@+id/vipButton"
+        android:layout_below="@+id/goldButton"
+        android:layout_alignLeft="@+id/goldButton"
+        android:layout_alignStart="@+id/goldButton"
+        android:layout_marginTop="27dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sub"
+        android:id="@+id/subButton"
+        android:layout_below="@+id/vipButton"
+        android:layout_alignLeft="@+id/vipButton"
+        android:layout_alignStart="@+id/vipButton"
+        android:layout_marginTop="39dp" />
+
 
 </RelativeLayout>

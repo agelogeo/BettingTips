@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.android.vending.billing.IInAppBillingService;
 import com.facebook.ads.AdView;
 
 import java.io.InputStream;
@@ -30,6 +31,33 @@ public class  CallHolder {
     private static String message ;
     private static Boolean show_ads;
     private static SharedPreferences app_preferences;
+    private static  ArrayList<String> inappresponseList;
+    private static  ArrayList<String> subsresponseList;
+    private static IInAppBillingService mService;
+
+    public static IInAppBillingService getmService() {
+        return mService;
+    }
+
+    public static void setmService(IInAppBillingService mService) {
+        CallHolder.mService = mService;
+    }
+
+    public static ArrayList<String> getInappresponseList() {
+        return inappresponseList;
+    }
+
+    public static void setInappresponseList(ArrayList<String> inappresponseList) {
+        CallHolder.inappresponseList = inappresponseList;
+    }
+
+    public static ArrayList<String> getSubsresponseList() {
+        return subsresponseList;
+    }
+
+    public static void setSubsresponseList(ArrayList<String> subsresponseList) {
+        CallHolder.subsresponseList = subsresponseList;
+    }
 
     public static SharedPreferences getApp_preferences() {
         return app_preferences;

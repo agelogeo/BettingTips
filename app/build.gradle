@@ -8,8 +8,8 @@ android {
         applicationId "gr.betting.admin.bettingtips"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 22
-        versionName "3.2"
+        versionCode 26
+        versionName "3.2.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 

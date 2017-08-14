@@ -1,14 +1,17 @@
 package gr.betting.admin.bettingtips;
 
+import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -21,6 +24,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
+import android.telecom.Call;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -39,13 +43,14 @@ import org.json.JSONObject;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, InterstitialAdListener {
+        implements NavigationView.OnNavigationItemSelectedListener, InterstitialAdListener,ServiceConnection {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     private int id;
@@ -54,11 +59,21 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     private AdView adView;
 
-
+    IInAppBillingService mService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent serviceIntent =
+                new Intent("com.android.vending.billing.InAppBillingService.BIND");
+        serviceIntent.setPackage("com.android.vending");
+        bindService(serviceIntent, this, Context.BIND_AUTO_CREATE);
+        System.out.println("SERVICE STARTED");
+
+
+
+
 
 
         // Get the app's shared preferences
@@ -120,6 +135,112 @@ public class MainActivity extends AppCompatActivity
 
         }
     }
+
+    @Override
+    public void onServiceConnected(ComponentName name, IBinder service) {
+
+        mService = IInAppBillingService.Stub.asInterface(service);
+        CallHolder.setmService(mService);
+
+        ArrayList<String> skuList = new ArrayList<String> ();
+        skuList.add("friendly_donation");
+        skuList.add("gold_donation");
+        skuList.add("vip_donation");
+        skuList.add("subscriber");
+        Bundle querySkus = new Bundle();
+        querySkus.putStringArrayList("ITEM_ID_LIST", skuList);
+
+        try {
+            Bundle skuDetails = mService.getSkuDetails(3,
+                    getPackageName(), "inapp", querySkus);
+
+            int response = skuDetails.getInt("RESPONSE_CODE");
+            if (response == 0) {
+                ArrayList<String> responseList
+                        = skuDetails.getStringArrayList("DETAILS_LIST");
+
+                for (String thisResponse : responseList) {
+                    JSONObject object = new JSONObject(thisResponse);
+                    String sku = object.getString("productId");
+                    String price = object.getString("price");
+                    System.out.println("----/ "+sku+" "+price+"/----");
+
+                }
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            Bundle skuDetails = mService.getSkuDetails(3,
+                    getPackageName(), "subs", querySkus);
+
+            int response = skuDetails.getInt("RESPONSE_CODE");
+            if (response == 0) {
+                ArrayList<String> responseList
+                        = skuDetails.getStringArrayList("DETAILS_LIST");
+
+                CallHolder.setSubsresponseList(responseList);
+
+                for (String thisResponse : responseList) {
+                    JSONObject object = new JSONObject(thisResponse);
+                    String sku = object.getString("productId");
+                    String price = object.getString("price");
+                    System.out.println("----/ "+sku+" "+price+"/----");
+
+                }
+
+
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            Bundle ownedItems = mService.getPurchases(3, getPackageName(), "inapp", null);
+            int response = ownedItems.getInt("RESPONSE_CODE");
+            if (response == 0) {
+                ArrayList<String> ownedSkus =
+                        ownedItems.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
+                ArrayList<String> purchaseDataList =
+                        ownedItems.getStringArrayList("INAPP_PURCHASE_DATA_LIST");
+                ArrayList<String> signatureList =
+                        ownedItems.getStringArrayList("INAPP_DATA_SIGNATURE_LIST");
+                String continuationToken =
+                        ownedItems.getString("INAPP_CONTINUATION_TOKEN");
+
+                for (int i = 0; i < purchaseDataList.size(); ++i) {
+                    String purchaseData = purchaseDataList.get(i);
+                    String signature = signatureList.get(i);
+                    String sku = ownedSkus.get(i);
+
+                    System.out.println(" -> "+purchaseData+" "+signature+" "+sku);
+
+                    // do something with this purchase information
+                    // e.g. display the updated list of products owned by user
+                }
+
+                // if continuationToken != null, call getPurchases ag
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+
+
+        System.out.println("SERVICE CONNECTED");
+    }
+
+    @Override
+    public void onServiceDisconnected(ComponentName name) {
+        Log.e("INAPP","SERVICE DISCONNECTED");
+        mService = null;
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -274,14 +395,14 @@ public class MainActivity extends AppCompatActivity
                         Intent.ACTION_VIEW,
                         Uri.parse(paypallink)));
             }
-        } /*else if (id == R.id.nav_support) {
+        } else if (id == R.id.nav_support) {
             navigationView.setCheckedItem(R.id.nav_support);
             fragment = new SupportFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
-        }*/else if (id == R.id.nav_send) {
+        }else if (id == R.id.nav_send) {
             if(shareActionProvider != null){
                 startActivity(createShareAppIntent());
                 Log.e(LOG_TAG, "intent set to share action provider ");
@@ -313,7 +434,11 @@ public class MainActivity extends AppCompatActivity
         } catch (Exception e) {
             e.printStackTrace();
         }
+        if (mService != null) {
+            unbindService(this);
+        }
     }
+
 
     public static void trimCache(Context context) {
         try {
@@ -446,6 +571,8 @@ public class MainActivity extends AppCompatActivity
         interstitialAd.destroy();
 
     }
+
+
 
 
     /**
