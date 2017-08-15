@@ -18,7 +18,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/tip_img"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentTop="false"
@@ -38,10 +38,10 @@
             android:paddingLeft="5dp">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tip_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/imageView5"
+                android:layout_alignTop="@+id/tip_img"
                 android:layout_centerHorizontal="true"
                 android:layout_weight="1"
                 android:gravity="bottom"
@@ -76,7 +76,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/textView"
+            android:layout_below="@+id/tip_title"
             android:layout_centerHorizontal="true"
             android:background="@color/common_google_signin_btn_text_dark_default"
             android:padding="5dp"
@@ -97,7 +97,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/textView"
+            android:layout_below="@+id/tip_title"
             android:layout_centerHorizontal="true"
             android:background="@color/common_google_signin_btn_text_dark_default"
             android:padding="5dp"
