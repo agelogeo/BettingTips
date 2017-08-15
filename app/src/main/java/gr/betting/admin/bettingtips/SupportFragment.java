@@ -75,7 +75,7 @@ public class SupportFragment extends Fragment {
                     Bundle buyIntentBundle = null;
                     try {
                         buyIntentBundle = CallHolder.getmService().getBuyIntent(3,getActivity().getPackageName(),
-                                "vip_donation", "inapp", "");
+                                "gold_donation", "inapp", "");
                         PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
 
                         getActivity().startIntentSenderForResult(pendingIntent.getIntentSender(),
