@@ -1,255 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorButtonNormal"
-    android:orientation="vertical">
-
+    android:background="?attr/colorButtonNormal">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/rectangleshape"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/tip_img"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="false"
-            android:layout_centerHorizontal="false"
-            android:layout_marginBottom="5dp"
-            android:background="@color/common_google_signin_btn_text_dark_default"
-            android:padding="5dp"
-            app:srcCompat="@drawable/tip" />
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@color/common_google_signin_btn_text_dark_default"
-            android:orientation="vertical"
-            android:paddingLeft="5dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rectangleshape"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tip_title"
+            <ImageView
+                android:id="@+id/tip_img"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="false"
+                android:layout_centerHorizontal="false"
+                android:layout_marginBottom="5dp"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:padding="5dp"
+                app:srcCompat="@drawable/tip" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tip_img"
-                android:layout_centerHorizontal="true"
-                android:layout_weight="1"
-                android:text="Friendly Donation"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:orientation="vertical"
+                android:paddingLeft="5dp">
 
-            <TextView
-                android:id="@+id/tip_text1"
+                <TextView
+                    android:id="@+id/tip_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tip_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text="Friendly Donation"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tip_text1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/developername"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="- Leave a tip for our team"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <TextView
+                    android:id="@+id/tip_text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/developername"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="- Help us with a small donation"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <Button
+                    android:id="@+id/friendlyButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/main_footer_bet_color"
+                    android:text="leave a tip" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rectangleshape"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/sub_img"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="false"
+                android:layout_centerHorizontal="false"
+                android:layout_marginBottom="5dp"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:padding="5dp"
+                app:srcCompat="@drawable/sub_img" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/developername"
-                android:layout_weight="1"
-                android:gravity="top"
-                android:text="- Leave a tip for our team"
-                android:textSize="18sp"
-                android:textStyle="normal|bold|italic" />
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:orientation="vertical"
+                android:paddingLeft="5dp">
 
-            <TextView
-                android:id="@+id/tip_text2"
+                <TextView
+                    android:id="@+id/sub_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tip_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text="Become a subscriber"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_stext1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/developername"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="- 12 months subscription"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <TextView
+                    android:id="@+id/sub_stext2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/developername"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="- Remove Ads"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <TextView
+                    android:id="@+id/sub_stext3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/developername"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="- Subscriber tips coming soon"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <Button
+                    android:id="@+id/subButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/main_header_bet_color"
+                    android:text="Join us" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rectangleshape"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/vip_img"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="false"
+                android:layout_centerHorizontal="false"
+                android:layout_marginBottom="5dp"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:padding="5dp"
+                app:srcCompat="@drawable/vip" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/developername"
-                android:layout_weight="1"
-                android:gravity="top"
-                android:text="- Help us with a small donation"
-                android:textSize="18sp"
-                android:textStyle="normal|bold|italic" />
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:orientation="vertical"
+                android:paddingLeft="5dp">
 
-            <Button
-                android:id="@+id/friendlyButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/main_footer_bet_color"
-                android:text="leave a tip" />
+                <TextView
+                    android:id="@+id/vip_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tip_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text="VIP Member"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/vip_stext1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/developername"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="- Lifetime subscription"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <TextView
+                    android:id="@+id/vip_stext2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/developername"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="- Remove Ads"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <TextView
+                    android:id="@+id/vip_stext3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/developername"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="- Subscriber tips coming soon"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <Button
+                    android:id="@+id/vipButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/main_footer_bet_color"
+                    android:text="Purchase this item" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/rectangleshape"
-        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/sub_img"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="false"
-            android:layout_centerHorizontal="false"
-            android:layout_marginBottom="5dp"
-            android:background="@color/common_google_signin_btn_text_dark_default"
-            android:padding="5dp"
-            app:srcCompat="@drawable/sub_img" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@color/common_google_signin_btn_text_dark_default"
-            android:orientation="vertical"
-            android:paddingLeft="5dp">
-
-            <TextView
-                android:id="@+id/sub_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tip_img"
-                android:layout_centerHorizontal="true"
-                android:layout_weight="1"
-                android:text="Become a subscriber"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/sub_stext1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/developername"
-                android:layout_weight="1"
-                android:gravity="top"
-                android:text="- 12 months subscription"
-                android:textSize="18sp"
-                android:textStyle="normal|bold|italic" />
-
-            <TextView
-                android:id="@+id/sub_stext2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/developername"
-                android:layout_weight="1"
-                android:gravity="top"
-                android:text="- Remove Ads"
-                android:textSize="18sp"
-                android:textStyle="normal|bold|italic" />
-
-            <TextView
-                android:id="@+id/sub_stext3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/developername"
-                android:layout_weight="1"
-                android:gravity="top"
-                android:text="- Subscriber tips coming soon"
-                android:textSize="18sp"
-                android:textStyle="normal|bold|italic" />
-
-            <Button
-                android:id="@+id/subButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/main_header_bet_color"
-                android:text="Join us" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/rectangleshape"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/vip_img"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="false"
-            android:layout_centerHorizontal="false"
-            android:layout_marginBottom="5dp"
-            android:background="@color/common_google_signin_btn_text_dark_default"
-            android:padding="5dp"
-            app:srcCompat="@drawable/vip" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@color/common_google_signin_btn_text_dark_default"
-            android:orientation="vertical"
-            android:paddingLeft="5dp">
-
-            <TextView
-                android:id="@+id/vip_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tip_img"
-                android:layout_centerHorizontal="true"
-                android:layout_weight="1"
-                android:text="VIP Member"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/vip_stext1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/developername"
-                android:layout_weight="1"
-                android:gravity="top"
-                android:text="- Lifetime subscription"
-                android:textSize="18sp"
-                android:textStyle="normal|bold|italic" />
-
-            <TextView
-                android:id="@+id/vip_stext2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/developername"
-                android:layout_weight="1"
-                android:gravity="top"
-                android:text="- Remove Ads"
-                android:textSize="18sp"
-                android:textStyle="normal|bold|italic" />
-
-            <TextView
-                android:id="@+id/vip_stext3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/developername"
-                android:layout_weight="1"
-                android:gravity="top"
-                android:text="- Subscriber tips coming soon"
-                android:textSize="18sp"
-                android:textStyle="normal|bold|italic" />
-
-            <Button
-                android:id="@+id/vipButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/main_footer_bet_color"
-                android:text="Purchase this item" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+</ScrollView>
