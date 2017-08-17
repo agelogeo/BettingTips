@@ -55,6 +55,10 @@
     <string name="ok" translatable="true">Ok</string>
 
 
+    <!-- In App Biling -->
+    <string name="subscriber" translatable="false">sgiorgos</string>
+    <string name="friendly" translatable="false">fgiorgos</string>
+    <string name="vip" translatable="false">vgiorgos</string>
 
 
     <!-- Info fragment -->

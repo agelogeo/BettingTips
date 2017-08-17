@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.vending.billing.IInAppBillingService;
@@ -43,22 +44,50 @@ public class SupportFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
             View v = inflater.inflate(R.layout.support_layout, null);
 
-            friendlyButton = (Button)v.findViewById(R.id.friendlyButton);
-            vipButton = (Button)v.findViewById(R.id.vipButton);
-            subButton = (Button)v.findViewById(R.id.subButton);
+            if(CallHolder.getIsSubscriber()){
+                LinearLayout vip_member_layout = (LinearLayout) v.findViewById(R.id.vip_member_layout);
+                vip_member_layout.setVisibility(View.GONE);
+            }else{
+                vipButton = (Button)v.findViewById(R.id.vipButton);
 
+                vipButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Bundle buyIntentBundle = null;
+                        try {
+                            buyIntentBundle = CallHolder.getmService().getBuyIntent(3,getActivity().getPackageName(),
+                                    getString(R.string.vip), "inapp", "");
+                            PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
+
+                            getActivity().startIntentSenderForResult(pendingIntent.getIntentSender(),
+                                    1001, new Intent(), Integer.valueOf(0), Integer.valueOf(0),
+                                    Integer.valueOf(0));
+
+                            //int response = CallHolder.getmService().consumePurchase(3, getActivity().getPackageName(), token);
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        } catch (IntentSender.SendIntentException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+
+            friendlyButton = (Button)v.findViewById(R.id.friendlyButton);
             friendlyButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Bundle buyIntentBundle = null;
                     try {
                         buyIntentBundle = CallHolder.getmService().getBuyIntent(3,getActivity().getPackageName(),
-                                "friendly_donation", "inapp", "");
+                                getString(R.string.friendly), "inapp", "");
                         PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
 
                         getActivity().startIntentSenderForResult(pendingIntent.getIntentSender(),
                                 1001, new Intent(), Integer.valueOf(0), Integer.valueOf(0),
                                 Integer.valueOf(0));
+
+
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     } catch (IntentSender.SendIntentException e) {
@@ -67,35 +96,14 @@ public class SupportFragment extends Fragment {
                 }
             });
 
-
-
-            vipButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Bundle buyIntentBundle = null;
-                    try {
-                        buyIntentBundle = CallHolder.getmService().getBuyIntent(3,getActivity().getPackageName(),
-                                "gold_donation", "inapp", "");
-                        PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
-
-                        getActivity().startIntentSenderForResult(pendingIntent.getIntentSender(),
-                                1001, new Intent(), Integer.valueOf(0), Integer.valueOf(0),
-                                Integer.valueOf(0));
-                    } catch (RemoteException e) {
-                        e.printStackTrace();
-                    } catch (IntentSender.SendIntentException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
+            subButton = (Button)v.findViewById(R.id.subButton);
             subButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Bundle buyIntentBundle = null;
                     try {
                         buyIntentBundle = CallHolder.getmService().getBuyIntent(3,getActivity().getPackageName(),
-                                "subscriber", "subs", "");
+                                getString(R.string.subscriber), "subs", "");
                         PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
 
                         getActivity().startIntentSenderForResult(pendingIntent.getIntentSender(),
@@ -111,127 +119,10 @@ public class SupportFragment extends Fragment {
 
 
 
-
-
-            /*testButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        mHelper.launchPurchaseFlow(getActivity(), ITEM_SKU, 10001,
-                                mPurchaseFinishedListener, "mypurchasetoken");
-                    } catch (IabHelper.IabAsyncInProgressException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-
-
-            mHelper = new IabHelper(getContext(), license_key_one+license_key_two+license_key_three);
-
-            mHelper.startSetup(new
-                                       IabHelper.OnIabSetupFinishedListener() {
-                                           public void onIabSetupFinished(IabResult result)
-                                           {
-                                               if (!result.isSuccess()) {
-                                                   Log.e(TAG, "In-app Billing setup failed: " +
-                                                           result);
-                                               } else {
-                                                   Log.e(TAG, "In-app Billing is set up OK");
-                                               }
-                                           }
-                                       });
-*/
-
             this.getActivity().setTitle(getString(R.string.nav_support));
 
             return v;
-            /*
-            // Increment the counter
-            SharedPreferences.Editor editor = CallHolder.getApp_preferences().edit();
-            editor.putBoolean("show_ads",false);
-            editor.apply(); // Very important*/
         }
 
 
-
-
-        /*
-    @Override
-    public void onActivityResult(int requestCode, int resultCode,
-                                    Intent data)
-    {
-        if (!mHelper.handleActivityResult(requestCode,
-                resultCode, data)) {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
-
-    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener
-            = new IabHelper.OnIabPurchaseFinishedListener() {
-        public void onIabPurchaseFinished(IabResult result,
-                                          Purchase purchase)
-        {
-            if (result.isFailure()) {
-                // Handle error
-                return;
-            }
-            else if (purchase.getSku().equals(ITEM_SKU)) {
-                consumeItem();
-                testButton.setEnabled(false);
-            }
-
-        }
-    };
-
-    public void consumeItem() {
-        try {
-            mHelper.queryInventoryAsync(mReceivedInventoryListener);
-        } catch (IabHelper.IabAsyncInProgressException e) {
-            e.printStackTrace();
-        }
-    }
-
-    IabHelper.QueryInventoryFinishedListener mReceivedInventoryListener
-            = new IabHelper.QueryInventoryFinishedListener() {
-        public void onQueryInventoryFinished(IabResult result,
-                                             Inventory inventory) {
-
-            if (result.isFailure()) {
-                // Handle failure
-            } else {
-                try {
-                    mHelper.consumeAsync(inventory.getPurchase(ITEM_SKU),
-                            mConsumeFinishedListener);
-                } catch (IabHelper.IabAsyncInProgressException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    };
-
-    IabHelper.OnConsumeFinishedListener mConsumeFinishedListener =
-            new IabHelper.OnConsumeFinishedListener() {
-                public void onConsumeFinished(Purchase purchase,
-                                              IabResult result) {
-
-                    if (result.isSuccess()) {
-                        clickButton.setEnabled(true);
-                    } else {
-                        // handle error
-                    }
-                }
-            };
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (mHelper != null) try {
-            mHelper.dispose();
-        } catch (IabHelper.IabAsyncInProgressException e) {
-            e.printStackTrace();
-        }
-        mHelper = null;
-    }
-    */
 }

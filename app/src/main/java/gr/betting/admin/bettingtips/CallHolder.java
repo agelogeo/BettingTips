@@ -29,11 +29,19 @@ public class  CallHolder {
     private static AdView adView;
     private static Calendar calendar;
     private static String message ;
-    private static Boolean show_ads;
+    private static Boolean isSubscriber;
     private static SharedPreferences app_preferences;
     private static  ArrayList<String> inappresponseList;
     private static  ArrayList<String> subsresponseList;
     private static IInAppBillingService mService;
+
+    public static Boolean getIsSubscriber() {
+        return isSubscriber;
+    }
+
+    public static void setIsSubscriber(Boolean isSubscriber) {
+        CallHolder.isSubscriber = isSubscriber;
+    }
 
     public static IInAppBillingService getmService() {
         return mService;

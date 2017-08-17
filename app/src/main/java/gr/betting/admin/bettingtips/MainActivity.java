@@ -32,6 +32,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.android.vending.billing.IInAppBillingService;
 import com.facebook.ads.*;
@@ -142,11 +143,40 @@ public class MainActivity extends AppCompatActivity
         mService = IInAppBillingService.Stub.asInterface(service);
         CallHolder.setmService(mService);
 
+        try {
+            Bundle ownedItems = mService.getPurchases(3, getPackageName(), "inapp", null);
+            Bundle ownedSubs = mService.getPurchases(3, getPackageName(), "subs", null);
+
+            int response = ownedItems.getInt("RESPONSE_CODE");
+            int responseSubs = ownedItems.getInt("RESPONSE_CODE");
+            if (response == 0 && responseSubs == 0) {
+                ArrayList<String> ownedSkus =
+                        ownedItems.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
+
+                ArrayList<String> ownedSubsStringArrayList =
+                        ownedSubs.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
+
+                System.out.println("OWNED !!!!!!! :"+ownedSkus);
+                System.out.println("OWNED !!!!!!! :"+ownedSubsStringArrayList);
+
+                if(ownedSkus.contains(getString(R.string.vip)) || ownedSubsStringArrayList.contains(getString(R.string.subscriber))){
+                    CallHolder.setIsSubscriber(true);
+                    RelativeLayout adViewContainer = (RelativeLayout) findViewById(R.id.adViewContainer);
+                    adViewContainer.setVisibility(View.GONE);
+                }else{
+                    CallHolder.setIsSubscriber(false);
+                }
+            }
+
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+
         ArrayList<String> skuList = new ArrayList<String> ();
-        skuList.add("friendly_donation");
-        skuList.add("gold_donation");
-        skuList.add("vip_donation");
-        skuList.add("subscriber");
+        skuList.add(getString(R.string.friendly));
+        skuList.add(getString(R.string.vip));
+        skuList.add(getString(R.string.subscriber));
         Bundle querySkus = new Bundle();
         querySkus.putStringArrayList("ITEM_ID_LIST", skuList);
 
@@ -294,6 +324,37 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1001) {
+            int responseCode = data.getIntExtra("RESPONSE_CODE", 0);
+            String purchaseData = data.getStringExtra("INAPP_PURCHASE_DATA");
+            String dataSignature = data.getStringExtra("INAPP_DATA_SIGNATURE");
+
+            if (resultCode == RESULT_OK) {
+                try {
+                    JSONObject jo = new JSONObject(purchaseData);
+                    String sku = jo.getString("productId");
+                    if(sku.equals(getString(R.string.friendly))) {
+                        Toast.makeText(this, "You have bought the " + sku + ". Excellent choice,adventurer!", Toast.LENGTH_LONG).show();
+
+                        int response = mService.consumePurchase(3, getPackageName(), jo.getString("purchaseToken"));
+                    }
+                    else{
+                        Toast.makeText(this, "You have bought the " + sku + ".", Toast.LENGTH_LONG).show();
+
+                    }
+                }
+                catch (JSONException e) {
+                    //alert("Failed to parse purchase data.");
+                    e.printStackTrace();
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
@@ -349,7 +410,7 @@ public class MainActivity extends AppCompatActivity
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
-            if(CallHolder.getApp_preferences().getBoolean("show_ads",true))
+            if(CallHolder.getIsSubscriber())
                 loadInterstitialAd();
         } else if (id == R.id.nav_old_tips) {
             fragment = new HistoryFragment();
@@ -357,7 +418,7 @@ public class MainActivity extends AppCompatActivity
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
-            if(CallHolder.getApp_preferences().getBoolean("show_ads",true))
+            if(CallHolder.getIsSubscriber())
                 loadInterstitialAd();
         } else if (id == R.id.nav_feedback) {
             final String appName = getApplicationContext().getPackageName();
@@ -377,7 +438,7 @@ public class MainActivity extends AppCompatActivity
             transaction.setCustomAnimations(R.anim.nav_enter,R.anim.nav_exit);
             transaction.replace(R.id.mainFrame,fragment);
             transaction.commit();
-            if(CallHolder.getApp_preferences().getBoolean("show_ads",true))
+            if(CallHolder.getIsSubscriber())
                 loadInterstitialAd();
         }else if (id == R.id.nav_guides) {
             fragment = new GuideFragment();

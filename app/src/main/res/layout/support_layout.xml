@@ -12,6 +12,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/friendly_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -95,6 +96,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/sub_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -189,6 +191,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/vip_member_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
