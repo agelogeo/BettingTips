@@ -53,7 +53,7 @@
                         android:layout_alignTop="@+id/tip_img"
                         android:layout_centerHorizontal="true"
                         android:layout_weight="1"
-                        android:text="Friendly Donation"
+                        android:text="@string/f_title"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
@@ -64,7 +64,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="- Leave a tip for our team"
+                        android:text="@string/f_text1"
                         android:textSize="18sp"
                         android:textStyle="normal|bold|italic" />
 
@@ -75,7 +75,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="- Help us with a small donation"
+                        android:text="@string/f_text2"
                         android:textSize="18sp"
                         android:textStyle="normal|bold|italic" />
 
@@ -91,7 +91,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/background_light"
                 android:backgroundTint="@color/main_footer_bet_color"
-                android:text="leave a tip" />
+                android:text="@string/f_button" />
 
         </LinearLayout>
 
@@ -137,7 +137,7 @@
                         android:layout_alignTop="@+id/tip_img"
                         android:layout_centerHorizontal="true"
                         android:layout_weight="1"
-                        android:text="Become a subscriber"
+                        android:text="@string/s_title"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
@@ -148,7 +148,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="- 12 months subscription"
+                        android:text="@string/s_text1"
                         android:textSize="18sp"
                         android:textStyle="normal|bold|italic" />
 
@@ -159,7 +159,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="- Remove Ads"
+                        android:text="@string/s_text2"
                         android:textSize="18sp"
                         android:textStyle="normal|bold|italic" />
 
@@ -170,7 +170,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="- Subscriber tips coming soon"
+                        android:text="@string/s_text3"
                         android:textSize="18sp"
                         android:textStyle="normal|bold|italic" />
 
@@ -186,7 +186,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/background_light"
                 android:backgroundTint="@color/main_header_bet_color"
-                android:text="Join Us" />
+                android:text="@string/s_button" />
 
         </LinearLayout>
 
@@ -232,7 +232,7 @@
                         android:layout_alignTop="@+id/tip_img"
                         android:layout_centerHorizontal="true"
                         android:layout_weight="1"
-                        android:text="VIP Member"
+                        android:text="@string/v_title"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
@@ -243,7 +243,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="- Lifetime subscription"
+                        android:text="@string/v_text1"
                         android:textSize="18sp"
                         android:textStyle="normal|bold|italic" />
 
@@ -254,7 +254,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="- Remove Ads"
+                        android:text="@string/v_text2"
                         android:textSize="18sp"
                         android:textStyle="normal|bold|italic" />
 
@@ -265,7 +265,7 @@
                         android:layout_below="@+id/developername"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:text="- Subscriber tips coming soon"
+                        android:text="@string/v_text3"
                         android:textSize="18sp"
                         android:textStyle="normal|bold|italic" />
 
@@ -281,7 +281,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/background_light"
                 android:backgroundTint="@color/main_footer_bet_color"
-                android:text="Purchase this item" />
+                android:text="@string/v_button" />
 
         </LinearLayout>
 
