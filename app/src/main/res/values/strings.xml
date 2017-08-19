@@ -60,6 +60,8 @@
     <string name="friendly" translatable="false">fgiorgos</string>
     <string name="vip" translatable="false">vgiorgos</string>
 
+    
+
 
     <!-- Info fragment -->
     <string name="info_message" translatable="true"><b>Daily Betting Tips</b> contains some useful tips about betting.<b> Just in case, we want to make it clear that we do not take any responsibility about the results of betting.</b>We are just a group of guys who are passionate about football and have some knowledge about betting.</string>

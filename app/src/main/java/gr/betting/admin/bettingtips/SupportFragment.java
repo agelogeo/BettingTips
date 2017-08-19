@@ -33,11 +33,7 @@ import gr.betting.admin.bettingtips.util.Purchase;
  */
 
 public class SupportFragment extends Fragment {
-    String license_key_one = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAilx49B8+wMZ6ZeTICJaTHZQQyMU+nVrO0mom3laf5/Jl9QTB9n5QcacG9wbeCuyJN392vUgaHk66Yy7mQgSB0qNl3pFAzlZfPGmC8BKNsVPm94JZ1Is2lS/";
-    String license_key_two = "X4Wq6Hkz3K0leG5R30/m9eS8IeGUbi/BmtHSP67GaLXetKrkKiQOE4NwuEqI9ooxaspEMgcRuJ0R+w2YfXZQrCITFB4AbS68vqf24dayQFqfd37OrMzkEEihVpdQvfH7Yz";
-    String license_key_three = "+IeTfKSCfu/KfYo93N2BOMmsyXS1MAg1rg/ZOA1A4x/dF3rQr03hZWm9VnnTt82KTgx61HoJzBdx7dZ9YasxwrA1zGSAQIDAQAB";
-    private static final String TAG = "bettingtips";
-    private Button friendlyButton,goldButton,vipButton,subButton;
+    private Button friendlyButton,vipButton,subButton;
 
         @Nullable
         @Override

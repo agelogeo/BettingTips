@@ -144,7 +144,6 @@ public class Splashscreen extends Activity {
             protected String doInBackground(Void... urls) {
                 try {
                     String SheetID = getString(R.string.sheet_id);
-                    ;
                     String SheetName = getString(R.string.andriko_today);
                     String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
 
