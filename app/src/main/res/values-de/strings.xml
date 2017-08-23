@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_settings">Einstellungen</string>
+    <string name="bonus_history">Verlauf</string>
+    <string name="bonus_today">Tipps für Heute</string>
+    <string name="loading_tips">Lädt</string>
+    <string name="nav_about">Über uns</string>
+    <string name="nav_bonus">Bonus Tipps</string>
+    <string name="nav_feedback">Bewertung der App</string>
+    <string name="nav_history">Verlauf</string>
+    <string name="nav_send">Diese App weiterempfehlen</string>
+    <string name="nav_social">Mehr</string>
+    <string name="nav_support">Unterstützten Sie uns</string>
+    <string name="nav_donate">Donate</string>
+    <string name="nav_guide">Wettenführung</string>
+    <string name="nav_today">Tipps für Heute</string>
+    <string name="navigation_drawer_close">Κλείσε το μενού</string>
+    <string name="navigation_drawer_open">Άνοιξε το μενού</string>
+    <string name="no">Nein</string>
+    <string name="please_wait">Bitten warten</string>
+    <string name="quit_message">Sind Sie sicher dass Sie die App verlassen wollen?</string>
+    <string name="quit_title">Exit</string>
+    <string name="share_message">Wenn Sie möchten könne Sie die App hier testen https://goo.gl/QcCauP</string>
+    <string name="sorry_text">Es tut uns leid, aber es gibt keine neue tips,\nVersuchen Sie es gleich wieder.</string>
+    <string name="tab_alternative">Alternativen</string>
+    <string name="tab_standard">Standard</string>
+    <string name="yes">Ya</string>
+
+    <string name="info_message" ><b>Daily Betting Tips</b> ist eine app mit Wetten prognosen für Fußballspiele.<b> In keiner ansicht tragen wir Haft für die Spielergebnissen </b> Wir sind nur ein paar Freunde die sich für Wetten und Fußball interessieren. </string>
+    <string name="info_message2" >Unser Ziel ist es ein bishen geld zu machen mit denn Wetten. Wir bedanken uns sehr für eure Unterstütztung und wünschen Ihnen gute Gewinne.<b>\n Für weitere Fragen oder Vorschläge können Sie uns eine e-mail senden unter: dailybettingapp@gmail.com</b></string>
+    <string name="build_version" >Software Version </string>
+
+    <string name="error_server" >Kein Internetzugang.</string>
+
+    <string name="we_need_your_help">Wir brauchen deine hilfe</string>
+    <string name="please_take_a_moment">Wir würden uns sehr freuen, wenn Sie ein bischen Zeit hätten unsere App zu bewerten.</string>
+    <string name="cancel">Jetzt nicht</string>
+    <string name="rate_it">Ich mache es</string>
+
+
+    <string name="ok">OK</string>
+
+    <string name="f_title">Freundliche Spende</string>
+    <string name="f_text1">- Lass ein Trinkgeld für das Team</string>
+    <string name="f_text2">- Hilft uns mit eine kleine Spende</string>
+    <string name="f_button">Lass dein Trinkgeld</string>
+    <string name="s_title">Werde zum Abonenten</string>
+    <string name="s_text1">- 12 Monate abo</string>
+    <string name="s_text2">- Kein Werbung</string>
+    <string name="s_text3">- Speziele Tipps für Abonenten kommt später</string>
+    <string name="s_button">Folge uns</string>
+    <string name="v_title">VIP Mitglied</string>
+    <string name="v_text1">- Lebenslange abo</string>
+    <string name="v_text2">- keine Werbung</string>
+    <string name="v_text3">- Speziele Tipps für Abonenten kommt später</string>
+    <string name="v_button">Kaufen</string>
+</resources>

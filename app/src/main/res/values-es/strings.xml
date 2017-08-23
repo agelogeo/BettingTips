@@ -15,11 +15,7 @@
     <string name="no">No</string>
     <string name="tab_standard">Básicas</string>
     <string name="tab_alternative">Alternativas</string>
-    <string name="stats_title">Estadísticas</string>
-    <string name="stats_total">Todos los consejos del historial</string>
-    <string name="stats_won">Ganados</string>
-    <string name="stats_lost">Perdidos</string>
-    <string name="stats_perc">Porcentaje de éxito</string>
+
     <string name="we_need_your_help">iNecesitamos su ayuda!</string>
     <string name="please_take_a_moment">Dedique un momento por favor para evaluar nuestro aplicación. Lo apreciaríamos muchísimo.</string>
     <string name="please_wait">Espere un momento por favor</string>
@@ -36,13 +32,24 @@
     <string name="navigation_drawer_open">Abra el menú</string>
     <string name="bonus_history">Historial de sugerencias</string>
     <string name="bonus_today">Sugerencias de hoy</string>
-    <string name="first_odd">Probabilidad &lt; 1.50</string>
-    <string name="mid_odd">1.50 &lt; Probabilidad &lt; 2.00</string>
-    <string name="right_odd">Probabilidad &gt; 2.00</string>
 
     <string name="info_message"><b>Daily Betting Tips</b> contiene algunos consejos útiles sobre apostar.<b> Por si acaso, querríamos aclarar que no tomamos ninguna responsabilidad sobre los resultados de las apuestas.</b>Somos, simplemente, un grupo de personas que son aficionados al fútbol y tienen unos conocimientos sobre apostar.</string>
     <string name="info_message2">Nuestro objetivo es ganar algo de lucro. Querríamos desearles a todos buena suerte y agradecerles por su apoyo y sus comentarios.<b>\nPara cualquier pregunta sobre la aplicación no dude en comunicárnosla por el corréo electrónico siguiente: dailybettingapp@gmail.com</b></string>
 
+    <string name="f_title">Donación amistosa</string>
+    <string name="f_text1">- Dejar un consejo para nuestro equipo</string>
+    <string name="f_text2">- Ayúdanos con una pequeña donación</string>
+    <string name="f_button">Deja una propina</string>
+    <string name="s_title">Convertirse en suscriptor</string>
+    <string name="s_text1">- 12 meses de suscripción</string>
+    <string name="s_text2">- Quitar anuncios</string>
+    <string name="s_text3">- Consejos de suscriptores próximamente</string>
+    <string name="s_button">Únete a nosotros</string>
+    <string name="v_title">VIP Miembro</string>
+    <string name="v_text1">- Suscripción de por vida</string>
+    <string name="v_text2">- Quitar anuncios</string>
+    <string name="v_text3">- Consejos de suscriptores próximamente</string>
+    <string name="v_button">Comprar este artículo</string>
 
     <string name="ok" >Bueno</string>
 </resources>

@@ -37,16 +37,20 @@
     <string name="cancel">Άκυρο</string>
     <string name="rate_it">Θα το κάνω</string>
 
-
-    <!-- Stats -->
-    <string name="stats_title">Στατιστικά</string>
-    <string name="stats_total">Συνολικές προτάσεις :</string>
-    <string name="stats_won">Κερδισμένα :</string>
-    <string name="stats_lost">Χαμένα :</string>
-    <string name="stats_perc">Ποσοστό επιτυχίας :</string>
-    <string name="first_odd">Απόδοση &lt; 1.50</string>
-    <string name="mid_odd">1.50 &lt; Απόδοση &lt; 2.00</string>
-    <string name="right_odd">Απόδοση &gt; 2.00</string>
+    <string name="f_title">Φιλική δωρεά</string>
+    <string name="f_text1">- Ενα φιλοδώρημα για την ομάδα μας</string>
+    <string name="f_text2">- Βοηθήστε μας με μια μικρή δωρεά</string>
+    <string name="f_button">Στείλτε φιλοδώρημα</string>
+    <string name="s_title">Γίνε συνδρομητής</string>
+    <string name="s_text1">- 12 μήνη συνδρομή</string>
+    <string name="s_text2">- Αφαίρεση διαφημίσεων</string>
+    <string name="s_text3">- Αποκλειστικές προγνώσεις συνδρομητών</string>
+    <string name="s_button">Γίνε μέλος τώρα</string>
+    <string name="v_title">VIP Μέλος</string>
+    <string name="v_text1">- Μόνιμη συνδρομή</string>
+    <string name="v_text2">- Αφαίρεση διαφημίσεων</string>
+    <string name="v_text3">- Αποκλειστικές προγνώσεις συνδρομητών</string>
+    <string name="v_button">Αγοράστε το τώρα</string>
 
 
     <string name="ok">Εντάξει</string>

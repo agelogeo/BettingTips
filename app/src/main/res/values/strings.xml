@@ -56,24 +56,24 @@
 
 
     <!-- In App Biling -->
-    <string name="subscriber" translatable="false">sgiorgos</string>
-    <string name="friendly" translatable="false">fgiorgos</string>
-    <string name="vip" translatable="false">vgiorgos</string>
+    <string name="subscriber" translatable="false">donation_subscriber</string>
+    <string name="friendly" translatable="false">donation_friendly</string>
+    <string name="vip" translatable="false">donation_vip</string>
     <!-- In App Biling Layout -->
-    <string name="f_title">Friendly Donation</string>
-    <string name="f_text1">- Leave a tip for our team</string>
-    <string name="f_text2">- Help us with a small donation</string>
-    <string name="f_button">leave a tip</string>
-    <string name="s_title">Become a subscriber</string>
-    <string name="s_text1">- 12 months subscription</string>
-    <string name="s_text2">- Remove Ads</string>
-    <string name="s_text3">- Subscriber tips coming soon</string>
-    <string name="s_button">Join Us</string>
-    <string name="v_title">VIP Member</string>
-    <string name="v_text1">- Lifetime subscription</string>
-    <string name="v_text2">- Remove Ads</string>
-    <string name="v_text3">- Subscriber tips coming soon</string>
-    <string name="v_button">Purchase this item</string>
+    <string name="f_title" translatable="true">Friendly Donation</string>
+    <string name="f_text1" translatable="true">- Leave a tip for our team</string>
+    <string name="f_text2" translatable="true">- Help us with a small donation</string>
+    <string name="f_button" translatable="true">leave a tip</string>
+    <string name="s_title" translatable="true">Become a subscriber</string>
+    <string name="s_text1" translatable="true">- 12 months subscription</string>
+    <string name="s_text2" translatable="true">- Remove Ads</string>
+    <string name="s_text3" translatable="true">- Subscriber tips coming soon</string>
+    <string name="s_button" translatable="true">Join Us</string>
+    <string name="v_title" translatable="true">VIP Member</string>
+    <string name="v_text1" translatable="true">- Lifetime subscription</string>
+    <string name="v_text2" translatable="true">- Remove Ads</string>
+    <string name="v_text3" translatable="true">- Subscriber tips coming soon</string>
+    <string name="v_button" translatable="true">Purchase this item</string>
 
 
 
@@ -89,15 +89,6 @@
     <string name="rate_it" translatable="true">Rate it</string>
     <string name="error_server" translatable="true">Error with Google server.</string>
 
-    <!-- Stats -->
-    <string name="stats_title" translatable="true">Statistics</string>
-    <string name="stats_total" translatable="true">Total tips in history :</string>
-    <string name="stats_won" translatable="true">Won :</string>
-    <string name="stats_lost" translatable="true">Lost :</string>
-    <string name="stats_perc" translatable="true">Success Percentage :</string>
-    <string name="first_odd" translatable="true">Odd &lt; 1.50</string>
-    <string name="mid_odd" translatable="true">1.50 &lt; Odd &lt; 2.00</string>
-    <string name="right_odd" translatable="true">Odd &gt; 2.00</string>
 
     <!-- FACEBOOK ADS -->
     <string name="today_banner" translatable="false">314020665687947_324069141349766</string>
