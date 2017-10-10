@@ -1,0 +1,125 @@
+function doGet() {
+  
+  var Match = function(date,time,league,home_team,away_team,odds,tip,home_score,away_score,gotcha){
+               this.date=date;
+               this.time = time;
+               this.league = league;
+               this.home_team = home_team;
+               this.away_team = away_team;
+               this.odds = odds;
+               this.tip = tip;
+               this.home_score = home_score;
+               this.away_score = away_score;
+               this.gotcha = gotcha;
+  }
+  
+  var fetchString="FAKE_URL"
+  var response = UrlFetchApp.fetch(fetchString);
+
+  var doc = Xml.parse(response.getBlob().getDataAsString(),true);
+  var b = doc.html.body;
+  var table = b[1].table.thead;
+  
+  var date = b[1].getElement("p").getElements("span")[6].getElement("strong").getText();
+  date = date.replace(/ /g,'');
+  date = date.slice(6)+'-'+date.slice(3,5)+'-'+date.slice(0,2);
+
+  var rows = [];
+  var matches = [];
+  var trs = table.getElements("tr");
+  
+  for(var r=2;r<trs.length-1;r=r+2){
+      var tds = trs[r].getElements("td");
+      
+    var time = tds[0];  
+    while(time.getElement()!=null){
+        time = time.getElement();
+    }   
+    time = time.getText();
+      
+    var teams = tds[2];  
+    while(teams.getElement()!=null){
+        teams = teams.getElement();
+    }   
+    teams = teams.getText();
+    
+    if(teams.search("-")!==-1){
+      var seperator = teams.search(" - ");
+    
+      var home_team = teams.slice(0,seperator);
+      home_team = home_team.replace(/\t/g,'');
+      var away_team = teams.slice(seperator+3);
+    }else{
+      var seperator = teams.search(" v ");
+    
+      var home_team = teams.slice(0,seperator);
+      home_team = home_team.replace(/\t/g,'');
+      var away_team = teams.slice(seperator+3);
+    } 
+      
+    var odds = tds[3];  
+    while(odds.getElement()!=null){
+        odds = odds.getElement();
+    }   
+    odds = odds.getText();
+      
+      tds = trs[r+1].getElements("td");
+    
+    var league = tds[0];  
+    while(league.getElement()!=null){
+        league = league.getElement();
+    }   
+    league = league.getText();
+    
+    var tip = tds[1];  
+    while(tip.getElement()!=null){
+        tip = tip.getElement();
+    }   
+    tip = tip.getText();
+    
+    
+    var home_score = "0";
+    var away_score = "0";
+    var gotcha = "yet";
+    
+    
+    
+    
+      var match = new Match(date,time,league,home_team,away_team,odds,tip,home_score,away_score,gotcha);
+      matches.push(match);
+    
+  }
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheets()[0];
+  var lastRow = sheet.getLastRow();
+  for(var i=lastRow; i>1; i--){
+    sheet.deleteRow(i);   
+  }
+  
+  for(var i=0; i<matches.length; i++){    
+    sheet.appendRow([matches[i].date,matches[i].league,matches[i].time,matches[i].home_team,matches[i].away_team,matches[i].home_score,matches[i].away_score,matches[i].odds,matches[i].tip,matches[i].gotcha]);
+  }
+  
+  var range = sheet.getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns());
+  range.setNumberFormat('@');
+  
+}
+
+
+
+
+///**
+// * Automatically sorts the 1st column (not the header row) Ascending.ΤΕΣΤ
+// */
+//function onEdit(event){
+//  var sheet = event.source.getActiveSheet();
+//  var editedCell = sheet.getActiveCell();
+//
+//  var columnToSortBy = 1;
+//  var tableRange = "A2:T200"; // What to sort.
+//
+//  if(editedCell.getColumn() == columnToSortBy && sheet.getName()!="stats"){   
+//    var range = sheet.getRange(tableRange);
+//    range.sort( { column : columnToSortBy, ascending: false } );
+//  }
+//}
