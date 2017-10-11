@@ -13,7 +13,7 @@ function doGet() {
                this.gotcha = gotcha;
   }
   
-  var fetchString="FAKE_URL"
+  var fetchString="https://vipbetting8.blogspot.gr/"
   var response = UrlFetchApp.fetch(fetchString);
 
   var doc = Xml.parse(response.getBlob().getDataAsString(),true);
@@ -102,6 +102,8 @@ function doGet() {
   
   var range = sheet.getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns());
   range.setNumberFormat('@');
+  
+  MailApp.sendEmail("agelogeo@gmail.com","Daily Betting Tips", "Sync completed");
   
 }
 
