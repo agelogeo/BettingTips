@@ -114,27 +114,7 @@ public class MainActivity extends AppCompatActivity
         transaction.replace(R.id.mainFrame,fragment);
         transaction.commit();
 
-        if(CallHolder.getMessage()!=null){
-            String title="",message="" ;
 
-            try {
-                JSONArray Jmessage =  new JSONObject(CallHolder.getMessage()).getJSONArray("message");
-                title = Jmessage.getJSONObject(0).getString("TITLE");
-                message = Jmessage.getJSONObject(0).getString("MESSAGE");
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(message).setTitle(title)
-                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            builder.create().dismiss();
-                        }
-                    });
-            builder.create().show();
-
-        }
     }
 
     @Override

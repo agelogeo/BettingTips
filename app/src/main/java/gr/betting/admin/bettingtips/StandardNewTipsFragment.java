@@ -88,20 +88,20 @@ public class StandardNewTipsFragment extends Fragment {
 
                         JSONObject tip = results.getJSONObject(i);
 
-                        tempItem.setDate(tip.getString("DATE"));
-                        tempItem.setTime(tip.getString("TIME"));
+                        tempItem.setDate(tip.getString("date"));
+                        tempItem.setTime(tip.getString("time"));
 
-                        tempItem.setHome_team_name(tip.getString("HOME_TEAM"));
-                        tempItem.setAway_team_name(tip.getString("AWAY_TEAM"));
+                        tempItem.setHome_team_name(tip.getString("homeTeam"));
+                        tempItem.setAway_team_name(tip.getString("awayTeam"));
 
-                        tempItem.setHome_team_score(tip.getString("HOME_SCORE"));
-                        tempItem.setAway_team_score(tip.getString("AWAY_SCORE"));
+                        tempItem.setHome_team_score(tip.getString("homeScore"));
+                        tempItem.setAway_team_score(tip.getString("awayScore"));
 
-                        tempItem.setOdd(tip.getString("ODD"));
-                        tempItem.setTip(tip.getString("TIP"));
+                        tempItem.setOdd(tip.getString("odd"));
+                        tempItem.setTip(tip.getString("tip"));
 
-                        tempItem.setCountry_league(tip.getString("COUNTRY_LEAGUE"));
-                        tempItem.setGotcha(tip.getString("Gotcha"));
+                        tempItem.setCountry_league(tip.getString("countryleague"));
+                        tempItem.setGotcha(tip.getString("gotcha"));
 
                         adapterList.add(tempItem);
 
