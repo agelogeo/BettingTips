@@ -1,6 +1,5 @@
 package gr.betting.admin.bettingtips;
 
-import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -11,28 +10,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.facebook.ads.AdSize;
-import com.google.android.gms.ads.AdView;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.mopub.mobileads.MoPubErrorCode;
-import com.mopub.mobileads.MoPubView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 
 /**
@@ -79,6 +68,7 @@ public class StandardNewTipsFragment extends Fragment {
             }
             else{
                 if (!response.contains("The coordinates or dimensions of the range are invalid.")) {
+                    System.out.println("No available tips ----------------" + response);
                     JSONObject jsonResult = new JSONObject(response);
                     final JSONArray results = (JSONArray) jsonResult.get(getString(R.string.standard_today));
                     int counter = 0;
@@ -88,20 +78,20 @@ public class StandardNewTipsFragment extends Fragment {
 
                         JSONObject tip = results.getJSONObject(i);
 
-                        tempItem.setDate(tip.getString("date"));
-                        tempItem.setTime(tip.getString("time"));
+                        tempItem.setDate(tip.getString("DATE"));
+                        tempItem.setTime(tip.getString("TIME"));
 
-                        tempItem.setHome_team_name(tip.getString("homeTeam"));
-                        tempItem.setAway_team_name(tip.getString("awayTeam"));
+                        tempItem.setHome_team_name(tip.getString("HOME_TEAM"));
+                        tempItem.setAway_team_name(tip.getString("AWAY_TEAM"));
 
-                        tempItem.setHome_team_score(tip.getString("homeScore"));
-                        tempItem.setAway_team_score(tip.getString("awayScore"));
+                        tempItem.setHome_team_score(tip.getString("HOME_SCORE"));
+                        tempItem.setAway_team_score(tip.getString("AWAY_SCORE"));
 
-                        tempItem.setOdd(tip.getString("odd"));
-                        tempItem.setTip(tip.getString("tip"));
+                        tempItem.setOdd(tip.getString("ODD"));
+                        tempItem.setTip(tip.getString("TIP"));
 
-                        tempItem.setCountry_league(tip.getString("countryleague"));
-                        tempItem.setGotcha(tip.getString("gotcha"));
+                        tempItem.setCountry_league(tip.getString("COUNTRY_LEAGUE"));
+                        tempItem.setGotcha(tip.getString("Gotcha"));
 
                         adapterList.add(tempItem);
 

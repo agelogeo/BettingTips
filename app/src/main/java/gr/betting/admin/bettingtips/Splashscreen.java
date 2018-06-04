@@ -2,36 +2,24 @@ package gr.betting.admin.bettingtips;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.PixelFormat;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.telecom.Call;
 import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.ads.AdSettings;
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Splashscreen extends Activity {
@@ -73,12 +61,12 @@ public class Splashscreen extends Activity {
 
         //getStats();
         getMessage();
-        //getAltToday();
+        getAltToday();
         getStandardToday(); // Contains SplashScreen.finish
-       // getBonusToday();
-        //getStandardHistory();
-        //getAltHistory();
-        //getBonusHistory();
+        getBonusToday();
+        getStandardHistory();
+        getAltHistory();
+        getBonusHistory();
 
 
     }
@@ -191,8 +179,7 @@ public class Splashscreen extends Activity {
                 try {
                     String SheetID = getString(R.string.sheet_id);
                     String SheetName = getString(R.string.standard_today);
-                    //String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id="+SheetID+"&sheet="+SheetName;
-                    String link = "https://script.googleusercontent.com/macros/echo?user_content_key=d80nls9Bbfxwop2hiSzwdN4k0rWFFuVA2fSz_Eez7Qo3IIWPW1wa7XY4oO4lqmzmDi0YptTTxV5myL71NoFu3RyPCFyVe0eCm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBvmhKDJLEGY2cIeu6OPmj0mb8ivWuuoYtsZZeKgf0f2jhISEsfN0_9Ae_f8DTaHW0qhI51p3q1_&lib=Mjtccf0eY7Whib06sVWvI2lwF9HK3kCjO";
+                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id="+SheetID+"&sheet="+SheetName;
 
 
 
@@ -222,13 +209,6 @@ public class Splashscreen extends Activity {
             }
             protected void onPostExecute(final String response) {
                 CallHolder.setStandard_new(response);
-                CallHolder.setTameiarxis_new(response);
-                CallHolder.setBonus_new(response);
-
-                CallHolder.setStandard_old(response);
-                CallHolder.setTameiarxis_old(response);
-                CallHolder.setBonus_old(response);
-
                 Intent intent = new Intent(Splashscreen.this,
                         MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
