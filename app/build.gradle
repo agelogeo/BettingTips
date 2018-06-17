@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "gr.betting.admin.bettingtips"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 27
         versionCode 38
         versionName "3.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -33,7 +33,7 @@ dependencies {
     compile 'com.google.firebase:firebase-ads:10.0.1'
     compile 'com.facebook.android:audience-network-sdk:4.+'
 
-        compile('com.mopub:mopub-sdk:4.15.0@aar') {
+    compile('com.mopub:mopub-sdk:4.15.0@aar') {
         transitive = true
     }
 
@@ -41,4 +41,3 @@ dependencies {
 }
 // Add to the bottom of the file
 apply plugin: 'com.google.gms.google-services'
-

@@ -60,13 +60,14 @@ public class Splashscreen extends Activity {
 
 
         //getStats();
-        getMessage();
+        //getMessage();
         getAltToday();
-        getStandardToday(); // Contains SplashScreen.finish
+
         getBonusToday();
         getStandardHistory();
         getAltHistory();
         getBonusHistory();
+        getStandardToday(); // Contains SplashScreen.finish
 
 
     }
@@ -87,7 +88,7 @@ public class Splashscreen extends Activity {
                 try {
                     String SheetID = getString(R.string.sheet_id);
                     String SheetName = getString(R.string.tameiarxis_today);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+                    String link = "https://script.google.com/macros/s/AKfycbx8vGJmVLsz3DMIIHQ-YySElLApsuf9YAKefyUaW1lVL-FtCZc/exec?action=" + SheetName;
 
 
                     System.out.println(link);
@@ -133,7 +134,7 @@ public class Splashscreen extends Activity {
                 try {
                     String SheetID = getString(R.string.sheet_id);
                     String SheetName = getString(R.string.andriko_today);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+                    String link = "https://script.google.com/macros/s/AKfycbx8vGJmVLsz3DMIIHQ-YySElLApsuf9YAKefyUaW1lVL-FtCZc/exec?action=" + SheetName;
 
 
                     System.out.println(link);
@@ -179,7 +180,7 @@ public class Splashscreen extends Activity {
                 try {
                     String SheetID = getString(R.string.sheet_id);
                     String SheetName = getString(R.string.standard_today);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id="+SheetID+"&sheet="+SheetName;
+                    String link = "https://script.google.com/macros/s/AKfycbx8vGJmVLsz3DMIIHQ-YySElLApsuf9YAKefyUaW1lVL-FtCZc/exec?action=" + SheetName;
 
 
 
@@ -231,7 +232,7 @@ public class Splashscreen extends Activity {
                 try {
                     String SheetID = getString(R.string.sheet_id);
                     String SheetName = getString(R.string.message);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+                    String link = "https://script.google.com/macros/s/AKfycbx8vGJmVLsz3DMIIHQ-YySElLApsuf9YAKefyUaW1lVL-FtCZc/exec?action=" + SheetName;
 
 
                     System.out.println(link);
@@ -284,7 +285,7 @@ public class Splashscreen extends Activity {
                 try {
                     String SheetID = getString(R.string.sheet_id);
                     String SheetName = getString(R.string.stats);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+                    String link = "https://script.google.com/macros/s/AKfycbx8vGJmVLsz3DMIIHQ-YySElLApsuf9YAKefyUaW1lVL-FtCZc/exec?action=" + SheetName;
 
 
                     System.out.println(link);
@@ -330,7 +331,7 @@ public class Splashscreen extends Activity {
                 try {
                     String SheetID = getString(R.string.sheet_id);
                     String SheetName = getString(R.string.standard_history);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+                    String link = "https://script.google.com/macros/s/AKfycbx8vGJmVLsz3DMIIHQ-YySElLApsuf9YAKefyUaW1lVL-FtCZc/exec?action=" + SheetName;
 
 
                     System.out.println(link);
@@ -376,7 +377,7 @@ public class Splashscreen extends Activity {
                 try {
                     String SheetID = getString(R.string.sheet_id);
                     String SheetName = getString(R.string.tameiarxis_history);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+                    String link = "https://script.google.com/macros/s/AKfycbx8vGJmVLsz3DMIIHQ-YySElLApsuf9YAKefyUaW1lVL-FtCZc/exec?action=" + SheetName;
 
 
                     System.out.println(link);
@@ -422,7 +423,7 @@ public class Splashscreen extends Activity {
                 try {
                     String SheetID = getString(R.string.sheet_id);
                     String SheetName = getString(R.string.andriko_history);
-                    String link = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=" + SheetID + "&sheet=" + SheetName;
+                    String link = "https://script.google.com/macros/s/AKfycbx8vGJmVLsz3DMIIHQ-YySElLApsuf9YAKefyUaW1lVL-FtCZc/exec?action=" + SheetName;
 
 
                     System.out.println(link);

@@ -42,12 +42,12 @@
 
     <!-- Google Spreadsheet -->
     <string name="sheet_id" translatable="false">175XqnHhcOS8CVoBY08xMhaDO39VmauBEFKU9qeaHS3U</string>
-    <string name="andriko_history" translatable="false">andriko_history</string>
-    <string name="andriko_today" translatable="false">andriko_today</string>
-    <string name="tameiarxis_history" translatable="false">tameiarxis_history</string>
-    <string name="tameiarxis_today" translatable="false">tameiarxis_today</string>
-    <string name="standard_history" translatable="false">standard_history</string>
-    <string name="standard_today" translatable="false">standard_today</string>
+    <string name="andriko_history" translatable="false">get_bonus_history</string>
+    <string name="andriko_today" translatable="false">get_bonus_today</string>
+    <string name="tameiarxis_history" translatable="false">get_alt_history</string>
+    <string name="tameiarxis_today" translatable="false">get_alt_today</string>
+    <string name="standard_history" translatable="false">get_basic_history</string>
+    <string name="standard_today" translatable="false">get_basic_today</string>
     <string name="stats" translatable="false">stats</string>
 
     <string name="message" translatable="false">message</string>

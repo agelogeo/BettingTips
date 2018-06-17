@@ -19,7 +19,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -69,29 +68,29 @@ public class StandardNewTipsFragment extends Fragment {
             else{
                 if (!response.contains("The coordinates or dimensions of the range are invalid.")) {
                     System.out.println("No available tips ----------------" + response);
-                    JSONObject jsonResult = new JSONObject(response);
-                    final JSONArray results = (JSONArray) jsonResult.get(getString(R.string.standard_today));
+                    JSONArray results = new JSONArray(response);
+                    //final JSONArray results = (JSONArray) jsonResult.get(getString(R.string.standard_today));
                     int counter = 0;
-                    for(int i=0;i<results.length();i++){
+                    for(int i=1;i<results.length();i++){
                         betItem tempItem = new betItem();
                         counter++;
 
-                        JSONObject tip = results.getJSONObject(i);
+                        JSONArray tip = results.getJSONArray(i);
 
-                        tempItem.setDate(tip.getString("DATE"));
-                        tempItem.setTime(tip.getString("TIME"));
+                        tempItem.setDate(tip.get(0).toString());
+                        tempItem.setTime(tip.get(2).toString());
 
-                        tempItem.setHome_team_name(tip.getString("HOME_TEAM"));
-                        tempItem.setAway_team_name(tip.getString("AWAY_TEAM"));
+                        tempItem.setHome_team_name(tip.get(3).toString());
+                        tempItem.setAway_team_name(tip.get(4).toString());
 
-                        tempItem.setHome_team_score(tip.getString("HOME_SCORE"));
-                        tempItem.setAway_team_score(tip.getString("AWAY_SCORE"));
+                        tempItem.setHome_team_score(tip.get(5).toString());
+                        tempItem.setAway_team_score(tip.get(6).toString());
 
-                        tempItem.setOdd(tip.getString("ODD"));
-                        tempItem.setTip(tip.getString("TIP"));
+                        tempItem.setOdd(tip.get(7).toString());
+                        tempItem.setTip(tip.get(8).toString());
 
-                        tempItem.setCountry_league(tip.getString("COUNTRY_LEAGUE"));
-                        tempItem.setGotcha(tip.getString("Gotcha"));
+                        tempItem.setCountry_league(tip.get(1).toString());
+                        tempItem.setGotcha(tip.get(9).toString());
 
                         adapterList.add(tempItem);
 
